@@ -1,0 +1,14 @@
+E:\TTCSDL\TTCSDL\BUS\bin\Debug\BUS.dll
+E:\TTCSDL\TTCSDL\BUS\bin\Debug\BUS.pdb
+E:\TTCSDL\TTCSDL\BUS\bin\Debug\DAL.dll
+E:\TTCSDL\TTCSDL\BUS\bin\Debug\DAL.pdb
+E:\TTCSDL\TTCSDL\BUS\obj\Debug\BUS.csprojResolveAssemblyReference.cache
+E:\TTCSDL\TTCSDL\BUS\obj\Debug\BUS.dll
+E:\TTCSDL\TTCSDL\BUS\obj\Debug\BUS.pdb
+C:\Users\DELL\Desktop\TTCSDL-Thang273\TTCSDL\BUS\bin\Debug\BUS.dll
+C:\Users\DELL\Desktop\TTCSDL-Thang273\TTCSDL\BUS\bin\Debug\BUS.pdb
+C:\Users\DELL\Desktop\TTCSDL-Thang273\TTCSDL\BUS\bin\Debug\DAL.dll
+C:\Users\DELL\Desktop\TTCSDL-Thang273\TTCSDL\BUS\bin\Debug\DAL.pdb
+C:\Users\DELL\Desktop\TTCSDL-Thang273\TTCSDL\BUS\obj\Debug\BUS.csprojResolveAssemblyReference.cache
+C:\Users\DELL\Desktop\TTCSDL-Thang273\TTCSDL\BUS\obj\Debug\BUS.dll
+C:\Users\DELL\Desktop\TTCSDL-Thang273\TTCSDL\BUS\obj\Debug\BUS.pdb

@@ -1,0 +1,12 @@
+E:\TTCSDL\TTCSDL\DAL\bin\Debug\DAL.dll.config
+E:\TTCSDL\TTCSDL\DAL\bin\Debug\DAL.dll
+E:\TTCSDL\TTCSDL\DAL\bin\Debug\DAL.pdb
+E:\TTCSDL\TTCSDL\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+E:\TTCSDL\TTCSDL\DAL\obj\Debug\DAL.dll
+E:\TTCSDL\TTCSDL\DAL\obj\Debug\DAL.pdb
+C:\Users\DELL\Desktop\TTCSDL-Thang273\TTCSDL\DAL\bin\Debug\DAL.dll.config
+C:\Users\DELL\Desktop\TTCSDL-Thang273\TTCSDL\DAL\bin\Debug\DAL.dll
+C:\Users\DELL\Desktop\TTCSDL-Thang273\TTCSDL\DAL\bin\Debug\DAL.pdb
+C:\Users\DELL\Desktop\TTCSDL-Thang273\TTCSDL\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+C:\Users\DELL\Desktop\TTCSDL-Thang273\TTCSDL\DAL\obj\Debug\DAL.dll
+C:\Users\DELL\Desktop\TTCSDL-Thang273\TTCSDL\DAL\obj\Debug\DAL.pdb

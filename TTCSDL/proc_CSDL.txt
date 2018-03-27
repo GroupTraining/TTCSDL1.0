@@ -1,0 +1,134 @@
+create proc adduser
+	@ma nchar(10),
+	@user nvarchar(max),
+	@pass nvarchar(50),
+	@name nvarchar(max),
+	@mail nvarchar(max),
+	@phone nchar(10),
+	@time datetime,
+	@group int
+	as begin
+		if((select Ma from TKUser where Ma = @ma) is not null)
+		print 'Da ton tai ' +@ma
+		else
+		insert into TKUser(Ma,Username,Pass,HoTen,Email,Phone,TimeEdited)
+		values(@ma,@user,@pass,@name,@mail,@phone,@time)
+		if((select Ma from GroupUser where Ma = @ma) is not null)
+		print 'Da ton tai ' +@ma
+		else
+		insert into GroupUser(Nhom,Ma)
+		values(@group,@ma)
+		end
+
+create proc editUser
+	@ma nchar(10),
+	@username nvarchar(50),
+	@pass nvarchar(10),
+	@name nvarchar(max),
+	@email nvarchar(max),
+	@phone nvarchar(10),
+	@timeedit datetime
+as begin
+		update TKUser
+		set Username = @username,Pass = @pass, HoTen = @name, Email = @email, Phone =@phone, TimeEdited = @timeedit
+		where Ma = @ma
+	end
+
+CREATE PROCEDURE RemoveUser
+	@ma nchar(10)
+AS
+	delete TKUser
+	where Ma = @ma
+RETURN 0
+-----------------------------------------
+CREATE PROCEDURE addDV
+	@ma nchar(10),
+	@name nvarchar(max),
+	@price nvarchar(max),
+	@time datetime
+AS
+	if((SELECT MaDV from DichVu where MaDV = @ma) is not null)
+		print 'Error' 
+	else
+		insert into DichVu
+		values (@ma,@name,@price,@time)
+
+RETURN 0
+
+CREATE PROCEDURE editDV
+	@ma nchar(10),
+	@name nvarchar(max),
+	@price nvarchar(max),
+	@time datetime
+AS
+		update DichVu
+		set MaDV = @ma, TenDV = @name , GiaDV = @price, TimeEdited = @time
+		where MaDV = @ma
+RETURN 0
+
+CREATE PROCEDURE delDV
+	@ma nchar(10)
+AS
+	if((SELECT MaDV from DichVu where MaDV = @ma) is not null)
+	delete DichVu
+	where MaDV = @ma
+	else
+	print 'Error'
+RETURN 0
+-------------------------------------
+create proc editkhachhang
+	@makh nchar(10),
+	@tenkh nvarchar(50),
+	@ns date,
+	@gt bit,
+	@socmt nchar(20),
+	@phone nchar(20),
+	@diachi nvarchar(50),
+	@capbac int,
+	@time datetime
+as begin
+		update KhachHang
+		set TenKH = @tenkh,NgaySinh = @ns, SoCMT = @socmt, SoDT = @phone, DiaChi =@diachi,CapBac=@capbac, TimeEdited = @time
+		where MaKH = @makh
+	end
+
+CREATE PROCEDURE RemoveKhachHang
+	@makh nchar(10)
+AS
+	delete KhachHang
+	where MaKH = @makh
+RETURN 0
+-------------------------------------
+CREATE proc [dbo].[addPhong]
+	@so nchar(10),
+	@loai nvarchar(50),
+	@gia int,
+	@tinhtrang bit,
+	@timeedited datetime
+as begin
+	if((select SoPhong from Phong where SoPhong = @so) is not null)
+		print 'Da ton tai phong so ' + @so 
+		else
+		insert into Phong
+		values(@so,@loai,@gia,@tinhtrang,@timeedited)
+		
+end
+
+CREATE PROCEDURE [dbo].[removePhong]
+	@so nchar(10)
+AS
+	delete Phong
+	where SoPhong =@so
+RETURN 0
+
+CREATE proc [dbo].[editPhong]
+	@so nchar(10),
+	@loai nvarchar(50),
+	@gia int,
+	@tinhtrang bit,
+	@timeedited datetime
+as begin
+	update Phong
+	set SoPhong=@so,LoaiPhong=@loai,GiaPhong=@gia,TinhTrangPhong=@tinhtrang,TimeEdited=@timeedited
+	where SoPhong=@so
+end
