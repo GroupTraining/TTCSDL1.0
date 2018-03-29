@@ -137,5 +137,11 @@ namespace TTCSDL.GUI
         {
 
         }
+
+        private void btn_LoaiDV_Click(object sender, EventArgs e)
+        {
+            GUI.DatDichVu datdv = new DatDichVu();
+            datdv.Show();
+        }
     }
 }
