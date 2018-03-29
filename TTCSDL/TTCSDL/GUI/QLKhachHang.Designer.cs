@@ -203,7 +203,6 @@
             // 
             this.dateNS.BackgroundStyle.Class = "DateTimeInputBackground";
             this.dateNS.ButtonDropDown.Visible = true;
-            this.dateNS.CustomFormat = "dd/MM/yyyy";
             this.dateNS.Location = new System.Drawing.Point(107, 67);
             // 
             // 
@@ -331,6 +330,7 @@
             this.btnThem.TabIndex = 39;
             this.btnThem.Text = "Thêm";
             this.btnThem.UseVisualStyleBackColor = true;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // QLKhachHang
             // 
