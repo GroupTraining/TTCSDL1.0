@@ -12,18 +12,6 @@
       <Association Name="TKUser_GroupUser" Member="GroupUsers" ThisKey="Ma" OtherKey="Ma" Type="GroupUser" />
     </Type>
   </Table>
-  <Table Name="dbo.ChiTietDV" Member="ChiTietDVs">
-    <Type Name="ChiTietDV">
-      <Column Name="MaHD" Type="System.String" DbType="NChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="MaDV" Type="System.String" DbType="NChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="SoLuongDV" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="ThanhTien" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="MaNV" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
-      <Association Name="DichVu_ChiTietDV" Member="DichVu" ThisKey="MaDV" OtherKey="MaDV" Type="DichVu" IsForeignKey="true" />
-      <Association Name="HDDichVu_ChiTietDV" Member="HDDichVu" ThisKey="MaHD" OtherKey="MaHD" Type="HDDichVu" IsForeignKey="true" />
-      <Association Name="NhanVien_ChiTietDV" Member="NhanVien" ThisKey="MaNV" OtherKey="MaNV" Type="NhanVien" IsForeignKey="true" />
-    </Type>
-  </Table>
   <Table Name="dbo.DichVu" Member="DichVus">
     <Type Name="DichVu">
       <Column Name="MaDV" Type="System.String" DbType="NChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -38,13 +26,13 @@
       <Column Name="MaPhong" Type="System.String" DbType="NChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="SoPhong" Type="System.String" DbType="NChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="TimeEdited" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Association Name="HDThuePhong_ChiTietThuePhong" Member="HDThuePhong" ThisKey="MaPhong" OtherKey="MaPhong" Type="HDThuePhong" IsForeignKey="true" />
       <Association Name="Phong_ChiTietThuePhong" Member="Phong" ThisKey="SoPhong" OtherKey="SoPhong" Type="Phong" IsForeignKey="true" />
+      <Association Name="HDThuePhong_ChiTietThuePhong" Member="HDThuePhong" ThisKey="MaPhong" OtherKey="MaPhong" Type="HDThuePhong" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.HDDichVu" Member="HDDichVus">
     <Type Name="HDDichVu">
-      <Column Name="MaHD" Type="System.String" DbType="NChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MaHD" Type="System.String" DbType="NChar(10) NOT NULL" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="MaKH" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
       <Column Name="NgayLapHD" Type="System.DateTime" DbType="Date" CanBeNull="true" />
       <Column Name="TongTien" Type="System.Int32" DbType="Int" CanBeNull="true" />
@@ -62,26 +50,9 @@
       <Column Name="TimeEdited" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="MaNV" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
       <Column Name="GiamGia" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Association Name="HDThuePhong_HDThanhToan" Member="HDThuePhong" ThisKey="MaPhong" OtherKey="MaPhong" Type="HDThuePhong" IsForeignKey="true" />
       <Association Name="KhachHang_HDThanhToan" Member="KhachHang" ThisKey="MaKHTT" OtherKey="MaKH" Type="KhachHang" IsForeignKey="true" />
       <Association Name="NhanVien_HDThanhToan" Member="NhanVien" ThisKey="MaNV" OtherKey="MaNV" Type="NhanVien" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.HDThuePhong" Member="HDThuePhongs">
-    <Type Name="HDThuePhong">
-      <Column Name="MaPhong" Type="System.String" DbType="NChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="MaKHThue" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
-      <Column Name="NgayThue" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-      <Column Name="NgayTra" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-      <Column Name="ThoiGianThue" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="TienPhong" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="TimeEdited" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="MaNV" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
-      <Association Name="HDThuePhong_ChiTietThuePhong" Member="ChiTietThuePhongs" ThisKey="MaPhong" OtherKey="MaPhong" Type="ChiTietThuePhong" />
-      <Association Name="HDThuePhong_HDThanhToan" Member="HDThanhToans" ThisKey="MaPhong" OtherKey="MaPhong" Type="HDThanhToan" />
-      <Association Name="HDThuePhong_ThuePhong" Member="ThuePhongs" ThisKey="MaPhong" OtherKey="MaPhong" Type="ThuePhong" />
-      <Association Name="KhachHang_HDThuePhong" Member="KhachHang" ThisKey="MaKHThue" OtherKey="MaKH" Type="KhachHang" IsForeignKey="true" />
-      <Association Name="NhanVien_HDThuePhong" Member="NhanVien" ThisKey="MaNV" OtherKey="MaNV" Type="NhanVien" IsForeignKey="true" />
+      <Association Name="HDThuePhong_HDThanhToan" Member="HDThuePhong" ThisKey="MaPhong" OtherKey="MaPhong" Type="HDThuePhong" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.KhachHang" Member="KhachHangs">
@@ -97,8 +68,8 @@
       <Column Name="TimeEdited" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Association Name="KhachHang_HDDichVu" Member="HDDichVus" ThisKey="MaKH" OtherKey="MaKH" Type="HDDichVu" />
       <Association Name="KhachHang_HDThanhToan" Member="HDThanhToans" ThisKey="MaKH" OtherKey="MaKHTT" Type="HDThanhToan" />
-      <Association Name="KhachHang_HDThuePhong" Member="HDThuePhongs" ThisKey="MaKH" OtherKey="MaKHThue" Type="HDThuePhong" />
       <Association Name="KhachHang_ThuePhong" Member="ThuePhongs" ThisKey="MaKH" OtherKey="MaKH" Type="ThuePhong" />
+      <Association Name="KhachHang_HDThuePhong" Member="HDThuePhongs" ThisKey="MaKH" OtherKey="MaKHThue" Type="HDThuePhong" />
     </Type>
   </Table>
   <Table Name="dbo.NhanVien" Member="NhanViens">
@@ -113,9 +84,7 @@
       <Column Name="ChucVu" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="Luong" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="TimeEdited" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Association Name="NhanVien_ChiTietDV" Member="ChiTietDVs" ThisKey="MaNV" OtherKey="MaNV" Type="ChiTietDV" />
       <Association Name="NhanVien_HDThanhToan" Member="HDThanhToans" ThisKey="MaNV" OtherKey="MaNV" Type="HDThanhToan" />
-      <Association Name="NhanVien_HDThuePhong" Member="HDThuePhongs" ThisKey="MaNV" OtherKey="MaNV" Type="HDThuePhong" />
     </Type>
   </Table>
   <Table Name="dbo.Phong" Member="Phongs">
@@ -143,6 +112,31 @@
       <Column Name="Ma" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
       <Column Name="TimeEdited" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Association Name="TKUser_GroupUser" Member="TKUser" ThisKey="Ma" OtherKey="Ma" Type="TKUser" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ChiTietDV" Member="ChiTietDVs">
+    <Type Name="ChiTietDV">
+      <Column Name="MaHD" Type="System.String" DbType="NChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MaDV" Type="System.String" DbType="NChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="SoLuongDV" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ThanhTien" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="DichVu_ChiTietDV" Member="DichVu" ThisKey="MaDV" OtherKey="MaDV" Type="DichVu" IsForeignKey="true" />
+      <Association Name="HDDichVu_ChiTietDV" Member="HDDichVu" ThisKey="MaHD" OtherKey="MaHD" Type="HDDichVu" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.HDThuePhong" Member="HDThuePhongs">
+    <Type Name="HDThuePhong">
+      <Column Name="MaPhong" Type="System.String" DbType="NChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MaKHThue" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="NgayThue" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="NgayTra" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="ThoiGianThue" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TienPhong" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TimeEdited" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="HDThuePhong_ChiTietThuePhong" Member="ChiTietThuePhongs" ThisKey="MaPhong" OtherKey="MaPhong" Type="ChiTietThuePhong" />
+      <Association Name="HDThuePhong_HDThanhToan" Member="HDThanhToans" ThisKey="MaPhong" OtherKey="MaPhong" Type="HDThanhToan" />
+      <Association Name="HDThuePhong_ThuePhong" Member="ThuePhongs" ThisKey="MaPhong" OtherKey="MaPhong" Type="ThuePhong" />
+      <Association Name="KhachHang_HDThuePhong" Member="KhachHang" ThisKey="MaKHThue" OtherKey="MaKH" Type="KhachHang" IsForeignKey="true" />
     </Type>
   </Table>
   <Function Name="dbo.addDV" Method="addDV">
@@ -234,6 +228,22 @@
   </Function>
   <Function Name="dbo.removePhong" Method="removePhong">
     <Parameter Name="so" Type="System.String" DbType="NChar(10)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.HDDV" Method="HDDV">
+    <Parameter Name="mahd" Type="System.String" DbType="NChar(10)" />
+    <Parameter Name="makh" Type="System.String" DbType="NChar(10)" />
+    <Parameter Name="madv" Type="System.String" DbType="NChar(10)" />
+    <Parameter Name="sl" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ngaylap" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="tongtien" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.CTHDDV" Method="CTHDDV">
+    <Parameter Name="mahd" Type="System.String" DbType="NChar(10)" />
+    <Parameter Name="madv" Type="System.String" DbType="NChar(10)" />
+    <Parameter Name="sl" Type="System.Int32" DbType="Int" />
+    <Parameter Name="tongtien" Type="System.Int32" DbType="Int" />
     <Return Type="System.Int32" />
   </Function>
 </Database>
