@@ -6,9 +6,10 @@ CREATE PROCEDURE HDDV
 	@ngaylap datetime,
 	@tongtien int
 AS
-	if((SELECT MaHD from HDDichVu hd where hd.MaHD =@mahd) is not null)
+	if((SELECT MaHD from HDDichVu hd where hd.MaHD =@mahd and MaKH = @makh) is not null)
 	update  HDDichVu
 	set TongTien += @tongtien
+	where MaHD = @mahd
 	else
 	insert into HDDichVu
 	values (@mahd,@makh,@ngaylap,@tongtien)

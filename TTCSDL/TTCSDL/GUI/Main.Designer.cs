@@ -165,7 +165,7 @@
             this.btn_logout.BackColor = System.Drawing.Color.Transparent;
             this.btn_logout.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btn_logout.Image = global::TTCSDL.Properties.Resources.lock_48;
-            this.btn_logout.Location = new System.Drawing.Point(4, 5);
+            this.btn_logout.Location = new System.Drawing.Point(4, 3);
             this.btn_logout.Name = "btn_logout";
             this.btn_logout.Size = new System.Drawing.Size(99, 75);
             this.btn_logout.TabIndex = 0;
@@ -182,10 +182,10 @@
             // 
             this.ribbonControl1.AutoSize = true;
             this.ribbonControl1.CaptionVisible = true;
+            this.ribbonControl1.Controls.Add(this.ribbonPanel1);
+            this.ribbonControl1.Controls.Add(this.ribbonPanel2);
             this.ribbonControl1.Controls.Add(this.ribbonPanel3);
             this.ribbonControl1.Controls.Add(this.ribbonPanel4);
-            this.ribbonControl1.Controls.Add(this.ribbonPanel2);
-            this.ribbonControl1.Controls.Add(this.ribbonPanel1);
             this.ribbonControl1.Controls.Add(this.ribbonPanel5);
             this.ribbonControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.ribbonControl1.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -201,7 +201,7 @@
             this.ribbonControl1.Padding = new System.Windows.Forms.Padding(0, 0, 0, 2);
             this.ribbonControl1.QuickToolbarItems.AddRange(new DevComponents.DotNetBar.BaseItem[] {
             this.office2007StartButton1});
-            this.ribbonControl1.Size = new System.Drawing.Size(985, 161);
+            this.ribbonControl1.Size = new System.Drawing.Size(985, 160);
             this.ribbonControl1.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
             this.ribbonControl1.TabGroupHeight = 14;
             this.ribbonControl1.TabIndex = 5;
@@ -220,8 +220,9 @@
             this.ribbonPanel3.Location = new System.Drawing.Point(0, 55);
             this.ribbonPanel3.Name = "ribbonPanel3";
             this.ribbonPanel3.Padding = new System.Windows.Forms.Padding(3, 0, 3, 3);
-            this.ribbonPanel3.Size = new System.Drawing.Size(985, 104);
+            this.ribbonPanel3.Size = new System.Drawing.Size(985, 103);
             this.ribbonPanel3.TabIndex = 3;
+            this.ribbonPanel3.Visible = false;
             // 
             // ribbonbarLoaiDV
             // 
@@ -232,7 +233,7 @@
             this.controlContainerItem16});
             this.ribbonbarLoaiDV.Location = new System.Drawing.Point(635, 0);
             this.ribbonbarLoaiDV.Name = "ribbonbarLoaiDV";
-            this.ribbonbarLoaiDV.Size = new System.Drawing.Size(107, 101);
+            this.ribbonbarLoaiDV.Size = new System.Drawing.Size(107, 100);
             this.ribbonbarLoaiDV.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
             this.ribbonbarLoaiDV.TabIndex = 5;
             this.ribbonbarLoaiDV.Text = "Gọi Dịch Vụ";
@@ -264,7 +265,7 @@
             this.controlContainerItem15});
             this.ribbonBarLP.Location = new System.Drawing.Point(535, 0);
             this.ribbonBarLP.Name = "ribbonBarLP";
-            this.ribbonBarLP.Size = new System.Drawing.Size(100, 101);
+            this.ribbonBarLP.Size = new System.Drawing.Size(100, 100);
             this.ribbonBarLP.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
             this.ribbonBarLP.TabIndex = 4;
             this.ribbonBarLP.Text = "TT Phòng";
@@ -295,7 +296,7 @@
             this.controlContainerItem14});
             this.ribbonBarTB.Location = new System.Drawing.Point(434, 0);
             this.ribbonBarTB.Name = "ribbonBarTB";
-            this.ribbonBarTB.Size = new System.Drawing.Size(101, 101);
+            this.ribbonBarTB.Size = new System.Drawing.Size(101, 100);
             this.ribbonBarTB.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
             this.ribbonBarTB.TabIndex = 3;
             this.ribbonBarTB.Text = "Thiết bị";
@@ -326,7 +327,7 @@
             this.controlContainerItem13});
             this.ribbonBarDSHĐ.Location = new System.Drawing.Point(316, 0);
             this.ribbonBarDSHĐ.Name = "ribbonBarDSHĐ";
-            this.ribbonBarDSHĐ.Size = new System.Drawing.Size(118, 101);
+            this.ribbonBarDSHĐ.Size = new System.Drawing.Size(118, 100);
             this.ribbonBarDSHĐ.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
             this.ribbonBarDSHĐ.TabIndex = 2;
             this.ribbonBarDSHĐ.Text = "DS Hóa đơn";
@@ -359,7 +360,7 @@
             this.controlContainerItem12});
             this.ribbonBarDSKHTP.Location = new System.Drawing.Point(151, 0);
             this.ribbonBarDSKHTP.Name = "ribbonBarDSKHTP";
-            this.ribbonBarDSKHTP.Size = new System.Drawing.Size(165, 101);
+            this.ribbonBarDSKHTP.Size = new System.Drawing.Size(165, 100);
             this.ribbonBarDSKHTP.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
             this.ribbonBarDSKHTP.TabIndex = 1;
             this.ribbonBarDSKHTP.Text = "DS KH nhận trả phòng";
@@ -390,7 +391,7 @@
             this.controlContainerItem11});
             this.ribbonBarDSKHDP.Location = new System.Drawing.Point(3, 0);
             this.ribbonBarDSKHDP.Name = "ribbonBarDSKHDP";
-            this.ribbonBarDSKHDP.Size = new System.Drawing.Size(148, 101);
+            this.ribbonBarDSKHDP.Size = new System.Drawing.Size(148, 100);
             this.ribbonBarDSKHDP.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
             this.ribbonBarDSKHDP.TabIndex = 0;
             this.ribbonBarDSKHDP.Text = "DS KH đặt phòng";
@@ -421,7 +422,7 @@
             this.ribbonPanel4.Location = new System.Drawing.Point(0, 55);
             this.ribbonPanel4.Name = "ribbonPanel4";
             this.ribbonPanel4.Padding = new System.Windows.Forms.Padding(3, 0, 3, 3);
-            this.ribbonPanel4.Size = new System.Drawing.Size(985, 104);
+            this.ribbonPanel4.Size = new System.Drawing.Size(985, 103);
             this.ribbonPanel4.TabIndex = 4;
             this.ribbonPanel4.Visible = false;
             // 
@@ -497,7 +498,7 @@
             this.ribbonPanel2.Location = new System.Drawing.Point(0, 55);
             this.ribbonPanel2.Name = "ribbonPanel2";
             this.ribbonPanel2.Padding = new System.Windows.Forms.Padding(3, 0, 3, 3);
-            this.ribbonPanel2.Size = new System.Drawing.Size(985, 104);
+            this.ribbonPanel2.Size = new System.Drawing.Size(985, 103);
             this.ribbonPanel2.TabIndex = 2;
             this.ribbonPanel2.Visible = false;
             // 
@@ -664,9 +665,8 @@
             this.ribbonPanel1.Location = new System.Drawing.Point(0, 55);
             this.ribbonPanel1.Name = "ribbonPanel1";
             this.ribbonPanel1.Padding = new System.Windows.Forms.Padding(3, 0, 3, 3);
-            this.ribbonPanel1.Size = new System.Drawing.Size(985, 108);
+            this.ribbonPanel1.Size = new System.Drawing.Size(985, 103);
             this.ribbonPanel1.TabIndex = 1;
-            this.ribbonPanel1.Visible = false;
             // 
             // ribbonBar5
             // 
@@ -686,7 +686,7 @@
             this.btn_changepass.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btn_changepass.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btn_changepass.Image = global::TTCSDL.Properties.Resources.ICO_Symbol_Refresh_ico_48x48;
-            this.btn_changepass.Location = new System.Drawing.Point(4, 4);
+            this.btn_changepass.Location = new System.Drawing.Point(4, 3);
             this.btn_changepass.Name = "btn_changepass";
             this.btn_changepass.Size = new System.Drawing.Size(94, 75);
             this.btn_changepass.TabIndex = 0;
@@ -717,7 +717,7 @@
             this.btn_tk.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btn_tk.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btn_tk.Image = global::TTCSDL.Properties.Resources.users_two_481;
-            this.btn_tk.Location = new System.Drawing.Point(4, 5);
+            this.btn_tk.Location = new System.Drawing.Point(4, 3);
             this.btn_tk.Name = "btn_tk";
             this.btn_tk.Size = new System.Drawing.Size(97, 75);
             this.btn_tk.TabIndex = 0;
@@ -740,7 +740,7 @@
             this.ribbonPanel5.Location = new System.Drawing.Point(0, 55);
             this.ribbonPanel5.Name = "ribbonPanel5";
             this.ribbonPanel5.Padding = new System.Windows.Forms.Padding(3, 0, 3, 3);
-            this.ribbonPanel5.Size = new System.Drawing.Size(985, 108);
+            this.ribbonPanel5.Size = new System.Drawing.Size(985, 103);
             this.ribbonPanel5.TabIndex = 5;
             this.ribbonPanel5.Visible = false;
             // 
@@ -836,6 +836,7 @@
             // 
             // ribbonTabItemHT
             // 
+            this.ribbonTabItemHT.Checked = true;
             this.ribbonTabItemHT.ImagePaddingHorizontal = 8;
             this.ribbonTabItemHT.Name = "ribbonTabItemHT";
             this.ribbonTabItemHT.Panel = this.ribbonPanel1;
@@ -850,7 +851,6 @@
             // 
             // ribbonTabItemDM
             // 
-            this.ribbonTabItemDM.Checked = true;
             this.ribbonTabItemDM.ImagePaddingHorizontal = 8;
             this.ribbonTabItemDM.Name = "ribbonTabItemDM";
             this.ribbonTabItemDM.Panel = this.ribbonPanel3;
