@@ -149,3 +149,10 @@ AS
 	insert into ChiTietThuePhong
 	values (@mahd,@sophong,@ngaylap)
 RETURN 0
+
+CREATE PROCEDURE CTHDTT
+	AS
+	update HDThanhToan 
+set TongTienThanhToan= (select TienPhong + (select sum(TongTien) from HDDichVu where HDThuePhong.MaKHThue=HDDichVu.MaKH and HDDichVu.TongTien is not null) from HDThuePhong where HDThuePhong.MaPhong=HDThanhToan.MaPhong)
+
+exec CTHDTT
