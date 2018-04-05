@@ -59,7 +59,8 @@ namespace TTCSDL.GUI
             DateTime time = DateTime.Now;
             data.addkhachhang(textMakh.Text,textTenkh.Text,Convert.ToDateTime(dateNS.Text), gt,textSocmt.Text,textPhone.Text,textDiachi.Text,grp,time);
             MessageBox.Show("Thêm thành công !!");
-            this.Close();
+            dataGridView1.Refresh();
+            dataGridView1.DataSource = csdl.getDataKH();
         }
 
 
@@ -112,5 +113,7 @@ namespace TTCSDL.GUI
             
             dataGridView1.DataSource = csdl.getDataKH();
         }
+
+        
     }
 }

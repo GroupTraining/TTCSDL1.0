@@ -1,0 +1,38 @@
+CREATE PROCEDURE HDDV
+	@mahd nchar(10),
+	@makh nchar(10),
+	@madv nchar(10),
+	@sl int,
+	@ngaylap datetime,
+	@tongtien int
+AS
+	if((SELECT MaHD from HDDichVu hd where hd.MaHD =@mahd and MaKH = @makh) is not null)
+	update  HDDichVu
+	set TongTien += @tongtien
+	where MaHD = @mahd
+	else
+	insert into HDDichVu
+	values (@mahd,@makh,@ngaylap,@tongtien)
+
+RETURN 0
+
+
+CREATE PROCEDURE [dbo].[CTHDDV]
+	@mahd nchar(10),
+	@madv nchar(10),
+	@sl int,
+	@tongtien int
+AS
+	
+	if((SELECT MaDV from ChiTietDV  where MaDV = @madv and MaHD = @mahd) is not null)
+	update ChiTietDV
+	set SoLuongDV += @sl,ThanhTien +=@tongtien
+	else if exists ((SELECT MaHD from ChiTietDV  where MaDV != @madv and MaHD = @mahd))
+	insert into ChiTietDV
+	values (@mahd,@madv,@sl,@tongtien)
+	
+	else if((SELECT MaHD from ChiTietDV  where MaHD = @mahd)  is  null)
+	insert into ChiTietDV
+	values (@mahd,@madv,@sl,@tongtien)
+
+RETURN 0

@@ -132,3 +132,27 @@ as begin
 	set SoPhong=@so,LoaiPhong=@loai,GiaPhong=@gia,TinhTrangPhong=@tinhtrang,TimeEdited=@timeedited
 	where SoPhong=@so
 end
+----------------------------
+ALTER PROCEDURE [dbo].[HDTP]
+	@mahd nchar(10),
+	@makh nchar(10),
+	@ngaythue date,
+	@ngaytra date,
+	@thoigianthue int,
+	@tienphong int,
+	@ngaylap datetime,
+	@sophong nchar(10)
+AS
+	insert into HDThuePhong 
+	values (@mahd,@makh,@ngaythue,@ngaytra,@thoigianthue,@tienphong,@ngaylap)
+
+	insert into ChiTietThuePhong
+	values (@mahd,@sophong,@ngaylap)
+RETURN 0
+
+CREATE PROCEDURE CTHDTT
+	AS
+	update HDThanhToan 
+set TongTienThanhToan= (select TienPhong + (select sum(TongTien) from HDDichVu where HDThuePhong.MaKHThue=HDDichVu.MaKH and HDDichVu.TongTien is not null) from HDThuePhong where HDThuePhong.MaPhong=HDThanhToan.MaPhong)
+
+exec CTHDTT

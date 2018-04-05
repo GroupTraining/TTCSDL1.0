@@ -24,9 +24,17 @@ namespace TTCSDL.GUI
         {
             if (csdl.check_login(txt_username.Text,txt_pass.Text) == true)
             {
-                this.Hide();
-                GUI.Main_admin main1 = new GUI.Main_admin(txt_username.Text);
-                main1.Show();
+               if(csdl.getGroup(txt_username.Text) == "3")
+                {
+                    GUI.FormNguoiDung frm = new GUI.FormNguoiDung();
+                    frm.Show();
+                    this.Hide();
+                }else
+                {
+                    GUI.Main_admin frm = new GUI.Main_admin();
+                    frm.Show();
+                    this.Hide();
+                }
             }
             else
             {
