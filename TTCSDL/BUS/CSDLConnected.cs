@@ -94,5 +94,27 @@ namespace BUS
                        };
             return data;
         }
+        public object getDataHDTT()
+        {
+            var data = from u in db.HDDichVus
+                       from v in db.KhachHangs
+                       from t in db.HDThuePhongs
+                       from z in db.HDThanhToans
+                       where u.MaKH == v.MaKH
+                       where v.MaKH == t.MaKHThue
+                       where z.MaKHTT == v.MaKH
+                       select new
+                       {
+                           MaPhong = z.MaPhong.Trim(),
+                           TenKH = v.TenKH.Trim(),
+                           TienDV = u.TongTien,
+                           TienPhong = t.TienPhong,
+                           NgayThanhToan = z.NgayThanhToan,
+                           TongTienThanhToan = z.TongTienThanhToan
+                       };
+            return data;
+
+        
+        }
     }
 }
