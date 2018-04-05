@@ -20,7 +20,6 @@ namespace TTCSDL.GUI
         {
             InitializeComponent();
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            Default();
             
         }
         public Main_admin(string txt) : this()
@@ -28,32 +27,13 @@ namespace TTCSDL.GUI
             string text = txt;
             username = text;
         }
-        public void Default()
-        {
-            ribbonTabItemQL.Enabled = false;
-            ribbonTabItemTK.Enabled = false;
-            ribbonBarDSKHDP.Hide();
-            ribbonBarDSKHTP.Hide();
-            ribbonBarDSHĐ.Hide();
-            ribbonBarTK.Hide();
-            
-
-        }
         public void admin()
         {
-            ribbonTabItemQL.Enabled = true;
-            ribbonTabItemTK.Enabled = true;
-            ribbonBarDSKHDP.Show();
-            ribbonBarDSKHTP.Show();
-            ribbonBarDSHĐ.Show();
-            ribbonBarTK.Show();
         }
         public void personal()
         {
-            ribbonTabItemQL.Enabled = true;
             ribbonBarQLDV.Hide();
             ribbonBarRoom.Hide();
-            ribbonTabItemTK.Enabled = true;
         }
         
 
@@ -72,9 +52,6 @@ namespace TTCSDL.GUI
             }else if(csdl.getGroup(username) == "2")
             {
                 personal();
-            }else
-            {
-                Default();
             }
             var phongs = from p in data.Phongs
                          select p;
