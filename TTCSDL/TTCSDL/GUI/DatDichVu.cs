@@ -60,7 +60,7 @@ namespace TTCSDL.GUI
         {
 
             DichVu dv = data.DichVus.Single(p => p.TenDV == comboBox_namedv.SelectedItem.ToString());
-            tongtien += Convert.ToInt32(dv.GiaDV * Convert.ToInt32(comboBox_count.SelectedItem.ToString().Trim()));
+            tongtien = Convert.ToInt32(dv.GiaDV * Convert.ToInt32(comboBox_count.SelectedItem.ToString().Trim()));
             lbl_sumamount.Text = string.Format("{0,-10:N0}đ", tongtien) ;
             
 
@@ -82,8 +82,7 @@ namespace TTCSDL.GUI
             string mahd = "HDDV"+ makh.Trim();
             comboBox_namedv.SelectedIndex = 0;
             comboBox_count.SelectedIndex = 0;
-            lbl_amount.Text = "";
-            lbl_sumamount.Text = "";
+            
             
             DateTime time = DateTime.Now;
             
@@ -93,7 +92,8 @@ namespace TTCSDL.GUI
                 data.CTHDDV(mahd, maDV, sl, sum);
                 MessageBox.Show("Gọi thành công !! Vui lòng đợi nhân viên phục vụ...");
             }
-           
+            lbl_amount.Text = "";
+            lbl_sumamount.Text = "";
 
         }
 

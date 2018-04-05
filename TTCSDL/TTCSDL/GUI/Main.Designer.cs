@@ -421,7 +421,7 @@
             this.ribbonPanel4.Location = new System.Drawing.Point(0, 55);
             this.ribbonPanel4.Name = "ribbonPanel4";
             this.ribbonPanel4.Padding = new System.Windows.Forms.Padding(3, 0, 3, 3);
-            this.ribbonPanel4.Size = new System.Drawing.Size(985, 108);
+            this.ribbonPanel4.Size = new System.Drawing.Size(985, 104);
             this.ribbonPanel4.TabIndex = 4;
             this.ribbonPanel4.Visible = false;
             // 
@@ -443,7 +443,7 @@
             this.btn_sale.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btn_sale.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btn_sale.Image = global::TTCSDL.Properties.Resources.Restore;
-            this.btn_sale.Location = new System.Drawing.Point(4, 4);
+            this.btn_sale.Location = new System.Drawing.Point(4, 3);
             this.btn_sale.Name = "btn_sale";
             this.btn_sale.Size = new System.Drawing.Size(92, 68);
             this.btn_sale.TabIndex = 0;
@@ -497,7 +497,7 @@
             this.ribbonPanel2.Location = new System.Drawing.Point(0, 55);
             this.ribbonPanel2.Name = "ribbonPanel2";
             this.ribbonPanel2.Padding = new System.Windows.Forms.Padding(3, 0, 3, 3);
-            this.ribbonPanel2.Size = new System.Drawing.Size(985, 108);
+            this.ribbonPanel2.Size = new System.Drawing.Size(985, 104);
             this.ribbonPanel2.TabIndex = 2;
             this.ribbonPanel2.Visible = false;
             // 
@@ -509,7 +509,7 @@
             this.controlContainerItem10});
             this.ribbonBarTraPhong.Location = new System.Drawing.Point(380, 3);
             this.ribbonBarTraPhong.Name = "ribbonBarTraPhong";
-            this.ribbonBarTraPhong.Size = new System.Drawing.Size(94, 102);
+            this.ribbonBarTraPhong.Size = new System.Drawing.Size(95, 90);
             this.ribbonBarTraPhong.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
             this.ribbonBarTraPhong.TabIndex = 5;
             this.ribbonBarTraPhong.Text = "Trả phòng";
@@ -519,7 +519,7 @@
             this.btn_traphong.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btn_traphong.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btn_traphong.Image = global::TTCSDL.Properties.Resources.ThongKe1;
-            this.btn_traphong.Location = new System.Drawing.Point(4, 7);
+            this.btn_traphong.Location = new System.Drawing.Point(4, 3);
             this.btn_traphong.Name = "btn_traphong";
             this.btn_traphong.Size = new System.Drawing.Size(84, 68);
             this.btn_traphong.TabIndex = 0;
@@ -539,7 +539,7 @@
             this.controlContainerItem8});
             this.ribbonBarBook.Location = new System.Drawing.Point(286, 3);
             this.ribbonBarBook.Name = "ribbonBarBook";
-            this.ribbonBarBook.Size = new System.Drawing.Size(89, 102);
+            this.ribbonBarBook.Size = new System.Drawing.Size(92, 90);
             this.ribbonBarBook.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
             this.ribbonBarBook.TabIndex = 3;
             this.ribbonBarBook.Text = "Đặt phòng";
@@ -549,7 +549,7 @@
             this.btn_datphong.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btn_datphong.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btn_datphong.Image = global::TTCSDL.Properties.Resources.book_481;
-            this.btn_datphong.Location = new System.Drawing.Point(4, 7);
+            this.btn_datphong.Location = new System.Drawing.Point(4, 3);
             this.btn_datphong.Name = "btn_datphong";
             this.btn_datphong.Size = new System.Drawing.Size(84, 68);
             this.btn_datphong.TabIndex = 0;
@@ -569,7 +569,7 @@
             this.controlContainerItem6});
             this.ribbonBarQLDV.Location = new System.Drawing.Point(101, 3);
             this.ribbonBarQLDV.Name = "ribbonBarQLDV";
-            this.ribbonBarQLDV.Size = new System.Drawing.Size(96, 102);
+            this.ribbonBarQLDV.Size = new System.Drawing.Size(94, 90);
             this.ribbonBarQLDV.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
             this.ribbonBarQLDV.TabIndex = 2;
             this.ribbonBarQLDV.Text = "Dịch vụ";
@@ -579,7 +579,7 @@
             this.btn_dichvu.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btn_dichvu.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btn_dichvu.Image = global::TTCSDL.Properties.Resources.cup_coffee_48;
-            this.btn_dichvu.Location = new System.Drawing.Point(4, 7);
+            this.btn_dichvu.Location = new System.Drawing.Point(4, 3);
             this.btn_dichvu.Name = "btn_dichvu";
             this.btn_dichvu.Size = new System.Drawing.Size(84, 68);
             this.btn_dichvu.TabIndex = 0;
@@ -600,7 +600,7 @@
             this.controlContainerItem7});
             this.ribbonBarRoom.Location = new System.Drawing.Point(197, 3);
             this.ribbonBarRoom.Name = "ribbonBarRoom";
-            this.ribbonBarRoom.Size = new System.Drawing.Size(89, 102);
+            this.ribbonBarRoom.Size = new System.Drawing.Size(87, 90);
             this.ribbonBarRoom.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
             this.ribbonBarRoom.TabIndex = 1;
             this.ribbonBarRoom.Text = "Phòng";
@@ -610,7 +610,7 @@
             this.btn_QLPhong.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btn_QLPhong.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btn_QLPhong.Image = global::TTCSDL.Properties.Resources.home_48;
-            this.btn_QLPhong.Location = new System.Drawing.Point(4, 7);
+            this.btn_QLPhong.Location = new System.Drawing.Point(4, 3);
             this.btn_QLPhong.Name = "btn_QLPhong";
             this.btn_QLPhong.Size = new System.Drawing.Size(84, 68);
             this.btn_QLPhong.TabIndex = 0;
@@ -631,7 +631,7 @@
             this.controlContainerItem5});
             this.ribbonBarADDKH.Location = new System.Drawing.Point(3, 3);
             this.ribbonBarADDKH.Name = "ribbonBarADDKH";
-            this.ribbonBarADDKH.Size = new System.Drawing.Size(98, 102);
+            this.ribbonBarADDKH.Size = new System.Drawing.Size(96, 90);
             this.ribbonBarADDKH.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
             this.ribbonBarADDKH.TabIndex = 0;
             this.ribbonBarADDKH.Text = "Khách hàng";
@@ -641,7 +641,7 @@
             this.btn_DangKy.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btn_DangKy.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btn_DangKy.Image = global::TTCSDL.Properties.Resources.user_add_481;
-            this.btn_DangKy.Location = new System.Drawing.Point(4, 7);
+            this.btn_DangKy.Location = new System.Drawing.Point(4, 3);
             this.btn_DangKy.Name = "btn_DangKy";
             this.btn_DangKy.Size = new System.Drawing.Size(84, 68);
             this.btn_DangKy.TabIndex = 0;
