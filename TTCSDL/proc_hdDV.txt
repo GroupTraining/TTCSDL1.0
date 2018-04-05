@@ -16,19 +16,20 @@ AS
 RETURN 0
 
 
-CREATE PROCEDURE CTHDDV
+CREATE PROCEDURE [dbo].[CTHDDV]
 	@mahd nchar(10),
 	@madv nchar(10),
 	@sl int,
 	@tongtien int
 AS
 	
-	if((SELECT MaHD from ChiTietDV  where MaDV = @madv and MaHD = @mahd) is not null)
+	if((SELECT MaDV from ChiTietDV  where MaDV = @madv and MaHD = @mahd) is not null)
 	update ChiTietDV
 	set SoLuongDV += @sl,ThanhTien +=@tongtien
-	else if((SELECT MaHD from ChiTietDV  where MaDV != @madv and MaHD = @mahd) is not null)
+	else if exists ((SELECT MaHD from ChiTietDV  where MaDV != @madv and MaHD = @mahd))
 	insert into ChiTietDV
 	values (@mahd,@madv,@sl,@tongtien)
+	
 	else if((SELECT MaHD from ChiTietDV  where MaHD = @mahd)  is  null)
 	insert into ChiTietDV
 	values (@mahd,@madv,@sl,@tongtien)
