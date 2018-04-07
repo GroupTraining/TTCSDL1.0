@@ -64,6 +64,7 @@ namespace TTCSDL.GUI
         DateTime ngaytra;
         TimeSpan thoigianthue;
         string loai = "";
+        DateTime time = DateTime.Now;
 
         private void comboBoxLP_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -87,12 +88,8 @@ namespace TTCSDL.GUI
             {
                 loai = "phong vip";
             }
-            var phongs = from a in data.Phongs
-                         from b in data.ChiTietThuePhongs
-                         from c in data.HDThuePhongs
-                         where  (a.SoPhong == b.SoPhong && b.MaPhong ==c.MaPhong)  
-                         where a.LoaiPhong.Trim() == loai
-                         where DateTime.Compare(ngayden, Convert.ToDateTime(c.NgayTra)) >= 0 
+            var phongs = from a in data.Phongs 
+                         where a.LoaiPhong.Trim() == loai 
                          select new
                          {
                              SoPhong = a.SoPhong,
@@ -101,7 +98,38 @@ namespace TTCSDL.GUI
                              GiaPhong = a.GiaPhong
                          };
             dataGridViewX1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewX1.DataSource = phongs;
+            List<object> list = new List<object>();
+            foreach ( var phong in phongs)
+            {
+                if ( phong.TinhTrang == false)
+                {
+                    list.Add(phong);
+                }else
+                {
+                    var chitiets = from a in data.ChiTietThuePhongs
+                                   where a.SoPhong.Trim() == phong.SoPhong
+                                   select a;
+                    DateTime gannhat = DateTime.Now;
+                    double min = 1000000;
+                    foreach (var chitiet in chitiets)
+                    {
+                        TimeSpan maxdays = time - Convert.ToDateTime(chitiet.TimeEdited);
+                        if (maxdays.TotalMinutes < min)
+                        {
+                            gannhat = Convert.ToDateTime(chitiet.TimeEdited);
+                            min = maxdays.TotalMinutes;
+                        }
+                    }
+                    ChiTietThuePhong ct = data.ChiTietThuePhongs.Single(b => b.SoPhong.Trim() == phong.SoPhong && DateTime.Compare(gannhat, Convert.ToDateTime(b.TimeEdited)) == 0);
+                    HDThuePhong hd = data.HDThuePhongs.Single(c => c.MaPhong == ct.MaPhong);
+
+                    if (DateTime.Compare(ngayden, Convert.ToDateTime(hd.NgayTra)) >= 0)
+                    {
+                        list.Add(phong);
+                    }
+                }
+            }
+            dataGridViewX1.DataSource = list;
         }
         private void dataGridViewX1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -130,9 +158,9 @@ namespace TTCSDL.GUI
                 KhachHang kh   = data.KhachHangs.Single(a => a.SoDT.Trim() == txtSDT.Text);
                 Phong p = data.Phongs.Single(d => d.SoPhong.Trim() == dataGridViewX1.CurrentRow.Cells["SoPhong"].Value.ToString());
                 string makh = kh.MaKH;
-                string mahd = "";
-            
-            
+                string mahdtp = "";
+                string mahddv = "";
+
                 //Kiểm tra trường hợp khách hàng đặt phòng lần đầu hay ko
                 var khachs = from a in data.HDThuePhongs
                              where a.MaKHThue == makh
@@ -140,25 +168,27 @@ namespace TTCSDL.GUI
                 int count = 0;
                 if ( khachs == null)
                 {
-                     mahd = "HDTP" + makh.Trim();
-                }else
+                     mahdtp = "HDTP" + makh.Trim();
+                     mahddv = "HDDV" + makh.Trim();
+                }
+                else
                 {
                     foreach (var khach in khachs)
                     {
                         count = count + 1;
                     }
-                    mahd = "HDTP" + makh.Trim() + count.ToString();
+                    mahdtp = "HDTP" + makh.Trim() + count.ToString();
+                    mahddv = "HDDV" + makh.Trim() + count.ToString();
                 }
             
-                DateTime time = DateTime.Now;
+                
                 string sophong =  labelSP.Text;
 
                 if (MessageBox.Show("Bạn chắc chắn đặt phòng này?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                        data.HDTP(mahd, makh, ngayden, ngaytra, Convert.ToInt32(thoigianthue.TotalDays), thanhtien, thanhtien * 2, time, sophong);
+                        data.HDTP(mahdtp,mahddv, makh, ngayden, ngaytra, Convert.ToInt32(thoigianthue.TotalDays), thanhtien, thanhtien * 2, time, sophong);
                         MessageBox.Show("Đặt phòng thành công!!");
                         p.TinhTrangPhong = true;
-                        data.SubmitChanges();
 
                         txtSDT.Text = "";
                         labelHoTen.Text = "";

@@ -149,6 +149,9 @@ AS
 
 	insert into ChiTietThuePhong
 	values (@mahd,@sophong,@ngaylap)
+
+	update Phong 
+	set TinhTrangPhong = 1 where SoPhong = @sophong
 RETURN 0
 ----------------------------
 CREATE PROCEDURE CTHDTT
