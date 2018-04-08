@@ -20,6 +20,7 @@ namespace TTCSDL.GUI
         public HoaDonThanhToan()
         {
             InitializeComponent();
+            this.CenterToParent();
             data.CTHDTT();
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             dataGridViewHDTT.DataSource = csdl.getDataHDTT();

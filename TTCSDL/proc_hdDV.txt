@@ -27,6 +27,7 @@ AS
 	if((SELECT MaDV from ChiTietDV  where MaDV = @madv and MaHD = @mahd) is not null)
 	update ChiTietDV
 	set SoLuongDV += @sl,ThanhTien +=@tongtien
+	where MaDV = @madv and MaHD = @mahd
 	else if exists ((SELECT MaHD from ChiTietDV  where MaDV != @madv and MaHD = @mahd))
 	insert into ChiTietDV
 	values (@mahd,@madv,@sl,@tongtien)

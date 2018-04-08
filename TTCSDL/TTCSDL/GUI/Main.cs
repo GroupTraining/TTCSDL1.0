@@ -20,7 +20,22 @@ namespace TTCSDL.GUI
         {
             InitializeComponent();
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            
+            var phongs = from p in data.Phongs
+                         select p;
+            foreach (var p in phongs)
+            {
+                listView1.SmallImageList = imageList1;
+                listView1.LargeImageList = imageList1;
+
+                ListViewItem item = new ListViewItem();
+                item.Text = p.SoPhong;
+                item.SubItems.Add("hi");
+                item.SubItems.Add("download");
+                item.ImageIndex = 0;
+                listView1.Items.Add(item);
+                listView1.View = View.SmallIcon;
+            }
+
         }
         public Main_admin(string txt) : this()
         {
@@ -53,21 +68,7 @@ namespace TTCSDL.GUI
             {
                 personal();
             }
-            var phongs = from p in data.Phongs
-                         select p;
-            foreach ( var p in phongs)
-            {
-                listView1.SmallImageList = imageList1;
-                listView1.LargeImageList = imageList1;
-
-                ListViewItem item = new ListViewItem();
-                item.Text = p.SoPhong;
-                item.SubItems.Add("hi");
-                item.SubItems.Add("download");
-                item.ImageIndex = 0;
-                listView1.Items.Add(item);
-                listView1.View = View.SmallIcon;
-            }
+            
 
 
             
@@ -112,13 +113,21 @@ namespace TTCSDL.GUI
 
         private void btn_ThanhToan_Click(object sender, EventArgs e)
         {
-
+            GUI.HoaDonThanhToan hd = new GUI.HoaDonThanhToan();
+            hd.Show();
         }
 
         private void btn_LoaiDV_Click(object sender, EventArgs e)
         {
             GUI.DatDichVu datdv = new DatDichVu();
             datdv.Show();
+
+        }
+
+        private void btn_datphong_Click(object sender, EventArgs e)
+        {
+            GUI.DatPhong datp = new GUI.DatPhong();
+            datp.Show();
         }
     }
 }

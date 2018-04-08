@@ -160,6 +160,7 @@ namespace TTCSDL.GUI
                 string makh = kh.MaKH;
                 string mahdtp = "";
                 string mahddv = "";
+                string mahdtt = "";
 
                 //Kiểm tra trường hợp khách hàng đặt phòng lần đầu hay ko
                 var khachs = from a in data.HDThuePhongs
@@ -170,6 +171,7 @@ namespace TTCSDL.GUI
                 {
                      mahdtp = "HDTP" + makh.Trim();
                      mahddv = "HDDV" + makh.Trim();
+                     mahdtt = "HDTT" + makh.Trim();
                 }
                 else
                 {
@@ -179,6 +181,7 @@ namespace TTCSDL.GUI
                     }
                     mahdtp = "HDTP" + makh.Trim() + count.ToString();
                     mahddv = "HDDV" + makh.Trim() + count.ToString();
+                    mahdtt = "HDTT" + makh.Trim() + count.ToString();
                 }
             
                 
