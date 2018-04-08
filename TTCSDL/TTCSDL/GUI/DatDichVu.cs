@@ -19,13 +19,6 @@ namespace TTCSDL.GUI
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.CenterToParent();
 
-
-            var dvs = from dv in data.DichVus
-                      select dv;
-            foreach (var dv in dvs)
-            {
-                comboBox_namedv.Items.Add(dv.TenDV.Trim());
-            }
         }
 
         private void DatDichVu_Load(object sender, EventArgs e)
@@ -41,6 +34,14 @@ namespace TTCSDL.GUI
                 {
                     comboBox_sophong.Items.Add(p.SoPhong);
                 }
+            }
+            comboBox_sophong.SelectedItem = "[Chọn Phòng]";
+            
+            var dvs = from dv in data.DichVus
+                      select dv;
+            foreach (var dv in dvs)
+            {
+                comboBox_namedv.Items.Add(dv.TenDV.Trim());
             }
             comboBox_namedv.SelectedItem = "[Chọn dịch vụ]";
 
@@ -64,22 +65,22 @@ namespace TTCSDL.GUI
         }
 
          string makh = "";
-        private void comboBox_sophong_SelectedIndexChanged(object sender, EventArgs e)
+        
+        private void btn_submit_Click(object sender, EventArgs e)
         {
-            if (comboBox_sophong.Text == "[Chọn Phòng]")
-            {
-                MessageBox.Show("Vui lòng chọn đúng  số phòng !");
-                return;
-            }
-            DateTime time = DateTime.Now;
-            var chitiets = from a in data.ChiTietThuePhongs
-                           where a.SoPhong.Trim() == comboBox_sophong.Text
-                           select a;
+            int sum = tongtien;
+            int sl = Convert.ToInt32(comboBox_count.Text.Trim());
+            string maDV = madv;
+            //Lấy mã kh
+            DateTime time1 = DateTime.Now;
+            var chitiettps = from a in data.ChiTietThuePhongs
+                             where a.SoPhong.Trim() == comboBox_sophong.Text
+                             select a;
             DateTime gannhat = DateTime.Now;
             double min = 1000000;
-            foreach (var chitiet in chitiets)
+            foreach (var chitiet in chitiettps)
             {
-                TimeSpan maxdays = time - Convert.ToDateTime(chitiet.TimeEdited);
+                TimeSpan maxdays = time1 - Convert.ToDateTime(chitiet.TimeEdited);
                 if (maxdays.TotalMinutes < min)
                 {
                     gannhat = Convert.ToDateTime(chitiet.TimeEdited);
@@ -89,29 +90,23 @@ namespace TTCSDL.GUI
             ChiTietThuePhong ct = data.ChiTietThuePhongs.Single(b => b.SoPhong.Trim() == comboBox_sophong.Text && DateTime.Compare(gannhat, Convert.ToDateTime(b.TimeEdited)) == 0);
             HDThuePhong tp = data.HDThuePhongs.Single(p => p.MaPhong == ct.MaPhong);
             makh = tp.MaKHThue;
-        }
-        
-        private void btn_submit_Click(object sender, EventArgs e)
-        {
-            int sum = tongtien;
-            int sl = Convert.ToInt32(comboBox_count.SelectedItem.ToString().Trim());
-            string maDV = madv;
+            //Lấy mã hd
             DateTime time = DateTime.Now;
-            var chitiets = from a in data.HDDichVus
+            var chitietdvs = from a in data.HDDichVus
                            where a.MaKH == makh
                            select a;
-            DateTime gannhat = DateTime.Now;
-            double min = 1000000;
-            foreach (var chitiet in chitiets)
+            DateTime gannhat1 = DateTime.Now;
+            double min1 = 1000000;
+            foreach (var chitiet in chitietdvs)
             {
                 TimeSpan maxdays = time - Convert.ToDateTime(chitiet.NgayLapHD);
-                if (maxdays.TotalMinutes < min)
+                if (maxdays.TotalMinutes < min1)
                 {
-                    gannhat = Convert.ToDateTime(chitiet.NgayLapHD);
-                    min = maxdays.TotalMinutes;
+                    gannhat1 = Convert.ToDateTime(chitiet.NgayLapHD);
+                    min1 = maxdays.TotalMinutes;
                 }
             }
-            HDDichVu hd = data.HDDichVus.Single(p => p.MaKH == makh && DateTime.Compare(gannhat,Convert.ToDateTime(p.NgayLapHD))==0);
+            HDDichVu hd = data.HDDichVus.Single(p => p.MaKH == makh && DateTime.Compare(gannhat1,Convert.ToDateTime(p.NgayLapHD))==0);
             string mahd = hd.MaHD;
             comboBox_count.SelectedIndex = 0;
              
@@ -144,7 +139,7 @@ namespace TTCSDL.GUI
 
         private void btn_del_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Hide();
             GUI.HoaDonThanhToan hd = new GUI.HoaDonThanhToan();
             hd.Show();
         }
