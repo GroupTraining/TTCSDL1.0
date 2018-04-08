@@ -196,7 +196,7 @@
             this.comboBox_sophong.Name = "comboBox_sophong";
             this.comboBox_sophong.Size = new System.Drawing.Size(156, 23);
             this.comboBox_sophong.TabIndex = 1;
-            this.comboBox_sophong.SelectedIndexChanged += new System.EventHandler(this.comboBox_sophong_SelectedIndexChanged);
+
             // 
             // labelX5
             // 
