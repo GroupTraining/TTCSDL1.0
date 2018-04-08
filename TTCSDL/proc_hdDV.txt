@@ -10,10 +10,10 @@ AS
 	update  HDDichVu
 	set TongTien += @tongtien
 	where MaHD = @mahd
-	else
-	insert into HDDichVu
-	values (@mahd,@makh,@ngaylap,@tongtien)
 
+	update HDThanhToan
+	set TongTienThanhToan += @tongtien
+	where MaHDDV = @mahd
 RETURN 0
 
 

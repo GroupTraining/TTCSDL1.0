@@ -183,13 +183,13 @@ namespace TTCSDL.GUI
                     mahddv = "HDDV" + makh.Trim() + count.ToString();
                     mahdtt = "HDTT" + makh.Trim() + count.ToString();
                 }
-            
+                
                 
                 string sophong =  labelSP.Text;
 
                 if (MessageBox.Show("Bạn chắc chắn đặt phòng này?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                        data.HDTP(mahdtp,mahddv, makh, ngayden, ngaytra, Convert.ToInt32(thoigianthue.TotalDays), thanhtien, thanhtien * 2, time, sophong);
+                        data.HDTP(mahdtp,mahddv,mahdtt, makh, ngayden, ngaytra, Convert.ToInt32(thoigianthue.TotalDays), thanhtien, thanhtien * 2, time, sophong);
                         MessageBox.Show("Đặt phòng thành công!!");
                         p.TinhTrangPhong = true;
 

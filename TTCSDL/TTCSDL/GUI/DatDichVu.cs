@@ -108,8 +108,9 @@ namespace TTCSDL.GUI
             }
             HDDichVu hd = data.HDDichVus.Single(p => p.MaKH == makh && DateTime.Compare(gannhat1,Convert.ToDateTime(p.NgayLapHD))==0);
             string mahd = hd.MaHD;
+
             comboBox_count.SelectedIndex = 0;
-             
+
             
             if (MessageBox.Show("Bạn chắc chắn gọi dịch vụ này này?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
@@ -133,6 +134,7 @@ namespace TTCSDL.GUI
                     MessageBox.Show("Gọi thành công !! Vui lòng đợi nhân viên phục vụ...");
                     lbl_amount.Text = "";
                     lbl_sumamount.Text = "";
+                    comboBox_sophong.SelectedIndex = 0;
                 }
             }
         }
