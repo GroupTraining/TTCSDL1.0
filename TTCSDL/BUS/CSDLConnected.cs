@@ -94,7 +94,7 @@ namespace BUS
                        };
             return data;
         }
-        public object getDataHDTT()
+        public object getDataHDTT(string tenkh)
         {
             var data = from u in db.HDDichVus
                        from v in db.KhachHangs
@@ -108,14 +108,52 @@ namespace BUS
                        {
                            MaPhong = z.MaPhong.Trim(),
                            TenKH = v.TenKH.Trim(),
+                           SoDT = v.SoDT.Trim(),
                            TienDV = u.TongTien,
                            TienPhong = t.TienPhong,
                            NgayThanhToan = z.NgayThanhToan,
                            TongTienThanhToan = z.TongTienThanhToan
-                       };
+                       } into timkiemhdtt
+                       where timkiemhdtt.TenKH.Contains(tenkh)
+                       select timkiemhdtt
+                       ;
+
             return data;
 
-        
+
         }
+
+        public object getDataHDDV(string tenkh)
+        {
+            var data = from u in db.HDDichVus
+                       from v in db.KhachHangs
+                       from t in db.HDThuePhongs
+                       from z in db.HDThanhToans
+                       from y in db.ChiTietDVs
+                       from p in db.DichVus
+                       where u.MaKH == v.MaKH
+                       where v.MaKH == t.MaKHThue
+                       where z.MaKHTT == v.MaKH
+                       where z.MaPhong == t.MaPhong
+                       where p.MaDV == y.MaDV
+                       where y.MaHD == u.MaHD
+                       where u.MaHD == z.MaHDDV
+                       select new
+                       {
+                           TenKH = v.TenKH.Trim(),
+                           NgayLapHD = u.NgayLapHD,
+                           TenDV = p.TenDV.Trim(),
+                           SoLuong = y.SoLuongDV,
+                           ThanhTien = y.ThanhTien,
+                       } into timkiemhddv
+                       where timkiemhddv.TenKH.Contains(tenkh)
+                       select timkiemhddv
+                       ;
+
+            return data;
+
+
+        }
+
     }
 }
