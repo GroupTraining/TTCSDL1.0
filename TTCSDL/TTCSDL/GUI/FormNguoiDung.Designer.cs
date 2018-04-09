@@ -30,12 +30,18 @@
         {
             this.ribbonControl1 = new DevComponents.DotNetBar.RibbonControl();
             this.ribbonPanel1 = new DevComponents.DotNetBar.RibbonPanel();
+            this.ribbonBar5 = new DevComponents.DotNetBar.RibbonBar();
+            this.btn_logout = new DevComponents.DotNetBar.ButtonX();
+            this.controlContainerItem4 = new DevComponents.DotNetBar.ControlContainerItem();
             this.ribbonBar4 = new DevComponents.DotNetBar.RibbonBar();
             this.btn_infobill = new DevComponents.DotNetBar.ButtonX();
+            this.controlContainerItem3 = new DevComponents.DotNetBar.ControlContainerItem();
             this.ribbonBar3 = new DevComponents.DotNetBar.RibbonBar();
             this.btn_inforoom = new DevComponents.DotNetBar.ButtonX();
+            this.controlContainerItem2 = new DevComponents.DotNetBar.ControlContainerItem();
             this.ribbonBar1 = new DevComponents.DotNetBar.RibbonBar();
             this.btn_changepass = new DevComponents.DotNetBar.ButtonX();
+            this.controlContainerItem1 = new DevComponents.DotNetBar.ControlContainerItem();
             this.ribbonTabItem1 = new DevComponents.DotNetBar.RibbonTabItem();
             this.office2007StartButton1 = new DevComponents.DotNetBar.Office2007StartButton();
             this.itemContainer1 = new DevComponents.DotNetBar.ItemContainer();
@@ -58,19 +64,13 @@
             this.buttonItem13 = new DevComponents.DotNetBar.ButtonItem();
             this.buttonItem1 = new DevComponents.DotNetBar.ButtonItem();
             this.qatCustomizeItem1 = new DevComponents.DotNetBar.QatCustomizeItem();
-            this.ribbonBar5 = new DevComponents.DotNetBar.RibbonBar();
-            this.btn_logout = new DevComponents.DotNetBar.ButtonX();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.controlContainerItem1 = new DevComponents.DotNetBar.ControlContainerItem();
-            this.controlContainerItem2 = new DevComponents.DotNetBar.ControlContainerItem();
-            this.controlContainerItem3 = new DevComponents.DotNetBar.ControlContainerItem();
-            this.controlContainerItem4 = new DevComponents.DotNetBar.ControlContainerItem();
             this.ribbonControl1.SuspendLayout();
             this.ribbonPanel1.SuspendLayout();
+            this.ribbonBar5.SuspendLayout();
             this.ribbonBar4.SuspendLayout();
             this.ribbonBar3.SuspendLayout();
             this.ribbonBar1.SuspendLayout();
-            this.ribbonBar5.SuspendLayout();
             this.SuspendLayout();
             // 
             // ribbonControl1
@@ -109,6 +109,38 @@
             this.ribbonPanel1.Size = new System.Drawing.Size(857, 97);
             this.ribbonPanel1.TabIndex = 1;
             // 
+            // ribbonBar5
+            // 
+            this.ribbonBar5.AutoOverflowEnabled = true;
+            this.ribbonBar5.Controls.Add(this.btn_logout);
+            this.ribbonBar5.Dock = System.Windows.Forms.DockStyle.Left;
+            this.ribbonBar5.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
+            this.controlContainerItem4});
+            this.ribbonBar5.Location = new System.Drawing.Point(360, 0);
+            this.ribbonBar5.Name = "ribbonBar5";
+            this.ribbonBar5.Size = new System.Drawing.Size(119, 94);
+            this.ribbonBar5.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
+            this.ribbonBar5.TabIndex = 4;
+            this.ribbonBar5.Text = "Đăng xuất";
+            // 
+            // btn_logout
+            // 
+            this.btn_logout.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btn_logout.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btn_logout.Image = global::TTCSDL.Properties.Resources.lock_open_48;
+            this.btn_logout.Location = new System.Drawing.Point(4, 3);
+            this.btn_logout.Name = "btn_logout";
+            this.btn_logout.Size = new System.Drawing.Size(113, 71);
+            this.btn_logout.TabIndex = 0;
+            this.btn_logout.Click += new System.EventHandler(this.btn_logout_Click);
+            // 
+            // controlContainerItem4
+            // 
+            this.controlContainerItem4.AllowItemResize = false;
+            this.controlContainerItem4.Control = this.btn_logout;
+            this.controlContainerItem4.MenuVisibility = DevComponents.DotNetBar.eMenuVisibility.VisibleAlways;
+            this.controlContainerItem4.Name = "controlContainerItem4";
+            // 
             // ribbonBar4
             // 
             this.ribbonBar4.AutoOverflowEnabled = true;
@@ -133,6 +165,13 @@
             this.btn_infobill.Size = new System.Drawing.Size(113, 71);
             this.btn_infobill.TabIndex = 0;
             this.btn_infobill.Click += new System.EventHandler(this.btn_infobill_Click);
+            // 
+            // controlContainerItem3
+            // 
+            this.controlContainerItem3.AllowItemResize = false;
+            this.controlContainerItem3.Control = this.btn_infobill;
+            this.controlContainerItem3.MenuVisibility = DevComponents.DotNetBar.eMenuVisibility.VisibleAlways;
+            this.controlContainerItem3.Name = "controlContainerItem3";
             // 
             // ribbonBar3
             // 
@@ -160,6 +199,13 @@
             this.btn_inforoom.TabIndex = 0;
             this.btn_inforoom.Click += new System.EventHandler(this.btn_inforoom_Click);
             // 
+            // controlContainerItem2
+            // 
+            this.controlContainerItem2.AllowItemResize = false;
+            this.controlContainerItem2.Control = this.btn_inforoom;
+            this.controlContainerItem2.MenuVisibility = DevComponents.DotNetBar.eMenuVisibility.VisibleAlways;
+            this.controlContainerItem2.Name = "controlContainerItem2";
+            // 
             // ribbonBar1
             // 
             this.ribbonBar1.AutoOverflowEnabled = true;
@@ -184,6 +230,13 @@
             this.btn_changepass.Size = new System.Drawing.Size(113, 71);
             this.btn_changepass.TabIndex = 0;
             this.btn_changepass.Click += new System.EventHandler(this.btn_changepass_Click);
+            // 
+            // controlContainerItem1
+            // 
+            this.controlContainerItem1.AllowItemResize = false;
+            this.controlContainerItem1.Control = this.btn_changepass;
+            this.controlContainerItem1.MenuVisibility = DevComponents.DotNetBar.eMenuVisibility.VisibleAlways;
+            this.controlContainerItem1.Name = "controlContainerItem1";
             // 
             // ribbonTabItem1
             // 
@@ -394,65 +447,12 @@
             // 
             this.qatCustomizeItem1.Name = "qatCustomizeItem1";
             // 
-            // ribbonBar5
-            // 
-            this.ribbonBar5.AutoOverflowEnabled = true;
-            this.ribbonBar5.Controls.Add(this.btn_logout);
-            this.ribbonBar5.Dock = System.Windows.Forms.DockStyle.Left;
-            this.ribbonBar5.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
-            this.controlContainerItem4});
-            this.ribbonBar5.Location = new System.Drawing.Point(360, 0);
-            this.ribbonBar5.Name = "ribbonBar5";
-            this.ribbonBar5.Size = new System.Drawing.Size(119, 94);
-            this.ribbonBar5.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
-            this.ribbonBar5.TabIndex = 4;
-            this.ribbonBar5.Text = "Đăng xuất";
-            // 
-            // btn_logout
-            // 
-            this.btn_logout.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btn_logout.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btn_logout.Image = global::TTCSDL.Properties.Resources.lock_open_48;
-            this.btn_logout.Location = new System.Drawing.Point(4, 3);
-            this.btn_logout.Name = "btn_logout";
-            this.btn_logout.Size = new System.Drawing.Size(113, 71);
-            this.btn_logout.TabIndex = 0;
-            this.btn_logout.Click += new System.EventHandler(this.btn_logout_Click);
-            // 
             // panel1
             // 
             this.panel1.Location = new System.Drawing.Point(10, 156);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(851, 321);
             this.panel1.TabIndex = 1;
-            // 
-            // controlContainerItem1
-            // 
-            this.controlContainerItem1.AllowItemResize = false;
-            this.controlContainerItem1.Control = this.btn_changepass;
-            this.controlContainerItem1.MenuVisibility = DevComponents.DotNetBar.eMenuVisibility.VisibleAlways;
-            this.controlContainerItem1.Name = "controlContainerItem1";
-            // 
-            // controlContainerItem2
-            // 
-            this.controlContainerItem2.AllowItemResize = false;
-            this.controlContainerItem2.Control = this.btn_inforoom;
-            this.controlContainerItem2.MenuVisibility = DevComponents.DotNetBar.eMenuVisibility.VisibleAlways;
-            this.controlContainerItem2.Name = "controlContainerItem2";
-            // 
-            // controlContainerItem3
-            // 
-            this.controlContainerItem3.AllowItemResize = false;
-            this.controlContainerItem3.Control = this.btn_infobill;
-            this.controlContainerItem3.MenuVisibility = DevComponents.DotNetBar.eMenuVisibility.VisibleAlways;
-            this.controlContainerItem3.Name = "controlContainerItem3";
-            // 
-            // controlContainerItem4
-            // 
-            this.controlContainerItem4.AllowItemResize = false;
-            this.controlContainerItem4.Control = this.btn_logout;
-            this.controlContainerItem4.MenuVisibility = DevComponents.DotNetBar.eMenuVisibility.VisibleAlways;
-            this.controlContainerItem4.Name = "controlContainerItem4";
             // 
             // FormNguoiDung
             // 
@@ -466,10 +466,10 @@
             this.ribbonControl1.ResumeLayout(false);
             this.ribbonControl1.PerformLayout();
             this.ribbonPanel1.ResumeLayout(false);
+            this.ribbonBar5.ResumeLayout(false);
             this.ribbonBar4.ResumeLayout(false);
             this.ribbonBar3.ResumeLayout(false);
             this.ribbonBar1.ResumeLayout(false);
-            this.ribbonBar5.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

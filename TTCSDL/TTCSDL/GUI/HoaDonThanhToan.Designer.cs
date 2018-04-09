@@ -73,10 +73,10 @@
             // 
             // labelX2
             // 
-            this.labelX2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.labelX2.Location = new System.Drawing.Point(24, 65);
+            this.labelX2.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.labelX2.Location = new System.Drawing.Point(12, 63);
             this.labelX2.Name = "labelX2";
-            this.labelX2.Size = new System.Drawing.Size(102, 27);
+            this.labelX2.Size = new System.Drawing.Size(122, 27);
             this.labelX2.TabIndex = 6;
             this.labelX2.Text = "Tên Khách Hàng";
             // 
@@ -86,9 +86,10 @@
             // 
             // 
             this.textTenKH.Border.Class = "TextBoxBorder";
+            this.textTenKH.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textTenKH.Location = new System.Drawing.Point(142, 68);
             this.textTenKH.Name = "textTenKH";
-            this.textTenKH.Size = new System.Drawing.Size(209, 20);
+            this.textTenKH.Size = new System.Drawing.Size(209, 22);
             this.textTenKH.TabIndex = 7;
             // 
             // button1
@@ -97,7 +98,7 @@
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.button1.Location = new System.Drawing.Point(407, 63);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(91, 29);
+            this.button1.Size = new System.Drawing.Size(103, 29);
             this.button1.TabIndex = 8;
             this.button1.Text = "Tìm";
             this.button1.UseVisualStyleBackColor = false;
@@ -105,9 +106,12 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(572, 63);
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.button2.Location = new System.Drawing.Point(572, 55);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(80, 25);
+            this.button2.Size = new System.Drawing.Size(112, 36);
             this.button2.TabIndex = 9;
             this.button2.Text = "Thanh Toán";
             this.button2.UseVisualStyleBackColor = true;
@@ -126,9 +130,10 @@
             // button3
             // 
             this.button3.BackgroundImage = global::TTCSDL.Properties.Resources.reload_24;
-            this.button3.Location = new System.Drawing.Point(516, 67);
+            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.button3.Location = new System.Drawing.Point(516, 52);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(28, 24);
+            this.button3.Size = new System.Drawing.Size(50, 39);
             this.button3.TabIndex = 11;
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);

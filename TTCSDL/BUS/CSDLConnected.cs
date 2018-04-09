@@ -104,6 +104,7 @@ namespace BUS
                        where v.MaKH == t.MaKHThue
                        where z.MaKHTT == v.MaKH
                        where z.MaPhong == t.MaPhong
+                       where u.MaHD == z.MaHDDV
                        select new
                        {
                            MaPhong = z.MaPhong.Trim(),
