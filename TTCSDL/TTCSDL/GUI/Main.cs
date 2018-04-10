@@ -27,12 +27,23 @@ namespace TTCSDL.GUI
                 listView1.SmallImageList = imageList1;
                 listView1.LargeImageList = imageList1;
 
-                ListViewItem item = new ListViewItem();
-                item.Text = p.SoPhong;
-                item.SubItems.Add("hi");
-                item.SubItems.Add("download");
-                item.ImageIndex = 0;
-                listView1.Items.Add(item);
+                
+                if(p.TinhTrangPhong == true)
+                {
+                    ListViewItem item = new ListViewItem("Phòng số " + p.SoPhong + "Đang sử dụng");
+                    item.ForeColor = Color.Red;
+                    item.ImageIndex = 0;
+                    listView1.Items.Add(item);
+                }
+                else
+                {
+                    ListViewItem item = new ListViewItem("Phòng số " + p.SoPhong + "Đang trống");
+                    item.ForeColor = Color.Green;
+                    item.ImageIndex = 0;
+                    listView1.Items.Add(item);
+                }
+               
+                
                 listView1.View = View.SmallIcon;
             }
 
@@ -128,6 +139,17 @@ namespace TTCSDL.GUI
         {
             GUI.DatPhong datp = new GUI.DatPhong();
             datp.Show();
+        }
+
+
+        private void listView1_ItemSelectionChanged(object sender, ListViewItemSelectionChangedEventArgs e)
+        {
+            var item = e.Item;
+            string used = "sử dụng";
+                if(item.Text.Contains(used))
+                {
+                    MessageBox.Show("Đang sử dụng!!");
+                }
         }
     }
 }
