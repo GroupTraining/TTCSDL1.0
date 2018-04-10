@@ -166,4 +166,17 @@ CREATE PROCEDURE CTHDTT
 	AS
 	update HDThanhToan 
 set TongTienThanhToan= (select TienPhong + (select sum(TongTien) from HDDichVu where HDThuePhong.MaKHThue=HDDichVu.MaKH and HDDichVu.MaHD = HDThanhToan.MaHDDV) from HDThuePhong where HDThuePhong.MaPhong=HDThanhToan.MaPhong)
+-----------------------------------
+create PROCEDURE Update_ThanhTien
+as
+update ChiTietDV
+set ThanhTien = DichVu.GiaDV * SoLuongDV from DichVu
+where ChiTietDV.MaDV = DichVu.MaDV
+
+create PROCEDURE Update_TongTien
+as
+update HDDichVu
+set TongTien= (select sum(ThanhTien) from ChiTietDV where HDDichVu.MaHD=ChiTietDV.MaHD group by CHiTietDV.MaHD)
+from ChiTietDV
+where HDDichVu.MaHD=ChiTietDV.MaHD
 
