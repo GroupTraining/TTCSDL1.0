@@ -100,14 +100,16 @@ namespace BUS
                        from v in db.KhachHangs
                        from t in db.HDThuePhongs
                        from z in db.HDThanhToans
+                       from a in db.ChiTietThuePhongs
                        where u.MaKH == v.MaKH
                        where v.MaKH == t.MaKHThue
                        where z.MaKHTT == v.MaKH
                        where z.MaPhong == t.MaPhong
                        where u.MaHD == z.MaHDDV
+                       where t.MaPhong == a.MaPhong
                        select new
                        {
-                           MaPhong = z.MaPhong.Trim(),
+                           SoPhong = a.SoPhong.Trim(),
                            TenKH = v.TenKH.Trim(),
                            SoDT = v.SoDT.Trim(),
                            TienDV = u.TongTien,
@@ -124,7 +126,44 @@ namespace BUS
 
         }
 
+       
+
         public object getDataHDDV(string tenkh)
+        {
+            var data = from u in db.HDDichVus
+                       from v in db.KhachHangs
+                       from t in db.HDThuePhongs
+                       from z in db.HDThanhToans
+                       from y in db.ChiTietDVs
+                       from p in db.DichVus
+                       from a in db.ChiTietThuePhongs
+                       where u.MaKH == v.MaKH
+                       where v.MaKH == t.MaKHThue
+                       where z.MaKHTT == v.MaKH
+                       where z.MaPhong == t.MaPhong
+                       where p.MaDV == y.MaDV
+                       where y.MaHD == u.MaHD
+                       where u.MaHD == z.MaHDDV
+                       where a.MaPhong == t.MaPhong
+                       select new
+                       {
+                           SoPhong = a.SoPhong.Trim(),
+                           TenKH = v.TenKH.Trim(),
+                           NgayLapHD = u.NgayLapHD,
+                           TenDV = p.TenDV.Trim(),
+                           SoLuong = y.SoLuongDV,
+                           ThanhTien = y.ThanhTien,
+                       } into timkiemhddv
+                       where timkiemhddv.TenKH.Contains(tenkh)
+                       select timkiemhddv
+                       ;
+
+            return data;
+
+
+        }
+
+        public object getDataHDDV2(string tenkh)
         {
             var data = from u in db.HDDichVus
                        from v in db.KhachHangs
@@ -139,10 +178,13 @@ namespace BUS
                        where p.MaDV == y.MaDV
                        where y.MaHD == u.MaHD
                        where u.MaHD == z.MaHDDV
+       
                        select new
                        {
+                           MaKH = v.MaKH.Trim(),
                            TenKH = v.TenKH.Trim(),
                            NgayLapHD = u.NgayLapHD,
+                           MaHDDV = z.MaHDDV,
                            TenDV = p.TenDV.Trim(),
                            SoLuong = y.SoLuongDV,
                            ThanhTien = y.ThanhTien,
@@ -152,8 +194,34 @@ namespace BUS
                        ;
 
             return data;
+        }
 
 
+        public int EditCtHddv(string makh, string mahddv, string madv, string sl)
+        {
+            var hdtt = db.HDThanhToans.Single(p => p.MaHDDV == mahddv);
+            var kh = db.KhachHangs.Single(p => p.MaKH == makh) ;
+            var hddv = db.HDDichVus.Single(p => p.MaHD == mahddv);
+            var ctdv = db.ChiTietDVs.Single(p => p.MaHD == mahddv && p.MaDV == madv);
+            var dv = db.DichVus.Single(p => p.MaDV == madv);
+            
+            kh.MaKH = hdtt.MaKHTT;
+            ctdv.MaDV = dv.MaDV;
+            ctdv.SoLuongDV = Convert.ToInt32(sl);
+            ctdv.ThanhTien = dv.GiaDV * Convert.ToInt32(sl);
+            db.SubmitChanges();
+            return 1;
+        }
+
+        public int delHddv(string makh, string mahddv, string madv, string sl)
+        {
+            var hdtt = db.HDThanhToans.Single(p => p.MaHDDV == mahddv);
+            var kh = db.KhachHangs.Single(p => p.MaKH == makh);
+            var hddv = db.HDDichVus.Single(p => p.MaHD == mahddv);
+            var ctdv = db.ChiTietDVs.Single(p => p.MaHD == mahddv && p.MaDV == madv);
+            db.ChiTietDVs.DeleteOnSubmit(ctdv);
+            db.SubmitChanges();
+            return 1;
         }
 
     }
