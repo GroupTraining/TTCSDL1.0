@@ -183,7 +183,6 @@ namespace BUS
                        {
                            MaKH = v.MaKH.Trim(),
                            TenKH = v.TenKH.Trim(),
-                           NgayLapHD = u.NgayLapHD,
                            MaHDDV = z.MaHDDV,
                            TenDV = p.TenDV.Trim(),
                            SoLuong = y.SoLuongDV,

@@ -30,8 +30,6 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridViewEditCTDV = new DevComponents.DotNetBar.Controls.DataGridViewX();
-            this.labelX4 = new DevComponents.DotNetBar.LabelX();
-            this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.groupPanel1 = new DevComponents.DotNetBar.Controls.GroupPanel();
@@ -43,7 +41,6 @@
             this.labelX6 = new DevComponents.DotNetBar.LabelX();
             this.textBoxDv = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.labelX7 = new DevComponents.DotNetBar.LabelX();
-            this.textBoxTenkh = new DevComponents.DotNetBar.Controls.TextBoxX();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEditCTDV)).BeginInit();
             this.groupPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -60,43 +57,30 @@
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridViewEditCTDV.DefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridViewEditCTDV.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(215)))), ((int)(((byte)(229)))));
-            this.dataGridViewEditCTDV.Location = new System.Drawing.Point(302, 1);
+            this.dataGridViewEditCTDV.Location = new System.Drawing.Point(324, 12);
             this.dataGridViewEditCTDV.Name = "dataGridViewEditCTDV";
-            this.dataGridViewEditCTDV.Size = new System.Drawing.Size(609, 358);
+            this.dataGridViewEditCTDV.Size = new System.Drawing.Size(424, 238);
             this.dataGridViewEditCTDV.TabIndex = 0;
             this.dataGridViewEditCTDV.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewEditCTDV_CellClick);
             // 
-            // labelX4
-            // 
-            this.labelX4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.labelX4.Location = new System.Drawing.Point(21, 12);
-            this.labelX4.Name = "labelX4";
-            this.labelX4.Size = new System.Drawing.Size(119, 20);
-            this.labelX4.TabIndex = 8;
-            this.labelX4.Text = "Tên Khách Hàng";
-            // 
-            // button1
-            // 
-            this.button1.BackgroundImage = global::TTCSDL.Properties.Resources.search_48;
-            this.button1.Location = new System.Drawing.Point(221, 40);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(41, 43);
-            this.button1.TabIndex = 9;
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // button2
             // 
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.button2.Location = new System.Drawing.Point(16, 158);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(98, 33);
             this.button2.TabIndex = 10;
-            this.button2.Text = "Submit";
+            this.button2.Text = "Lưu";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.ForeColor = System.Drawing.Color.Red;
             this.button3.Location = new System.Drawing.Point(138, 158);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(98, 33);
@@ -119,9 +103,9 @@
             this.groupPanel1.Controls.Add(this.labelX7);
             this.groupPanel1.Controls.Add(this.button3);
             this.groupPanel1.Controls.Add(this.button2);
-            this.groupPanel1.Location = new System.Drawing.Point(12, 124);
+            this.groupPanel1.Location = new System.Drawing.Point(12, 12);
             this.groupPanel1.Name = "groupPanel1";
-            this.groupPanel1.Size = new System.Drawing.Size(281, 222);
+            this.groupPanel1.Size = new System.Drawing.Size(306, 238);
             // 
             // 
             // 
@@ -229,30 +213,16 @@
             this.labelX7.TabIndex = 13;
             this.labelX7.Text = "Mã KH";
             // 
-            // textBoxTenkh
-            // 
-            // 
-            // 
-            // 
-            this.textBoxTenkh.Border.Class = "TextBoxBorder";
-            this.textBoxTenkh.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.textBoxTenkh.Location = new System.Drawing.Point(146, 12);
-            this.textBoxTenkh.Name = "textBoxTenkh";
-            this.textBoxTenkh.Size = new System.Drawing.Size(137, 22);
-            this.textBoxTenkh.TabIndex = 12;
-            // 
             // EditHDDichVu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(911, 358);
+            this.ClientSize = new System.Drawing.Size(755, 263);
             this.Controls.Add(this.groupPanel1);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.labelX4);
             this.Controls.Add(this.dataGridViewEditCTDV);
-            this.Controls.Add(this.textBoxTenkh);
             this.Name = "EditHDDichVu";
             this.Text = "EditHDDichVu";
+            this.Load += new System.EventHandler(this.EditHDDichVu_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEditCTDV)).EndInit();
             this.groupPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -262,8 +232,6 @@
         #endregion
 
         private DevComponents.DotNetBar.Controls.DataGridViewX dataGridViewEditCTDV;
-        private DevComponents.DotNetBar.LabelX labelX4;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
         private DevComponents.DotNetBar.Controls.GroupPanel groupPanel1;
@@ -272,7 +240,6 @@
         private DevComponents.DotNetBar.LabelX labelX6;
         private DevComponents.DotNetBar.Controls.TextBoxX textBoxDv;
         private DevComponents.DotNetBar.LabelX labelX7;
-        private DevComponents.DotNetBar.Controls.TextBoxX textBoxTenkh;
         private DevComponents.DotNetBar.LabelX labelX1;
         private DevComponents.DotNetBar.Controls.TextBoxX textBoxMahddv;
         private DevComponents.DotNetBar.Controls.TextBoxX textBoxMakh;

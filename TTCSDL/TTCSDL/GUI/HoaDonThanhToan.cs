@@ -51,6 +51,7 @@ namespace TTCSDL.GUI
             int rowindex = dataGridViewHDTT.CurrentCell.RowIndex;
             int columnindex = dataGridViewHDTT.CurrentCell.ColumnIndex;
             textTenKH.Text = dataGridViewHDTT.Rows[rowindex].Cells[1].Value.ToString();
+
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -62,7 +63,7 @@ namespace TTCSDL.GUI
 
         private void button4_Click(object sender, EventArgs e)
         {
-            GUI.EditHDDichVu edit_hddv = new GUI.EditHDDichVu();
+            GUI.EditHDDichVu edit_hddv = new GUI.EditHDDichVu(textTenKH.Text);
             edit_hddv.Show();
         }
     }

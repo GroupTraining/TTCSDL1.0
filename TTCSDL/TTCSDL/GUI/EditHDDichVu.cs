@@ -20,18 +20,17 @@ namespace TTCSDL.GUI
         {
             InitializeComponent();
             groupPanel1.Hide();
+            this.CenterToParent();
         }
-
-
-
-        private void button1_Click(object sender, EventArgs e)
+        string namekh = "";
+        public EditHDDichVu(string name) : this()
         {
-            groupPanel1.Hide();
-            dataGridViewEditCTDV.DataSource = csdl.getDataHDDV2(textBoxTenkh.Text);
-            dataGridViewEditCTDV.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
-            dataGridViewEditCTDV.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewEditCTDV.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-        }
+            string text = name;
+            namekh = text;
+        } 
+
+
+
 
         private void dataGridViewEditCTDV_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -42,7 +41,6 @@ namespace TTCSDL.GUI
             textBoxDv.Enabled = false;
             textBoxMakh.Text = dataGridViewEditCTDV.CurrentRow.Cells["MaKH"].Value.ToString();
             textBoxMahddv.Text = dataGridViewEditCTDV.CurrentRow.Cells["MaHDDV"].Value.ToString();
-            textBoxTenkh.Text = dataGridViewEditCTDV.CurrentRow.Cells["TenKH"].Value.ToString();
             textBoxDv.Text = dataGridViewEditCTDV.CurrentRow.Cells["TenDV"].Value.ToString();
             textBoxSl.Text = dataGridViewEditCTDV.CurrentRow.Cells["SoLuong"].Value.ToString();
 
@@ -67,7 +65,7 @@ namespace TTCSDL.GUI
             textBoxSl.Text = "";
             data.Update_TongTien();
             data.CTHDTT();
-            dataGridViewEditCTDV.DataSource = csdl.getDataHDDV2(textBoxTenkh.Text);
+            dataGridViewEditCTDV.DataSource = csdl.getDataHDDV2(namekh);
             
         }
 
@@ -89,7 +87,14 @@ namespace TTCSDL.GUI
             textBoxSl.Text = "";
             data.Update_TongTien();
             data.CTHDTT();
-            dataGridViewEditCTDV.DataSource = csdl.getDataHDDV2(textBoxTenkh.Text);
+            dataGridViewEditCTDV.DataSource = csdl.getDataHDDV2(namekh);
+        }
+
+        private void EditHDDichVu_Load(object sender, EventArgs e)
+        {
+            groupPanel1.Hide();
+            dataGridViewEditCTDV.DataSource = csdl.getDataHDDV2(namekh);
+            dataGridViewEditCTDV.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
         }
     }
 }
