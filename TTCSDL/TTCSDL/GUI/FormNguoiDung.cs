@@ -38,9 +38,9 @@ namespace TTCSDL.GUI
 
         private void btn_logout_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            this.Close();
             GUI.Login lg = new GUI.Login();
-
+            lg.Show();
         }
 
 

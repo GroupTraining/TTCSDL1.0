@@ -20,6 +20,7 @@ namespace TTCSDL.GUI
         {
             InitializeComponent();
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            
             var phongs = from p in data.Phongs
                          select p;
             foreach (var p in phongs)
@@ -62,26 +63,26 @@ namespace TTCSDL.GUI
             ribbonBarRoom.Hide();
         }
         
-
-        private void btn_login_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void Main_admin_Load(object sender, EventArgs e)
         {
             
             this.CenterToScreen();
-            if(csdl.getGroup(username) == "1")
+            this.WindowState = FormWindowState.Maximized;
+            int widthScreen = Screen.PrimaryScreen.WorkingArea.Width;
+            int heightScreen = Screen.PrimaryScreen.WorkingArea.Height;
+            listView1.Width = widthScreen - 10;
+            listView1.Height = heightScreen - 10;
+            if (csdl.getGroup(username) == "1")
             {
                 admin();
             }else if(csdl.getGroup(username) == "2")
             {
                 personal();
             }
-            
+            else
+            {
 
-
+            }         
             
         }
 
