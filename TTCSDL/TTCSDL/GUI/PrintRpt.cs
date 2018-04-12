@@ -32,7 +32,18 @@ namespace TTCSDL.GUI
             var kh = data.KhachHangs.Single(b => b.MaKH == hoadontt.MaKHTT);
             var phong = data.ChiTietThuePhongs.Single(c => c.MaPhong == hoadontt.MaPhong);
             var hoadontp = data.HDThuePhongs.Single(d => d.MaPhong == hoadontt.MaPhong);
-            
+            var hoadondv = data.HDDichVus.Single(a => a.MaHD == hoadontt.MaHDDV);
+            var chitiets = from a in data.ChiTietDVs
+                           from b in data.DichVus
+                           where a.MaHD == hoadontt.MaHDDV && a.MaDV == b.MaDV
+                           select new
+                           {
+                               ten = b.TenDV,
+                               sl = a.SoLuongDV,
+                               dongia = b.GiaDV,
+                               tien = a.ThanhTien
+                           };
+
             TimeSpan thoigianthue = Convert.ToDateTime(hoadontp.NgayTra) - Convert.ToDateTime(hoadontp.NgayThue);
 
             rptHDTT1.SetParameterValue("pSoHD", hoadontt.MaHDTT);
@@ -47,7 +58,33 @@ namespace TTCSDL.GUI
             {
                 rptHDTT1.SetParameterValue("pThoiGianO", thoigianthue.TotalDays + " ngày");
             }
-            
+            foreach ( var chitiet in chitiets)
+            {
+                rptHDTT1.SetParameterValue("pTenDV",chitiet.ten);
+                rptHDTT1.SetParameterValue("pSL",chitiet.sl);
+                rptHDTT1.SetParameterValue("pDinhGia",chitiet.dongia);
+                rptHDTT1.SetParameterValue("pThanhTien",chitiet.tien);
+            }
+
+            rptHDTT1.SetParameterValue("pTienDV", string.Format("{0,-10:N0}đ", hoadondv.TongTien) );
+            rptHDTT1.SetParameterValue("pTienPhong", string.Format("{0,-10:N0}đ", hoadontp.TienPhong) );
+            rptHDTT1.SetParameterValue("pTong", string.Format("{0,-10:N0}đ", hoadontt.TongTienThanhToan) );
+            rptHDTT1.SetParameterValue("pDatCoc", string.Format("{0,-10:N0}đ", hoadontp.DatCoc) );
+
+            if (kh.CapBac == 2)
+            {
+                hoadontt.GiamGia = Convert.ToInt32(hoadontt.TongTienThanhToan * 0.05);
+            }
+            else if (kh.CapBac == 3)
+            {
+                hoadontt.GiamGia = Convert.ToInt32(hoadontt.TongTienThanhToan * 0.1);
+            }
+            else hoadontt.GiamGia = 0;
+            hoadontt.Total = hoadontt.TongTienThanhToan - hoadontt.GiamGia - hoadontp.DatCoc;
+            data.SubmitChanges();
+
+            rptHDTT1.SetParameterValue("pGiamGia", string.Format("{0,-10:N0}đ", hoadontt.GiamGia) );
+            rptHDTT1.SetParameterValue("pTongThu", string.Format("{0,-10:N0}đ", hoadontt.Total) );
 
             crystalReportViewer.ReportSource = rptHDTT1;
         }
