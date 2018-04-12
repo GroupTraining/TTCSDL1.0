@@ -81,6 +81,17 @@ namespace BUS
                        select u;
             return data;
         }
+
+        public object getDataDVu()
+        {
+            var data = from u in db.DichVus
+                       select new
+                       {
+                           TenDichVu = u.TenDV.Trim(),
+                           GiaDichVu = u.GiaDV,
+                       };
+            return data;
+        }
         public object getDataPhong()
         {
             var data = from p in db.Phongs
