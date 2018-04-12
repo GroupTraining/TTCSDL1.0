@@ -20,7 +20,7 @@ namespace TTCSDL.GUI
         {
             InitializeComponent();
         }
-
+        string name = "";
         private void btnSearch_Click(object sender, EventArgs e)
         {
             dataGridViewX1.DataSource = csdl.getDataHDTT1(textTenKH.Text);
@@ -29,7 +29,9 @@ namespace TTCSDL.GUI
 
         private void btnXuatHD_Click(object sender, EventArgs e)
         {
-            GUI.PrintRpt print_report = new GUI.PrintRpt(dataGridViewX1.CurrentRow.Cells["MaHD"].Value.ToString());
+            name = dataGridViewX1.CurrentRow.Cells["MaHD"].Value.ToString();
+
+            GUI.PrintRpt print_report = new GUI.PrintRpt(name);
             print_report.Show();
         }
 

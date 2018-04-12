@@ -43,6 +43,9 @@ namespace TTCSDL.GUI
             lg.Show();
         }
 
+        private void btn_dv_Click(object sender, EventArgs e)
+        {
 
+        }
     }
 }

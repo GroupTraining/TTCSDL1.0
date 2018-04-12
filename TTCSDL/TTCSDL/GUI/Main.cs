@@ -61,6 +61,9 @@ namespace TTCSDL.GUI
         {
             ribbonBarQLDV.Hide();
             ribbonBarRoom.Hide();
+            ribbonTabItemTK.Enabled = false;
+            ribbonBarQLNV.Hide();
+            ribbonBarTK.Hide();
         }
         
         private void Main_admin_Load(object sender, EventArgs e)
@@ -151,6 +154,12 @@ namespace TTCSDL.GUI
                 {
                     MessageBox.Show("Đang sử dụng!!");
                 }
+        }
+
+        private void btn_LoaiPhong_Click(object sender, EventArgs e)
+        {
+            GUI.ThanhToanPhong tt = new GUI.ThanhToanPhong();
+            tt.Show();
         }
     }
 }

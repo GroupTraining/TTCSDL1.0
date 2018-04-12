@@ -32,7 +32,6 @@
             this.ribbonPanel1 = new DevComponents.DotNetBar.RibbonPanel();
             this.ribbonBar5 = new DevComponents.DotNetBar.RibbonBar();
             this.btn_logout = new DevComponents.DotNetBar.ButtonX();
-            this.controlContainerItem4 = new DevComponents.DotNetBar.ControlContainerItem();
             this.ribbonBar4 = new DevComponents.DotNetBar.RibbonBar();
             this.btn_infobill = new DevComponents.DotNetBar.ButtonX();
             this.controlContainerItem3 = new DevComponents.DotNetBar.ControlContainerItem();
@@ -65,12 +64,16 @@
             this.buttonItem1 = new DevComponents.DotNetBar.ButtonItem();
             this.qatCustomizeItem1 = new DevComponents.DotNetBar.QatCustomizeItem();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.ribbonBar2 = new DevComponents.DotNetBar.RibbonBar();
+            this.controlContainerItem5 = new DevComponents.DotNetBar.ControlContainerItem();
+            this.btn_dv = new DevComponents.DotNetBar.ButtonX();
             this.ribbonControl1.SuspendLayout();
             this.ribbonPanel1.SuspendLayout();
             this.ribbonBar5.SuspendLayout();
             this.ribbonBar4.SuspendLayout();
             this.ribbonBar3.SuspendLayout();
             this.ribbonBar1.SuspendLayout();
+            this.ribbonBar2.SuspendLayout();
             this.SuspendLayout();
             // 
             // ribbonControl1
@@ -98,6 +101,7 @@
             // ribbonPanel1
             // 
             this.ribbonPanel1.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
+            this.ribbonPanel1.Controls.Add(this.ribbonBar2);
             this.ribbonPanel1.Controls.Add(this.ribbonBar5);
             this.ribbonPanel1.Controls.Add(this.ribbonBar4);
             this.ribbonPanel1.Controls.Add(this.ribbonBar3);
@@ -112,16 +116,14 @@
             // ribbonBar5
             // 
             this.ribbonBar5.AutoOverflowEnabled = true;
-            this.ribbonBar5.Controls.Add(this.btn_logout);
+            this.ribbonBar5.Controls.Add(this.btn_dv);
             this.ribbonBar5.Dock = System.Windows.Forms.DockStyle.Left;
-            this.ribbonBar5.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
-            this.controlContainerItem4});
             this.ribbonBar5.Location = new System.Drawing.Point(360, 0);
             this.ribbonBar5.Name = "ribbonBar5";
             this.ribbonBar5.Size = new System.Drawing.Size(119, 94);
             this.ribbonBar5.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
             this.ribbonBar5.TabIndex = 4;
-            this.ribbonBar5.Text = "Đăng xuất";
+            this.ribbonBar5.Text = "Dịch Vụ";
             // 
             // btn_logout
             // 
@@ -133,13 +135,6 @@
             this.btn_logout.Size = new System.Drawing.Size(113, 71);
             this.btn_logout.TabIndex = 0;
             this.btn_logout.Click += new System.EventHandler(this.btn_logout_Click);
-            // 
-            // controlContainerItem4
-            // 
-            this.controlContainerItem4.AllowItemResize = false;
-            this.controlContainerItem4.Control = this.btn_logout;
-            this.controlContainerItem4.MenuVisibility = DevComponents.DotNetBar.eMenuVisibility.VisibleAlways;
-            this.controlContainerItem4.Name = "controlContainerItem4";
             // 
             // ribbonBar4
             // 
@@ -185,7 +180,7 @@
             this.ribbonBar3.Size = new System.Drawing.Size(119, 94);
             this.ribbonBar3.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
             this.ribbonBar3.TabIndex = 2;
-            this.ribbonBar3.Text = "Thông tin phòng";
+            this.ribbonBar3.Text = "Thông tin Phòng";
             // 
             // btn_inforoom
             // 
@@ -454,6 +449,38 @@
             this.panel1.Size = new System.Drawing.Size(851, 321);
             this.panel1.TabIndex = 1;
             // 
+            // ribbonBar2
+            // 
+            this.ribbonBar2.AutoOverflowEnabled = true;
+            this.ribbonBar2.Controls.Add(this.btn_logout);
+            this.ribbonBar2.Dock = System.Windows.Forms.DockStyle.Left;
+            this.ribbonBar2.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
+            this.controlContainerItem5});
+            this.ribbonBar2.Location = new System.Drawing.Point(479, 0);
+            this.ribbonBar2.Name = "ribbonBar2";
+            this.ribbonBar2.Size = new System.Drawing.Size(122, 94);
+            this.ribbonBar2.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
+            this.ribbonBar2.TabIndex = 5;
+            this.ribbonBar2.Text = "Đăng xuất";
+            // 
+            // controlContainerItem5
+            // 
+            this.controlContainerItem5.AllowItemResize = false;
+            this.controlContainerItem5.Control = this.btn_logout;
+            this.controlContainerItem5.MenuVisibility = DevComponents.DotNetBar.eMenuVisibility.VisibleAlways;
+            this.controlContainerItem5.Name = "controlContainerItem5";
+            // 
+            // btn_dv
+            // 
+            this.btn_dv.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btn_dv.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btn_dv.Image = global::TTCSDL.Properties.Resources.cup_coffee_48;
+            this.btn_dv.Location = new System.Drawing.Point(4, 3);
+            this.btn_dv.Name = "btn_dv";
+            this.btn_dv.Size = new System.Drawing.Size(109, 71);
+            this.btn_dv.TabIndex = 0;
+            this.btn_dv.Click += new System.EventHandler(this.btn_dv_Click);
+            // 
             // FormNguoiDung
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -470,6 +497,7 @@
             this.ribbonBar4.ResumeLayout(false);
             this.ribbonBar3.ResumeLayout(false);
             this.ribbonBar1.ResumeLayout(false);
+            this.ribbonBar2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -509,9 +537,11 @@
         private DevComponents.DotNetBar.RibbonBar ribbonBar5;
         private DevComponents.DotNetBar.ButtonX btn_logout;
         private System.Windows.Forms.Panel panel1;
-        private DevComponents.DotNetBar.ControlContainerItem controlContainerItem4;
         private DevComponents.DotNetBar.ControlContainerItem controlContainerItem3;
         private DevComponents.DotNetBar.ControlContainerItem controlContainerItem2;
         private DevComponents.DotNetBar.ControlContainerItem controlContainerItem1;
+        private DevComponents.DotNetBar.RibbonBar ribbonBar2;
+        private DevComponents.DotNetBar.ControlContainerItem controlContainerItem5;
+        private DevComponents.DotNetBar.ButtonX btn_dv;
     }
 }
