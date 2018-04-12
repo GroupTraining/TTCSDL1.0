@@ -126,7 +126,38 @@ namespace BUS
 
         }
 
-       
+        public object getDataHDTT1(string tenkh)
+        {
+            var data = from u in db.HDDichVus
+                       from v in db.KhachHangs
+                       from t in db.HDThuePhongs
+                       from z in db.HDThanhToans
+                       from a in db.ChiTietThuePhongs
+                       where u.MaKH == v.MaKH
+                       where v.MaKH == t.MaKHThue
+                       where z.MaKHTT == v.MaKH
+                       where z.MaPhong == t.MaPhong
+                       where u.MaHD == z.MaHDDV
+                       where t.MaPhong == a.MaPhong
+                       select new
+                       {
+                           MaHD = z.MaHDTT.Trim(),
+                           SoPhong = a.SoPhong.Trim(),
+                           TenKH = v.TenKH.Trim(),
+                           SoDT = v.SoDT.Trim(),
+                           TienDV = u.TongTien,
+                           TienPhong = t.TienPhong,
+                           NgayThanhToan = z.NgayThanhToan,
+                           Tong = z.TongTienThanhToan
+                       } into timkiemhdtt
+                       where timkiemhdtt.TenKH.Contains(tenkh)
+                       select timkiemhdtt
+                       ;
+
+            return data;
+
+
+        }
 
         public object getDataHDDV(string tenkh)
         {
