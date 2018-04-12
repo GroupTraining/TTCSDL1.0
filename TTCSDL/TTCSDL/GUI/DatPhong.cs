@@ -199,10 +199,11 @@ namespace TTCSDL.GUI
                         labelSP.Text = "";
                         labelNgayO.Text = "";
                         labelThanhTien.Text = "0 đ";
-                        comboBoxLP.SelectedItem = "[Danh sách phòng]";
+                        dataGridViewX1.DataSource = null;
+                        comboBoxLP.SelectedItem = "[Loại phòng]";
                         dateTimeNgayDen.Value = DateTime.Now;
-                
-                  }
+                        dateTimeNgayTra.Value = DateTime.Now;
+                }
             }
             else
             {
