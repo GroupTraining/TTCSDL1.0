@@ -17,6 +17,7 @@ namespace TTCSDL.GUI
             InitializeComponent();
             picturePhongdoi.Hide();
             picturePhongvip.Hide();
+            this.CenterToParent();
         }
 
         private void buttonPdon_Click(object sender, EventArgs e)

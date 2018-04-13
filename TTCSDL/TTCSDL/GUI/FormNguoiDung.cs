@@ -16,6 +16,9 @@ namespace TTCSDL.GUI
         {
             InitializeComponent();
             this.CenterToParent();
+            this.WindowState = FormWindowState.Maximized;
+            int widthScreen = Screen.PrimaryScreen.WorkingArea.Width;
+            int heightScreen = Screen.PrimaryScreen.WorkingArea.Height;
         }
 
         private void btn_changepass_Click(object sender, EventArgs e)
@@ -33,7 +36,8 @@ namespace TTCSDL.GUI
 
         private void btn_inforoom_Click(object sender, EventArgs e)
         {
-
+            GUI.DSPhong list = new GUI.DSPhong();
+            list.Show();
         }
 
         private void btn_logout_Click(object sender, EventArgs e)
@@ -45,7 +49,8 @@ namespace TTCSDL.GUI
 
         private void btn_dv_Click(object sender, EventArgs e)
         {
-
+            GUI.DSDichVu dv = new GUI.DSDichVu();
+            dv.Show();
         }
     }
 }

@@ -33,12 +33,11 @@ namespace TTCSDL.GUI
             dataGridViewHDTT.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
             dataGridViewHDTT.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             button4.Hide();
-            button2.Show();
+
         }
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            button2.Hide();
             button4.Show();
             dataGridViewHDTT.DataSource = csdl.getDataHDDV(textTenKH.Text);
             dataGridViewHDTT.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
