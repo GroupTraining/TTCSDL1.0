@@ -76,19 +76,23 @@ namespace TTCSDL.GUI
 
         private void button3_Click(object sender, EventArgs e)
         {
-            bool gt = true;
-            if (radioNam.Checked == true)
+            
+            if (MessageBox.Show("Bạn có muốn sửa thông tin khách hàng này?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                gt = false;
+                bool gt = true;
+                if (radioNam.Checked == true)
+                {
+                    gt = false;
+                }
+                if (radioNu.Checked == true)
+                {
+                    gt = true;
+                }
+                int grp = Convert.ToInt32(comboBoxLevel.SelectedItem.ToString());
+                DateTime time = DateTime.Now;
+                data.editkhachhang(textMakh.Text, textTenkh.Text, Convert.ToDateTime(dateNS.Text), gt, textSocmt.Text, textPhone.Text, textDiachi.Text, grp, time);
+                MessageBox.Show("Chỉnh sửa thành công !!");
             }
-            if (radioNu.Checked == true)
-            {
-                gt = true;
-            }
-            int grp = Convert.ToInt32(comboBoxLevel.SelectedItem.ToString());
-            DateTime time = DateTime.Now;
-            data.editkhachhang(textMakh.Text, textTenkh.Text, Convert.ToDateTime(dateNS.Text), gt, textSocmt.Text, textPhone.Text, textDiachi.Text, grp, time);
-            MessageBox.Show("Chỉnh sửa thành công !!");
             textMakh.Text = "";
             textTenkh.Text = "";
             dateNS.Text = "";
