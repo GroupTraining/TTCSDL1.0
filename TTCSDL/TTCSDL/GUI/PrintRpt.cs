@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DAL;
 using System.Globalization;
+using System.Data.SqlClient;
 
 namespace TTCSDL.GUI
 {
@@ -43,6 +44,17 @@ namespace TTCSDL.GUI
                                dongia = b.GiaDV,
                                tien = a.ThanhTien
                            };
+            
+            GUI.DataSet ds = new GUI.DataSet();
+
+            foreach (var chitiet in chitiets)
+            {
+                ds.chitiet.AddchitietRow(chitiet.ten, Convert.ToInt32(chitiet.sl), Convert.ToInt32(chitiet.dongia), Convert.ToInt32(chitiet.tien));
+                ds.AcceptChanges();
+            }
+          
+
+            rptHDTT1.SetDataSource(ds);
 
             TimeSpan thoigianthue = Convert.ToDateTime(hoadontp.NgayTra) - Convert.ToDateTime(hoadontp.NgayThue);
 
@@ -57,13 +69,6 @@ namespace TTCSDL.GUI
             }else
             {
                 rptHDTT1.SetParameterValue("pThoiGianO", thoigianthue.TotalDays + " ngày");
-            }
-            foreach ( var chitiet in chitiets)
-            {
-                rptHDTT1.SetParameterValue("pTenDV",chitiet.ten);
-                rptHDTT1.SetParameterValue("pSL",chitiet.sl);
-                rptHDTT1.SetParameterValue("pDinhGia",chitiet.dongia);
-                rptHDTT1.SetParameterValue("pThanhTien",chitiet.tien);
             }
 
             rptHDTT1.SetParameterValue("pTienDV", string.Format("{0,-10:N0}đ", hoadondv.TongTien) );
@@ -87,6 +92,7 @@ namespace TTCSDL.GUI
             rptHDTT1.SetParameterValue("pTongThu", string.Format("{0,-10:N0}đ", hoadontt.Total) );
 
             crystalReportViewer.ReportSource = rptHDTT1;
+
         }
     }
 }
