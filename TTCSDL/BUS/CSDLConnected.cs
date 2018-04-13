@@ -75,6 +75,13 @@ namespace BUS
             return data;
         }
 
+        public object getDataNV()
+        {
+            var data = from u in db.NhanViens
+                       select u;
+            return data;
+        }
+
         public object getDataDV()
         {
             var data = from u in db.DichVus
