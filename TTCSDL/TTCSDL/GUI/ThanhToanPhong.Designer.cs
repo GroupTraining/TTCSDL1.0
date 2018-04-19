@@ -30,6 +30,7 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupPanel1 = new DevComponents.DotNetBar.Controls.GroupPanel();
+            this.btnTraPhong = new System.Windows.Forms.Button();
             this.linkLichSu = new System.Windows.Forms.LinkLabel();
             this.dataGridViewX1 = new DevComponents.DotNetBar.Controls.DataGridViewX();
             this.btnXuatHD = new System.Windows.Forms.Button();
@@ -44,6 +45,7 @@
             // 
             this.groupPanel1.CanvasColor = System.Drawing.SystemColors.Control;
             this.groupPanel1.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
+            this.groupPanel1.Controls.Add(this.btnTraPhong);
             this.groupPanel1.Controls.Add(this.linkLichSu);
             this.groupPanel1.Controls.Add(this.dataGridViewX1);
             this.groupPanel1.Controls.Add(this.btnXuatHD);
@@ -53,7 +55,7 @@
             this.groupPanel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupPanel1.Location = new System.Drawing.Point(2, 12);
             this.groupPanel1.Name = "groupPanel1";
-            this.groupPanel1.Size = new System.Drawing.Size(853, 372);
+            this.groupPanel1.Size = new System.Drawing.Size(801, 403);
             // 
             // 
             // 
@@ -77,16 +79,30 @@
             this.groupPanel1.TabIndex = 0;
             this.groupPanel1.Text = "Thanh Toán Hóa Đơn";
             // 
+            // btnTraPhong
+            // 
+            this.btnTraPhong.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTraPhong.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTraPhong.ForeColor = System.Drawing.Color.Blue;
+            this.btnTraPhong.Location = new System.Drawing.Point(633, 337);
+            this.btnTraPhong.Name = "btnTraPhong";
+            this.btnTraPhong.Size = new System.Drawing.Size(115, 32);
+            this.btnTraPhong.TabIndex = 14;
+            this.btnTraPhong.Text = "Trả Phòng";
+            this.btnTraPhong.UseVisualStyleBackColor = true;
+            this.btnTraPhong.Click += new System.EventHandler(this.btnTraPhong_Click);
+            // 
             // linkLichSu
             // 
             this.linkLichSu.AutoSize = true;
             this.linkLichSu.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLichSu.Location = new System.Drawing.Point(704, 65);
+            this.linkLichSu.Location = new System.Drawing.Point(596, 63);
             this.linkLichSu.Name = "linkLichSu";
             this.linkLichSu.Size = new System.Drawing.Size(125, 16);
             this.linkLichSu.TabIndex = 13;
             this.linkLichSu.TabStop = true;
             this.linkLichSu.Text = "Lịch sử Thanh Toán";
+            this.linkLichSu.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLichSu_LinkClicked);
             // 
             // dataGridViewX1
             // 
@@ -100,10 +116,10 @@
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridViewX1.DefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridViewX1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(215)))), ((int)(((byte)(229)))));
-            this.dataGridViewX1.Location = new System.Drawing.Point(-3, 94);
+            this.dataGridViewX1.Location = new System.Drawing.Point(3, 94);
             this.dataGridViewX1.Name = "dataGridViewX1";
             this.dataGridViewX1.ReadOnly = true;
-            this.dataGridViewX1.Size = new System.Drawing.Size(853, 254);
+            this.dataGridViewX1.Size = new System.Drawing.Size(789, 220);
             this.dataGridViewX1.TabIndex = 12;
             this.dataGridViewX1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewX1_CellClick);
             // 
@@ -111,8 +127,8 @@
             // 
             this.btnXuatHD.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnXuatHD.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnXuatHD.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.btnXuatHD.Location = new System.Drawing.Point(652, 21);
+            this.btnXuatHD.ForeColor = System.Drawing.Color.Blue;
+            this.btnXuatHD.Location = new System.Drawing.Point(429, 338);
             this.btnXuatHD.Name = "btnXuatHD";
             this.btnXuatHD.Size = new System.Drawing.Size(163, 32);
             this.btnXuatHD.TabIndex = 11;
@@ -122,9 +138,11 @@
             // 
             // btnSearch
             // 
-            this.btnSearch.BackColor = System.Drawing.Color.Chartreuse;
+            this.btnSearch.BackColor = System.Drawing.Color.Beige;
+            this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnSearch.Location = new System.Drawing.Point(519, 21);
+            this.btnSearch.ForeColor = System.Drawing.Color.Blue;
+            this.btnSearch.Location = new System.Drawing.Point(599, 22);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(106, 32);
             this.btnSearch.TabIndex = 10;
@@ -139,7 +157,7 @@
             // 
             this.textTenKH.Border.Class = "TextBoxBorder";
             this.textTenKH.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textTenKH.Location = new System.Drawing.Point(243, 27);
+            this.textTenKH.Location = new System.Drawing.Point(310, 29);
             this.textTenKH.Name = "textTenKH";
             this.textTenKH.Size = new System.Drawing.Size(240, 22);
             this.textTenKH.TabIndex = 9;
@@ -147,7 +165,7 @@
             // labelX2
             // 
             this.labelX2.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.labelX2.Location = new System.Drawing.Point(79, 24);
+            this.labelX2.Location = new System.Drawing.Point(146, 26);
             this.labelX2.Name = "labelX2";
             this.labelX2.Size = new System.Drawing.Size(122, 27);
             this.labelX2.TabIndex = 7;
@@ -157,7 +175,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(858, 387);
+            this.ClientSize = new System.Drawing.Size(805, 418);
             this.Controls.Add(this.groupPanel1);
             this.Name = "ThanhToanPhong";
             this.Text = "ThanhToanPhong";
@@ -177,5 +195,6 @@
         private System.Windows.Forms.Button btnXuatHD;
         private DevComponents.DotNetBar.Controls.DataGridViewX dataGridViewX1;
         private System.Windows.Forms.LinkLabel linkLichSu;
+        private System.Windows.Forms.Button btnTraPhong;
     }
 }

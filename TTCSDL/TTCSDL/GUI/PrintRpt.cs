@@ -49,7 +49,7 @@ namespace TTCSDL.GUI
 
             foreach (var chitiet in chitiets)
             {
-                ds.chitiet.AddchitietRow(chitiet.ten, Convert.ToInt32(chitiet.sl), Convert.ToInt32(chitiet.dongia), Convert.ToInt32(chitiet.tien));
+                ds.chitiet.AddchitietRow(chitiet.ten, Convert.ToInt32(chitiet.sl), string.Format("{0,-10:N0}đ", chitiet.dongia) , string.Format("{0,-10:N0}đ", chitiet.tien));
                 ds.AcceptChanges();
             }
           

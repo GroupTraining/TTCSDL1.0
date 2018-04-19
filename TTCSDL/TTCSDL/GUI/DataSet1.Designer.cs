@@ -389,7 +389,7 @@ namespace TTCSDL.GUI {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public chitietRow AddchitietRow(string Name, int Count, int Amount, int Amounts) {
+            public chitietRow AddchitietRow(string Name, int Count, string Amount, string Amounts) {
                 chitietRow rowchitietRow = ((chitietRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         Name,
@@ -431,9 +431,9 @@ namespace TTCSDL.GUI {
                 base.Columns.Add(this.columnName);
                 this.columnCount = new global::System.Data.DataColumn("Count", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnCount);
-                this.columnAmount = new global::System.Data.DataColumn("Amount", typeof(int), null, global::System.Data.MappingType.Element);
+                this.columnAmount = new global::System.Data.DataColumn("Amount", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnAmount);
-                this.columnAmounts = new global::System.Data.DataColumn("Amounts", typeof(int), null, global::System.Data.MappingType.Element);
+                this.columnAmounts = new global::System.Data.DataColumn("Amounts", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnAmounts);
             }
             
@@ -609,10 +609,10 @@ namespace TTCSDL.GUI {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int Amount {
+            public string Amount {
                 get {
                     try {
-                        return ((int)(this[this.tablechitiet.AmountColumn]));
+                        return ((string)(this[this.tablechitiet.AmountColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'Amount\' in table \'chitiet\' is DBNull.", e);
@@ -625,10 +625,10 @@ namespace TTCSDL.GUI {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int Amounts {
+            public string Amounts {
                 get {
                     try {
-                        return ((int)(this[this.tablechitiet.AmountsColumn]));
+                        return ((string)(this[this.tablechitiet.AmountsColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'Amounts\' in table \'chitiet\' is DBNull.", e);

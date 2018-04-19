@@ -144,37 +144,79 @@ namespace BUS
 
         }
 
-        public object getDataHDTT1(string tenkh)
+        public object getDataHDTT1(string tenkh)//Lọc khách hàng có tên đang ở trạng thái checkin
         {
             var data = from u in db.HDDichVus
                        from v in db.KhachHangs
                        from t in db.HDThuePhongs
                        from z in db.HDThanhToans
                        from a in db.ChiTietThuePhongs
-                       where u.MaKH == v.MaKH
-                       where v.MaKH == t.MaKHThue
-                       where z.MaKHTT == v.MaKH
-                       where z.MaPhong == t.MaPhong
-                       where u.MaHD == z.MaHDDV
-                       where t.MaPhong == a.MaPhong
+                       where u.MaKH == v.MaKH && v.MaKH == t.MaKHThue && z.MaPhong == t.MaPhong && t.MaPhong == a.MaPhong
+                       where v.TrangThai == "checkin"
+                       where DateTime.Compare(DateTime.Now, Convert.ToDateTime(t.NgayThue)) <= 0
                        select new
                        {
                            MaHD = z.MaHDTT.Trim(),
                            SoPhong = a.SoPhong.Trim(),
                            TenKH = v.TenKH.Trim(),
                            SoDT = v.SoDT.Trim(),
+                           NgayThanhToan = z.NgayThanhToan
+                       } into timkiemhdtt
+                       where timkiemhdtt.TenKH.Contains(tenkh) 
+                       select timkiemhdtt
+                       ;
+
+            return data;
+        }
+        public object getDataHDTT2(string tenkh)//Lọc khách hàng có tên để xem lịch sử thanh toán
+        {
+            var data = from u in db.HDDichVus
+                       from v in db.KhachHangs
+                       from t in db.HDThuePhongs
+                       from z in db.HDThanhToans
+                       from a in db.ChiTietThuePhongs
+                       where u.MaKH == v.MaKH && v.MaKH == t.MaKHThue && z.MaPhong == t.MaPhong && t.MaPhong == a.MaPhong
+                       select new
+                       {
+                           SoPhong = a.SoPhong.Trim(),
+                           TenKH = v.TenKH.Trim(),
+                           SoDT = v.SoDT.Trim(),
                            TienDV = u.TongTien,
                            TienPhong = t.TienPhong,
                            NgayThanhToan = z.NgayThanhToan,
-                           Tong = z.TongTienThanhToan
+                           TongTien = z.TongTienThanhToan
                        } into timkiemhdtt
                        where timkiemhdtt.TenKH.Contains(tenkh)
                        select timkiemhdtt
                        ;
 
             return data;
+        }
+        public object getDataHDTT3(string tenkh,string tungay, string denngay)//Lọc theo ngay để xem lịch sử thanh toán
+        {
+            var data = from u in db.HDDichVus
+                       from v in db.KhachHangs
+                       from t in db.HDThuePhongs
+                       from z in db.HDThanhToans
+                       from a in db.ChiTietThuePhongs
+                       where u.MaKH == v.MaKH && v.MaKH == t.MaKHThue && z.MaPhong == t.MaPhong && t.MaPhong == a.MaPhong
+                       where DateTime.Compare(Convert.ToDateTime(tungay), Convert.ToDateTime(t.NgayTra)) <= 0
+                       where DateTime.Compare(Convert.ToDateTime(denngay), Convert.ToDateTime(t.NgayTra)) >= 0
+                       select new
+                       {
+                           SoPhong = a.SoPhong.Trim(),
+                           TenKH = v.TenKH.Trim(),
+                           SoDT = v.SoDT.Trim(),
+                           TienDV = u.TongTien,
+                           TienPhong = t.TienPhong,
+                           NgayThanhToan = z.NgayThanhToan,
+                           TongTien = z.TongTienThanhToan
+                       } into timkiemhdtt
+                       where timkiemhdtt.TenKH.Contains(tenkh)
+                       select timkiemhdtt
+                       ;
 
-
+            return data;
         }
 
         public object getDataHDDV(string tenkh)
