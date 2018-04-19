@@ -179,4 +179,48 @@ update HDDichVu
 set TongTien= (select sum(ThanhTien) from ChiTietDV where HDDichVu.MaHD=ChiTietDV.MaHD group by CHiTietDV.MaHD)
 from ChiTietDV
 where HDDichVu.MaHD=ChiTietDV.MaHD
+---------------------------------------------
+create proc addnv
+	@manv nchar(10),
+	@tennv nvarchar(50),
+	@ns date,
+	@gt bit,
+	@socmt nchar(20),
+	@phone nchar(20),
+	@quequan nvarchar(50),
+	@luong int,
+	@chucvu nvarchar(50),
+	@time datetime
+	as begin
+		if((select MaNV from NhanVien where MaNV = @manv) is not null)
+		print 'Da ton tai ' +@manv
+		else
+		insert into NhanVien(MaNV,TenNV,NgaySinh,Gioitinh,SoCMT,SoDT,QueQuan,Luong,ChucVu,TimeEdited)
+		values(@manv,@tennv,@ns,@gt,@socmt,@phone,@quequan,@luong,@chucvu,@time)
+		end
+
+create proc editnv
+	@manv nchar(10),
+	@tennv nvarchar(50),
+	@ns date,
+	@gt bit,
+	@socmt nchar(20),
+	@phone nchar(20),
+	@quequan nvarchar(50),
+	@luong int,
+	@chucvu nvarchar(50),
+	@time datetime
+as begin
+		update NhanVien
+		set TenNV = @tennv,NgaySinh = @ns, SoCMT = @socmt, SoDT = @phone, QueQuan =@quequan,Luong=@luong,ChucVu=@chucvu, TimeEdited = @time
+		where MaNV = @manv
+	end
+
+CREATE PROCEDURE Removenv
+	@manv nchar(10)
+AS
+	delete NhanVien
+	where MaNV = @manv
+RETURN 0
+
 
