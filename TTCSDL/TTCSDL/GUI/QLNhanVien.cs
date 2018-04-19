@@ -41,9 +41,85 @@ namespace TTCSDL.GUI
             textSocmt.Text = dataGridViewNV.Rows[rowindex].Cells[4].Value.ToString();
             textPhone.Text = dataGridViewNV.Rows[rowindex].Cells[5].Value.ToString();
             textQuequan.Text = dataGridViewNV.Rows[rowindex].Cells[6].Value.ToString();
-            textLuong.Text = dataGridViewNV.Rows[rowindex].Cells[7].Value.ToString();
-            textBoxChucvu.Text = dataGridViewNV.Rows[rowindex].Cells[8].Value.ToString();
+            textLuong.Text = dataGridViewNV.Rows[rowindex].Cells[8].Value.ToString();
+            textBoxChucvu.Text = dataGridViewNV.Rows[rowindex].Cells[7].Value.ToString();
 
+        }
+
+        private void btnThem_Click(object sender, EventArgs e)
+        {
+            TTCSDLDataContext data = new TTCSDLDataContext();
+            bool gt = true;
+            if (radioNam.Checked == true)
+            {
+                gt = false;
+            }
+            if (radioNu.Checked == true)
+            {
+                gt = true;
+            }
+            
+            DateTime time = DateTime.Now;
+            data.addnv(textManv.Text, textTennv.Text, Convert.ToDateTime(dateNS.Text), gt, textSocmt.Text, textPhone.Text, textQuequan.Text, Convert.ToInt32(textLuong.Text), textBoxChucvu.Text, time);
+            MessageBox.Show("Thêm thành công !!");
+            dataGridViewNV.Refresh();
+            dataGridViewNV.DataSource = csdl.getDataNV();
+        }
+
+        
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Bạn có muốn sửa thông tin nhân viên này?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                bool gt = true;
+                if (radioNam.Checked == true)
+                {
+                    gt = false;
+                }
+                if (radioNu.Checked == true)
+                {
+                    gt = true;
+                }
+
+                DateTime time = DateTime.Now;
+                data.editnv(textManv.Text, textTennv.Text, Convert.ToDateTime(dateNS.Text), gt, textSocmt.Text, textPhone.Text, textQuequan.Text, textBoxChucvu.Text, Convert.ToInt32(textLuong.Text), time);
+                MessageBox.Show("Chỉnh sửa thành công !!");
+                textManv.Text = "";
+                textTennv.Text = "";
+                dateNS.Text = "";
+                radioNam.Checked = false;
+                radioNu.Checked = false;
+                textSocmt.Text = "";
+                textPhone.Text = "";
+                textQuequan.Text = "";
+                textLuong.Text = "";
+                textBoxChucvu.Text = "";
+                textManv.Enabled = true;
+                dataGridViewNV.Refresh();
+                dataGridViewNV.DataSource = csdl.getDataNV();
+            }
+
+        }
+
+        private void btnDel_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Bạn có muốn xóa  thông tin nhân viên này?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                data.Removenv(textManv.Text);
+                MessageBox.Show("Xóa thành công !!");
+            }
+            textManv.Text = "";
+            textTennv.Text = "";
+            dateNS.Text = "";
+            radioNam.Checked = false;
+            radioNu.Checked = false;
+            textSocmt.Text = "";
+            textPhone.Text = "";
+            textQuequan.Text = "";
+            textLuong.Text = "";
+            textBoxChucvu.Text = "";
+            textManv.Enabled = true;
+            dataGridViewNV.DataSource = csdl.getDataNV();
         }
     }
 }
