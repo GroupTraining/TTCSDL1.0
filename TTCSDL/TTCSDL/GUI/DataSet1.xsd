@@ -12,13 +12,13 @@
   <xs:element name="DataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DataSet" msprop:Generator_UserDSName="DataSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="chitiet" msprop:Generator_TableClassName="chitietDataTable" msprop:Generator_TableVarName="tablechitiet" msprop:Generator_TablePropName="chitiet" msprop:Generator_RowDeletingName="chitietRowDeleting" msprop:Generator_RowChangingName="chitietRowChanging" msprop:Generator_RowEvHandlerName="chitietRowChangeEventHandler" msprop:Generator_RowDeletedName="chitietRowDeleted" msprop:Generator_UserTableName="chitiet" msprop:Generator_RowChangedName="chitietRowChanged" msprop:Generator_RowEvArgName="chitietRowChangeEvent" msprop:Generator_RowClassName="chitietRow">
+        <xs:element name="chitiet" msprop:Generator_TableClassName="chitietDataTable" msprop:Generator_TableVarName="tablechitiet" msprop:Generator_RowChangedName="chitietRowChanged" msprop:Generator_TablePropName="chitiet" msprop:Generator_RowDeletingName="chitietRowDeleting" msprop:Generator_RowChangingName="chitietRowChanging" msprop:Generator_RowEvHandlerName="chitietRowChangeEventHandler" msprop:Generator_RowDeletedName="chitietRowDeleted" msprop:Generator_RowClassName="chitietRow" msprop:Generator_UserTableName="chitiet" msprop:Generator_RowEvArgName="chitietRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Name" msprop:Generator_ColumnVarNameInTable="columnName" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_ColumnPropNameInTable="NameColumn" msprop:Generator_UserColumnName="Name" type="xs:string" minOccurs="0" />
               <xs:element name="Count" msprop:Generator_ColumnVarNameInTable="columnCount" msprop:Generator_ColumnPropNameInRow="Count" msprop:Generator_ColumnPropNameInTable="CountColumn" msprop:Generator_UserColumnName="Count" type="xs:int" minOccurs="0" />
-              <xs:element name="Amount" msprop:Generator_ColumnVarNameInTable="columnAmount" msprop:Generator_ColumnPropNameInRow="Amount" msprop:Generator_ColumnPropNameInTable="AmountColumn" msprop:Generator_UserColumnName="Amount" type="xs:int" minOccurs="0" />
-              <xs:element name="Amounts" msprop:Generator_ColumnVarNameInTable="columnAmounts" msprop:Generator_ColumnPropNameInRow="Amounts" msprop:Generator_ColumnPropNameInTable="AmountsColumn" msprop:Generator_UserColumnName="Amounts" type="xs:int" minOccurs="0" />
+              <xs:element name="Amount" msprop:Generator_ColumnVarNameInTable="columnAmount" msprop:Generator_ColumnPropNameInRow="Amount" msprop:Generator_ColumnPropNameInTable="AmountColumn" msprop:Generator_UserColumnName="Amount" type="xs:string" minOccurs="0" />
+              <xs:element name="Amounts" msprop:Generator_ColumnVarNameInTable="columnAmounts" msprop:Generator_ColumnPropNameInRow="Amounts" msprop:Generator_ColumnPropNameInTable="AmountsColumn" msprop:Generator_UserColumnName="Amounts" type="xs:string" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
