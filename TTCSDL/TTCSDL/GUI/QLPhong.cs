@@ -23,17 +23,15 @@ namespace TTCSDL.GUI
             dataGridViewX1.DataSource = bus.getDataPhong();
             dataGridViewX1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
             dataGridViewX1.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            btn_del.Hide();
+            btn_edit.Hide();
         }
 
         
         private void QLPhong_Load(object sender, EventArgs e)
         {
             this.CenterToScreen();
-            comboBoxTT.Items.Add("[Tình Trạng]");
-            comboBoxTT.Items.Add("Đang sử dụng");
-            comboBoxTT.Items.Add("Đang trống");
-            comboBoxTT.SelectedItem = "[Tình Trạng]";
-
+            
             comboBoxLP.Items.Add("[Loại Phòng]");
             comboBoxLP.Items.Add("Phòng đơn");
             comboBoxLP.Items.Add("Phòng đôi");
@@ -46,29 +44,24 @@ namespace TTCSDL.GUI
         {
             if (comboBoxLP.SelectedItem.ToString() == "Phòng đơn")
             {
-                labelGP.Text = "300000";
+                labelGP.Text = "300.000  đ";
+                labelTT.Text = "Đang trống";
             }
             else if (comboBoxLP.SelectedItem.ToString() == "Phòng đôi")
             {
-                labelGP.Text = "500000";
+                labelGP.Text = "500.000  đ";
+                labelTT.Text = "Đang trống";
             }
             else if (comboBoxLP.SelectedItem.ToString() == "Phòng Vip")
             {
-                labelGP.Text = "1000000";
+                labelGP.Text = "1.000.000 đ";
+                labelTT.Text = "Đang trống";
             }
         }
         private void btn_add_Click(object sender, EventArgs e)
         {
             DateTime time = DateTime.Now;
-            bool tt = true;
-            if (comboBoxTT.SelectedItem.ToString() == "Đang sử dụng")
-            {
-                tt = true;
-            }
-            else if (comboBoxTT.SelectedItem.ToString() == "Đang trống")
-            {
-                tt = false;
-            }
+            
             string lp = "";
             if (comboBoxLP.SelectedItem.ToString() == "Phòng đơn")
             {
@@ -82,31 +75,68 @@ namespace TTCSDL.GUI
             {
                 lp = "phong vip";
             }
+
+            int giaphong = 0;
+            if (labelGP.Text == "300.000  đ")
+            {
+                giaphong = 300000;
+            }
+            else if(labelGP.Text == "500.000  đ")
+            {
+                giaphong = 500000;
+            }
+            else if (labelGP.Text == "1.000.000 đ")
+            {
+                giaphong = 1000000;
+            }
             if (MessageBox.Show("Bạn có muốn thêm phòng?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                data.addPhong(txtSP.Text, lp, Convert.ToInt32(labelGP.Text), tt, time);
-                MessageBox.Show("Thêm thành công !!");
+                var phongs = from a in data.Phongs
+                             select a;
+                bool kiemtra = true;
+                foreach (var phong in phongs)
+                {
+                    if (txtSP.Text == phong.SoPhong.Trim())
+                    {
+                        kiemtra = false;
+                        break;
+                    }
+                }
+                if (kiemtra == false)
+                {
+                    MessageBox.Show("Đã tồn tại số phòng này !!");
+                    return;
+                }
+                else
+                {
+                    if(lp == "")
+                    {
+                        MessageBox.Show("Vui lòng chọn loại phòng !!");
+                        return;
+                    }
+                    else
+                    {
+                        data.addPhong(txtSP.Text, lp, giaphong, time);
+                        MessageBox.Show("Thêm thành công !!");
+                    }
+                   
+                }
             }
             else
             {
                 MessageBox.Show("Thêm không thành công !!");
             }
-
+            txtSP.Text = "";
+            comboBoxLP.SelectedItem = "[Loại Phòng]";
+            labelGP.Text = "0 đ";
+            txtSP.Enabled = true;
+            labelTT.Text = "";
             dataGridViewX1.DataSource = bus.getDataPhong();
         }
 
         private void btn_edit_Click(object sender, EventArgs e)
         {
             DateTime time = DateTime.Now;
-            bool tt = true;
-            if (comboBoxTT.SelectedItem.ToString() == "Đang sử dụng")
-            {
-                tt = true;
-            }
-            else if (comboBoxTT.SelectedItem.ToString() == "Đang trống")
-            {
-                tt = false;
-            }
             string lp = "";
             if (comboBoxLP.SelectedItem.ToString() == "Phòng đơn")
             {
@@ -120,9 +150,23 @@ namespace TTCSDL.GUI
             {
                 lp = "phong vip";
             }
+
+            int giaphong = 0;
+            if (labelGP.Text == "300.000  đ")
+            {
+                giaphong = 300000;
+            }
+            else if (labelGP.Text == "500.000  đ")
+            {
+                giaphong = 500000;
+            }
+            else if (labelGP.Text == "1.000.000 đ")
+            {
+                giaphong = 1000000;
+            }
             if (MessageBox.Show("Bạn có muốn sửa thông tin phòng?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                data.editPhong(txtSP.Text, lp, Convert.ToInt32(labelGP.Text), tt, time);
+                data.editPhong(txtSP.Text, lp, giaphong, time);
                 MessageBox.Show("Cập nhật thành công !!");
             }else
             {
@@ -131,10 +175,12 @@ namespace TTCSDL.GUI
 
             txtSP.Text = "";
             comboBoxLP.SelectedItem = "[Loại Phòng]";
-            labelGP.Text = "";
-            comboBoxTT.SelectedItem = "[Tình trạng]";
+            labelGP.Text = "0 đ";
+            labelTT.Text = "";
             txtSP.Enabled = true;
             btn_add.Show();
+            btn_del.Hide();
+            btn_edit.Hide();
             dataGridViewX1.DataSource = bus.getDataPhong();
         }
 
@@ -151,16 +197,20 @@ namespace TTCSDL.GUI
             }
             txtSP.Text = "";
             comboBoxLP.SelectedItem = "[Loại Phòng]";
-            labelGP.Text = "";
-            comboBoxTT.SelectedItem = "[Tình trạng]";
+            labelGP.Text = "0 đ";
+            labelTT.Text = "";
             txtSP.Enabled = true;
             btn_add.Show();
+            btn_del.Hide();
+            btn_edit.Hide();
             dataGridViewX1.DataSource = bus.getDataPhong();
         }
 
         private void dataGridViewX1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             btn_add.Hide();
+            btn_edit.Show();
+            btn_del.Show();
             int rowindex = dataGridViewX1.CurrentCell.RowIndex;
             int columnindex = dataGridViewX1.CurrentCell.ColumnIndex;
             txtSP.Enabled = false;
@@ -176,15 +226,16 @@ namespace TTCSDL.GUI
             {
                 comboBoxLP.SelectedItem = "Phòng Vip";
             }
-            labelGP.Text = dataGridViewX1.Rows[rowindex].Cells[2].Value.ToString();
+            int giaphong = Convert.ToInt32(dataGridViewX1.Rows[rowindex].Cells[2].Value.ToString());
+            labelGP.Text = string.Format("{0,-10:N0}đ", giaphong) ;
             string TT = dataGridViewX1.Rows[rowindex].Cells[3].Value.ToString();
             if (TT == "True")
             {
-                comboBoxTT.SelectedItem = "Đang sử dụng";
+                labelTT.Text = "Đang sử dụng";
             }
             else if ( TT == "False")
             {
-                comboBoxTT.SelectedItem = "Đang trống";
+                labelTT.Text = "Đang trống";
             }
         }
     }

@@ -55,7 +55,11 @@ namespace TTCSDL.GUI
             {
                 var hoadon = data.HDThanhToans.Single(a => a.MaHDTT.Trim() == dataGridViewX1.CurrentRow.Cells["MaHD"].Value.ToString());
                 var kh = data.KhachHangs.Single(a => a.MaKH == hoadon.MaKHTT);
+                var hoadonphong = data.ChiTietThuePhongs.Single(a => a.MaPhong == hoadon.MaPhong);
+                var phong = data.Phongs.Single(a => a.SoPhong == hoadonphong.SoPhong); 
+
                 kh.TrangThai = "checkout";
+                phong.TinhTrangPhong = false;
                 data.SubmitChanges();
                 MessageBox.Show("Trả phòng thành công!!");
                 textTenKH.Text = "";

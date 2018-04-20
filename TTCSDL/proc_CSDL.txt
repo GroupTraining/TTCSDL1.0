@@ -99,18 +99,17 @@ AS
 	where MaKH = @makh
 RETURN 0
 -------------------------------------
-CREATE proc [dbo].[addPhong]
-	@so nchar(10),
+CREATE proc addPhong
+	@so nvarchar(max),
 	@loai nvarchar(50),
 	@gia int,
-	@tinhtrang bit,
 	@timeedited datetime
 as begin
 	if((select SoPhong from Phong where SoPhong = @so) is not null)
 		print 'Da ton tai phong so ' + @so 
 		else
 		insert into Phong
-		values(@so,@loai,@gia,@tinhtrang,@timeedited)
+		values(@so,@loai,@gia,0,@timeedited)
 		
 end
 
@@ -121,15 +120,14 @@ AS
 	where SoPhong =@so
 RETURN 0
 
-CREATE proc [dbo].[editPhong]
+CREATE proc editPhong
 	@so nchar(10),
 	@loai nvarchar(50),
 	@gia int,
-	@tinhtrang bit,
 	@timeedited datetime
 as begin
 	update Phong
-	set SoPhong=@so,LoaiPhong=@loai,GiaPhong=@gia,TinhTrangPhong=@tinhtrang,TimeEdited=@timeedited
+	set SoPhong=@so,LoaiPhong=@loai,GiaPhong=@gia,TimeEdited=@timeedited
 	where SoPhong=@so
 end
 ----------------------------
