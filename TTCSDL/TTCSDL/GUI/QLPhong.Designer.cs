@@ -28,20 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupPanel1 = new DevComponents.DotNetBar.Controls.GroupPanel();
             this.labelGP = new DevComponents.DotNetBar.LabelX();
             this.comboBoxLP = new DevComponents.DotNetBar.Controls.ComboBoxEx();
             this.btn_del = new System.Windows.Forms.Button();
             this.btn_edit = new System.Windows.Forms.Button();
             this.btn_add = new System.Windows.Forms.Button();
-            this.comboBoxTT = new DevComponents.DotNetBar.Controls.ComboBoxEx();
             this.labelX4 = new DevComponents.DotNetBar.LabelX();
             this.labelX3 = new DevComponents.DotNetBar.LabelX();
             this.labelX2 = new DevComponents.DotNetBar.LabelX();
             this.txtSP = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.labelX1 = new DevComponents.DotNetBar.LabelX();
             this.dataGridViewX1 = new DevComponents.DotNetBar.Controls.DataGridViewX();
+            this.labelTT = new DevComponents.DotNetBar.LabelX();
             this.groupPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewX1)).BeginInit();
             this.SuspendLayout();
@@ -50,12 +50,12 @@
             // 
             this.groupPanel1.CanvasColor = System.Drawing.SystemColors.Control;
             this.groupPanel1.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
+            this.groupPanel1.Controls.Add(this.labelTT);
             this.groupPanel1.Controls.Add(this.labelGP);
             this.groupPanel1.Controls.Add(this.comboBoxLP);
             this.groupPanel1.Controls.Add(this.btn_del);
             this.groupPanel1.Controls.Add(this.btn_edit);
             this.groupPanel1.Controls.Add(this.btn_add);
-            this.groupPanel1.Controls.Add(this.comboBoxTT);
             this.groupPanel1.Controls.Add(this.labelX4);
             this.groupPanel1.Controls.Add(this.labelX3);
             this.groupPanel1.Controls.Add(this.labelX2);
@@ -90,9 +90,9 @@
             // 
             // labelGP
             // 
-            this.labelGP.Location = new System.Drawing.Point(146, 72);
+            this.labelGP.Location = new System.Drawing.Point(161, 74);
             this.labelGP.Name = "labelGP";
-            this.labelGP.Size = new System.Drawing.Size(153, 23);
+            this.labelGP.Size = new System.Drawing.Size(193, 23);
             this.labelGP.TabIndex = 13;
             // 
             // comboBoxLP
@@ -101,9 +101,9 @@
             this.comboBoxLP.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.comboBoxLP.FormattingEnabled = true;
             this.comboBoxLP.ItemHeight = 16;
-            this.comboBoxLP.Location = new System.Drawing.Point(146, 39);
+            this.comboBoxLP.Location = new System.Drawing.Point(161, 41);
             this.comboBoxLP.Name = "comboBoxLP";
-            this.comboBoxLP.Size = new System.Drawing.Size(153, 22);
+            this.comboBoxLP.Size = new System.Drawing.Size(193, 22);
             this.comboBoxLP.TabIndex = 12;
             this.comboBoxLP.SelectedIndexChanged += new System.EventHandler(this.comboBoxLP_SelectedIndexChanged);
             // 
@@ -111,7 +111,7 @@
             // 
             this.btn_del.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_del.ForeColor = System.Drawing.Color.Red;
-            this.btn_del.Location = new System.Drawing.Point(365, 141);
+            this.btn_del.Location = new System.Drawing.Point(279, 144);
             this.btn_del.Name = "btn_del";
             this.btn_del.Size = new System.Drawing.Size(75, 29);
             this.btn_del.TabIndex = 11;
@@ -123,7 +123,7 @@
             // 
             this.btn_edit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_edit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.btn_edit.Location = new System.Drawing.Point(258, 141);
+            this.btn_edit.Location = new System.Drawing.Point(86, 144);
             this.btn_edit.Name = "btn_edit";
             this.btn_edit.Size = new System.Drawing.Size(88, 29);
             this.btn_edit.TabIndex = 10;
@@ -135,7 +135,7 @@
             // 
             this.btn_add.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_add.ForeColor = System.Drawing.Color.Lime;
-            this.btn_add.Location = new System.Drawing.Point(164, 141);
+            this.btn_add.Location = new System.Drawing.Point(358, 144);
             this.btn_add.Name = "btn_add";
             this.btn_add.Size = new System.Drawing.Size(75, 29);
             this.btn_add.TabIndex = 9;
@@ -143,20 +143,9 @@
             this.btn_add.UseVisualStyleBackColor = true;
             this.btn_add.Click += new System.EventHandler(this.btn_add_Click);
             // 
-            // comboBoxTT
-            // 
-            this.comboBoxTT.DisplayMember = "Text";
-            this.comboBoxTT.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.comboBoxTT.FormattingEnabled = true;
-            this.comboBoxTT.ItemHeight = 16;
-            this.comboBoxTT.Location = new System.Drawing.Point(146, 108);
-            this.comboBoxTT.Name = "comboBoxTT";
-            this.comboBoxTT.Size = new System.Drawing.Size(153, 22);
-            this.comboBoxTT.TabIndex = 8;
-            // 
             // labelX4
             // 
-            this.labelX4.Location = new System.Drawing.Point(40, 108);
+            this.labelX4.Location = new System.Drawing.Point(55, 110);
             this.labelX4.Name = "labelX4";
             this.labelX4.Size = new System.Drawing.Size(75, 23);
             this.labelX4.TabIndex = 7;
@@ -165,7 +154,7 @@
             // 
             // labelX3
             // 
-            this.labelX3.Location = new System.Drawing.Point(40, 73);
+            this.labelX3.Location = new System.Drawing.Point(55, 75);
             this.labelX3.Name = "labelX3";
             this.labelX3.Size = new System.Drawing.Size(75, 23);
             this.labelX3.TabIndex = 6;
@@ -174,7 +163,7 @@
             // 
             // labelX2
             // 
-            this.labelX2.Location = new System.Drawing.Point(40, 38);
+            this.labelX2.Location = new System.Drawing.Point(55, 40);
             this.labelX2.Name = "labelX2";
             this.labelX2.Size = new System.Drawing.Size(75, 23);
             this.labelX2.TabIndex = 5;
@@ -187,14 +176,14 @@
             // 
             // 
             this.txtSP.Border.Class = "TextBoxBorder";
-            this.txtSP.Location = new System.Drawing.Point(146, 6);
+            this.txtSP.Location = new System.Drawing.Point(161, 8);
             this.txtSP.Name = "txtSP";
-            this.txtSP.Size = new System.Drawing.Size(210, 22);
+            this.txtSP.Size = new System.Drawing.Size(193, 22);
             this.txtSP.TabIndex = 1;
             // 
             // labelX1
             // 
-            this.labelX1.Location = new System.Drawing.Point(40, 3);
+            this.labelX1.Location = new System.Drawing.Point(55, 5);
             this.labelX1.Name = "labelX1";
             this.labelX1.Size = new System.Drawing.Size(75, 23);
             this.labelX1.TabIndex = 0;
@@ -204,20 +193,27 @@
             // dataGridViewX1
             // 
             this.dataGridViewX1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewX1.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewX1.DefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridViewX1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(215)))), ((int)(((byte)(229)))));
             this.dataGridViewX1.Location = new System.Drawing.Point(12, 218);
             this.dataGridViewX1.Name = "dataGridViewX1";
             this.dataGridViewX1.Size = new System.Drawing.Size(463, 178);
             this.dataGridViewX1.TabIndex = 1;
             this.dataGridViewX1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewX1_CellClick);
+            // 
+            // labelTT
+            // 
+            this.labelTT.Location = new System.Drawing.Point(161, 109);
+            this.labelTT.Name = "labelTT";
+            this.labelTT.Size = new System.Drawing.Size(193, 24);
+            this.labelTT.TabIndex = 14;
             // 
             // QLPhong
             // 
@@ -243,12 +239,12 @@
         private DevComponents.DotNetBar.LabelX labelX3;
         private DevComponents.DotNetBar.LabelX labelX2;
         private DevComponents.DotNetBar.Controls.TextBoxX txtSP;
-        private DevComponents.DotNetBar.Controls.ComboBoxEx comboBoxTT;
         private System.Windows.Forms.Button btn_del;
         private System.Windows.Forms.Button btn_edit;
         private System.Windows.Forms.Button btn_add;
         private DevComponents.DotNetBar.Controls.DataGridViewX dataGridViewX1;
         private DevComponents.DotNetBar.Controls.ComboBoxEx comboBoxLP;
         private DevComponents.DotNetBar.LabelX labelGP;
+        private DevComponents.DotNetBar.LabelX labelTT;
     }
 }
