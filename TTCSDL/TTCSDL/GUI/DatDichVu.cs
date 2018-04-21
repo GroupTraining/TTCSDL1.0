@@ -26,13 +26,21 @@ namespace TTCSDL.GUI
             comboBox_namedv.Items.Add("[Chọn dịch vụ]");
             comboBox_sophong.Items.Add("[Chọn Phòng]");
             var phongs = from p in data.Phongs
-                           select p;
-            
+                         where p.TinhTrangPhong == true
+                         select p;
+
             foreach(var p in phongs)
             {
-                if(p.TinhTrangPhong == true)
+                var hdtps = from a in data.ChiTietThuePhongs
+                            where a.SoPhong == p.SoPhong
+                            select a;
+                foreach(var hdtp in hdtps)
                 {
-                    comboBox_sophong.Items.Add(p.SoPhong);
+                    HDThuePhong hd = data.HDThuePhongs.Single(q => q.MaPhong == hdtp.MaPhong);
+                    if(DateTime.Compare(Convert.ToDateTime(hd.NgayThue),DateTime.Now) <= 0 && DateTime.Compare(Convert.ToDateTime(hd.NgayTra), DateTime.Now) > 0) 
+                    {
+                        comboBox_sophong.Items.Add(p.SoPhong);
+                    }
                 }
             }
             comboBox_sophong.SelectedItem = "[Chọn Phòng]";

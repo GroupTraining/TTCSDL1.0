@@ -82,7 +82,7 @@ namespace TTCSDL.GUI
                 }
 
                 DateTime time = DateTime.Now;
-                data.editnv(textManv.Text, textTennv.Text, Convert.ToDateTime(dateNS.Text), gt, textSocmt.Text, textPhone.Text, textQuequan.Text, textBoxChucvu.Text, Convert.ToInt32(textLuong.Text), time);
+                data.editnv(textManv.Text, textTennv.Text, Convert.ToDateTime(dateNS.Text), gt, textSocmt.Text, textPhone.Text, textQuequan.Text, Convert.ToInt32(textLuong.Text), textBoxChucvu.Text, time);
                 MessageBox.Show("Chỉnh sửa thành công !!");
                 textManv.Text = "";
                 textTennv.Text = "";

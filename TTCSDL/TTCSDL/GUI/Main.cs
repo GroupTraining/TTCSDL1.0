@@ -134,6 +134,7 @@ namespace TTCSDL.GUI
 
         private void btn_LoaiDV_Click(object sender, EventArgs e)
         {
+
             GUI.DatDichVu datdv = new DatDichVu();
             datdv.Show();
 
@@ -160,6 +161,26 @@ namespace TTCSDL.GUI
         {
             GUI.ThanhToanPhong tt = new GUI.ThanhToanPhong();
             tt.Show();
+        }
+
+        private void btn_qlnv_Click_1(object sender, EventArgs e)
+        {
+            GUI.QLNhanVien nv = new QLNhanVien();
+            nv.Show();
+        }
+
+        private void btn_nhanphong_Click(object sender, EventArgs e)
+        {
+            var ngaynhan = from a in data.HDThuePhongs
+                           where Convert.ToDateTime(a.NgayThue).Day == DateTime.Now.Day
+                           select a;
+            foreach( var n in ngaynhan)
+            {
+                KhachHang kh = data.KhachHangs.Single(p => p.MaKH == n.MaKHThue);
+                kh.TrangThai = "checkin";
+                data.SubmitChanges();
+            }
+            MessageBox.Show("Nhận thành công");
         }
     }
 }
