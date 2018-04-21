@@ -31,7 +31,7 @@ namespace TTCSDL.GUI
                     this.Hide();
                 }else
                 {
-                    GUI.Main_admin frm = new GUI.Main_admin();
+                    GUI.Main_admin frm = new GUI.Main_admin(txt_username.Text);
                     frm.Show();
                     this.Hide();
                 }

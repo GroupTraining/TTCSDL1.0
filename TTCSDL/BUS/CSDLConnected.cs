@@ -151,9 +151,14 @@ namespace BUS
                        from t in db.HDThuePhongs
                        from z in db.HDThanhToans
                        from a in db.ChiTietThuePhongs
-                       where u.MaKH == v.MaKH && v.MaKH == t.MaKHThue && z.MaPhong == t.MaPhong && t.MaPhong == a.MaPhong
+                       where u.MaKH == v.MaKH
+                       where v.MaKH == t.MaKHThue
+                       where z.MaKHTT == v.MaKH
+                       where z.MaPhong == t.MaPhong
+                       where u.MaHD == z.MaHDDV
+                       where t.MaPhong == a.MaPhong
                        where v.TrangThai == "checkin"
-                       where DateTime.Compare(DateTime.Now, Convert.ToDateTime(t.NgayThue)) <= 0
+                       where DateTime.Compare(DateTime.Now, Convert.ToDateTime(t.NgayThue)) >= 0 && DateTime.Compare(DateTime.Now, Convert.ToDateTime(t.NgayTra)) < 0
                        select new
                        {
                            MaHD = z.MaHDTT.Trim(),
@@ -175,7 +180,13 @@ namespace BUS
                        from t in db.HDThuePhongs
                        from z in db.HDThanhToans
                        from a in db.ChiTietThuePhongs
-                       where u.MaKH == v.MaKH && v.MaKH == t.MaKHThue && z.MaPhong == t.MaPhong && t.MaPhong == a.MaPhong
+                       where u.MaKH == v.MaKH
+                       where v.MaKH == t.MaKHThue
+                       where z.MaKHTT == v.MaKH
+                       where z.MaPhong == t.MaPhong
+                       where u.MaHD == z.MaHDDV
+                       where t.MaPhong == a.MaPhong
+                       where DateTime.Compare(DateTime.Now, Convert.ToDateTime(t.NgayTra)) >= 0
                        select new
                        {
                            SoPhong = a.SoPhong.Trim(),
