@@ -97,7 +97,7 @@ namespace TTCSDL.GUI
                              TinhTrang = a.TinhTrangPhong,
                              GiaPhong = a.GiaPhong
                          };
-            dataGridViewX1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridViewList.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             List<object> list = new List<object>();
             foreach ( var phong in phongs)
             {
@@ -129,13 +129,13 @@ namespace TTCSDL.GUI
                     }
                 }
             }
-            dataGridViewX1.DataSource = list;
+            dataGridViewList.DataSource = list;
         }
-        private void dataGridViewX1_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void dataGridViewList_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            Phong p = data.Phongs.Single(d => d.SoPhong.Trim() == dataGridViewX1.CurrentRow.Cells["SoPhong"].Value.ToString());
+            Phong p = data.Phongs.Single(d => d.SoPhong.Trim() == dataGridViewList.CurrentRow.Cells["SoPhong"].Value.ToString());
 
-            labelSP.Text = dataGridViewX1.CurrentRow.Cells["SoPhong"].Value.ToString();
+            labelSP.Text = dataGridViewList.CurrentRow.Cells["SoPhong"].Value.ToString();
             labelNgayO.Text = Convert.ToString(thoigianthue.Days) + " ngày";
 
             //Kiểm tra giá trị ngày trả đúng yêu cầu chưa
@@ -156,7 +156,7 @@ namespace TTCSDL.GUI
             if(labelHoTen.Text != "")
             {
                 KhachHang kh   = data.KhachHangs.Single(a => a.SoDT.Trim() == txtSDT.Text);
-                Phong p = data.Phongs.Single(d => d.SoPhong.Trim() == dataGridViewX1.CurrentRow.Cells["SoPhong"].Value.ToString());
+                Phong p = data.Phongs.Single(d => d.SoPhong.Trim() == dataGridViewList.CurrentRow.Cells["SoPhong"].Value.ToString());
                 string makh = kh.MaKH;
                 string mahdtp = "";
                 string mahddv = "";
@@ -199,7 +199,7 @@ namespace TTCSDL.GUI
                         labelSP.Text = "";
                         labelNgayO.Text = "";
                         labelThanhTien.Text = "0 đ";
-                        dataGridViewX1.DataSource = null;
+                        dataGridViewList.DataSource = null;
                         comboBoxLP.SelectedItem = "[Loại phòng]";
                         dateTimeNgayDen.Value = DateTime.Now;
                         dateTimeNgayTra.Value = DateTime.Now;

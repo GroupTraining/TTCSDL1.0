@@ -186,7 +186,7 @@ namespace BUS
                        where z.MaPhong == t.MaPhong
                        where u.MaHD == z.MaHDDV
                        where t.MaPhong == a.MaPhong
-                       where DateTime.Compare(DateTime.Now, Convert.ToDateTime(t.NgayTra)) >= 0
+                       where DateTime.Compare(DateTime.Now, Convert.ToDateTime(t.NgayTra)) >= 0 || v.TrangThai =="checkout"
                        select new
                        {
                            SoPhong = a.SoPhong.Trim(),

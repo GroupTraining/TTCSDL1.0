@@ -51,10 +51,10 @@
             this.btnHuyBo = new System.Windows.Forms.Button();
             this.labelX8 = new DevComponents.DotNetBar.LabelX();
             this.groupPanel2 = new DevComponents.DotNetBar.Controls.GroupPanel();
-            this.dataGridViewX1 = new DevComponents.DotNetBar.Controls.DataGridViewX();
+            this.dataGridViewList = new DevComponents.DotNetBar.Controls.DataGridViewX();
             this.groupPanel1.SuspendLayout();
             this.groupPanel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewX1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewList)).BeginInit();
             this.SuspendLayout();
             // 
             // labelX1
@@ -291,7 +291,7 @@
             // 
             this.groupPanel2.CanvasColor = System.Drawing.SystemColors.Control;
             this.groupPanel2.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
-            this.groupPanel2.Controls.Add(this.dataGridViewX1);
+            this.groupPanel2.Controls.Add(this.dataGridViewList);
             this.groupPanel2.Controls.Add(this.labelX5);
             this.groupPanel2.Controls.Add(this.dateTimeNgayDen);
             this.groupPanel2.Controls.Add(this.dateTimeNgayTra);
@@ -325,9 +325,9 @@
             this.groupPanel2.TabIndex = 21;
             this.groupPanel2.Text = "Tìm kiếm";
             // 
-            // dataGridViewX1
+            // dataGridViewList
             // 
-            this.dataGridViewX1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -335,13 +335,13 @@
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewX1.DefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridViewX1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(215)))), ((int)(((byte)(229)))));
-            this.dataGridViewX1.Location = new System.Drawing.Point(-3, 98);
-            this.dataGridViewX1.Name = "dataGridViewX1";
-            this.dataGridViewX1.Size = new System.Drawing.Size(511, 282);
-            this.dataGridViewX1.TabIndex = 20;
-            this.dataGridViewX1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewX1_CellClick);
+            this.dataGridViewList.DefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridViewList.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(215)))), ((int)(((byte)(229)))));
+            this.dataGridViewList.Location = new System.Drawing.Point(-3, 98);
+            this.dataGridViewList.Name = "dataGridViewList";
+            this.dataGridViewList.Size = new System.Drawing.Size(511, 282);
+            this.dataGridViewList.TabIndex = 20;
+            this.dataGridViewList.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewList_CellClick);
             // 
             // DatPhong
             // 
@@ -356,7 +356,7 @@
             this.groupPanel1.ResumeLayout(false);
             this.groupPanel1.PerformLayout();
             this.groupPanel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewX1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewList)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -382,7 +382,7 @@
         private DevComponents.DotNetBar.LabelX labelX8;
         private DevComponents.DotNetBar.LabelX labelX7;
         private DevComponents.DotNetBar.Controls.GroupPanel groupPanel2;
-        private DevComponents.DotNetBar.Controls.DataGridViewX dataGridViewX1;
+        private DevComponents.DotNetBar.Controls.DataGridViewX dataGridViewList;
         private DevComponents.DotNetBar.LabelX labelNgayO;
         private DevComponents.DotNetBar.LabelX labelX9;
     }
