@@ -20,6 +20,7 @@ namespace TTCSDL.GUI
         {
             InitializeComponent();
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.CenterToParent();
             dataGridViewNV.DataSource = csdl.getDataNV();
             dataGridViewNV.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
            // dataGridViewNV.Columns[7].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
@@ -95,7 +96,6 @@ namespace TTCSDL.GUI
                 textLuong.Text = "";
                 textBoxChucvu.Text = "";
                 textManv.Enabled = true;
-                dataGridViewNV.Refresh();
                 dataGridViewNV.DataSource = csdl.getDataNV();
             }
 
