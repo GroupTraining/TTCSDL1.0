@@ -25,10 +25,16 @@ namespace TTCSDL.GUI
             dataGridViewNV.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
            // dataGridViewNV.Columns[7].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             dataGridViewNV.Columns[7].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            btnDel.Enabled = false;
+            btnEdit.Enabled = false;
+            btnThem.Enabled = true;
         }
 
         private void dataGridViewNV_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            btnEdit.Enabled = true;
+            btnDel.Enabled = true;
+            btnThem.Enabled = false;
             int rowindex = dataGridViewNV.CurrentCell.RowIndex;
             int columnindex = dataGridViewNV.CurrentCell.ColumnIndex;
             textManv.Enabled = false;
@@ -96,6 +102,9 @@ namespace TTCSDL.GUI
                 textLuong.Text = "";
                 textBoxChucvu.Text = "";
                 textManv.Enabled = true;
+                btnDel.Enabled = false;
+                btnEdit.Enabled = false;
+                btnThem.Enabled = true;
                 dataGridViewNV.DataSource = csdl.getDataNV();
             }
 
@@ -119,6 +128,9 @@ namespace TTCSDL.GUI
             textLuong.Text = "";
             textBoxChucvu.Text = "";
             textManv.Enabled = true;
+            btnDel.Enabled = false;
+            btnEdit.Enabled = false;
+            btnThem.Enabled = true;
             dataGridViewNV.DataSource = csdl.getDataNV();
         }
     }
