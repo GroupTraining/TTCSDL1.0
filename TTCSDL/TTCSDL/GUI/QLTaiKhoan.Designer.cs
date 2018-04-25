@@ -162,7 +162,7 @@
             // 
             this.btn_delete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.btn_delete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_delete.ForeColor = System.Drawing.Color.Red;
+            this.btn_delete.ForeColor = System.Drawing.Color.Blue;
             this.btn_delete.Location = new System.Drawing.Point(726, 221);
             this.btn_delete.Name = "btn_delete";
             this.btn_delete.Size = new System.Drawing.Size(82, 38);

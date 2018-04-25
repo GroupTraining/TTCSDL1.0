@@ -95,7 +95,8 @@
             // btn_del
             // 
             this.btn_del.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_del.ForeColor = System.Drawing.Color.Red;
+            this.btn_del.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_del.ForeColor = System.Drawing.Color.Blue;
             this.btn_del.Location = new System.Drawing.Point(287, 193);
             this.btn_del.Name = "btn_del";
             this.btn_del.Size = new System.Drawing.Size(92, 37);
@@ -107,10 +108,11 @@
             // btn_submit
             // 
             this.btn_submit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_submit.ForeColor = System.Drawing.Color.Lime;
-            this.btn_submit.Location = new System.Drawing.Point(179, 193);
+            this.btn_submit.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_submit.ForeColor = System.Drawing.Color.Blue;
+            this.btn_submit.Location = new System.Drawing.Point(173, 193);
             this.btn_submit.Name = "btn_submit";
-            this.btn_submit.Size = new System.Drawing.Size(92, 37);
+            this.btn_submit.Size = new System.Drawing.Size(98, 37);
             this.btn_submit.TabIndex = 3;
             this.btn_submit.Text = "Chấp nhận";
             this.btn_submit.UseVisualStyleBackColor = true;
@@ -196,7 +198,6 @@
             this.comboBox_sophong.Name = "comboBox_sophong";
             this.comboBox_sophong.Size = new System.Drawing.Size(156, 23);
             this.comboBox_sophong.TabIndex = 1;
-
             // 
             // labelX5
             // 

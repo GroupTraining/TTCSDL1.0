@@ -27,6 +27,10 @@ namespace TTCSDL.GUI
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            button2.Enabled = true;
+            button3.Enabled = true;
+            btnThem.Enabled = false;
+
             int rowindex = dataGridView1.CurrentCell.RowIndex;
             int columnindex = dataGridView1.CurrentCell.ColumnIndex;
             textMakh.Enabled = false;
@@ -104,6 +108,9 @@ namespace TTCSDL.GUI
             comboBoxLevel.Text = "";
             textMakh.Enabled = true;
             dataGridView1.Refresh();
+            button2.Enabled = false;
+            button3.Enabled = false;
+            btnThem.Enabled = true;
             dataGridView1.DataSource = csdl.getDataKH();
         }
 
@@ -114,7 +121,9 @@ namespace TTCSDL.GUI
                 data.RemoveKhachHang(textMakh.Text);
                 MessageBox.Show("Xóa thành công !!");
             }
-            
+            button2.Enabled = false;
+            button3.Enabled = false;
+            btnThem.Enabled = true;
             dataGridView1.DataSource = csdl.getDataKH();
         }
 

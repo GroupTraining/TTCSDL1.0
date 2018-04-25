@@ -238,5 +238,18 @@ namespace TTCSDL.GUI
                 labelTT.Text = "Đang trống";
             }
         }
+
+        private void btnReset_Click(object sender, EventArgs e)
+        {
+            txtSP.Text = "";
+            comboBoxLP.SelectedItem = "[Loại Phòng]";
+            labelGP.Text = "0 đ";
+            labelTT.Text = "";
+            txtSP.Enabled = true;
+            btn_add.Show();
+            btn_del.Hide();
+            btn_edit.Hide();
+            dataGridViewX1.DataSource = bus.getDataPhong();
+        }
     }
 }

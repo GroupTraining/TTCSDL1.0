@@ -40,13 +40,14 @@
             this.txt_id = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.labelX3 = new DevComponents.DotNetBar.LabelX();
             this.labelX2 = new DevComponents.DotNetBar.LabelX();
+            this.btnReset = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewX1)).BeginInit();
             this.groupPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // dataGridViewX1
             // 
-            this.dataGridViewX1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            this.dataGridViewX1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewX1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
@@ -59,15 +60,15 @@
             this.dataGridViewX1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(215)))), ((int)(((byte)(229)))));
             this.dataGridViewX1.Location = new System.Drawing.Point(12, 193);
             this.dataGridViewX1.Name = "dataGridViewX1";
-            this.dataGridViewX1.Size = new System.Drawing.Size(342, 219);
+            this.dataGridViewX1.Size = new System.Drawing.Size(393, 219);
             this.dataGridViewX1.TabIndex = 0;
             this.dataGridViewX1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewX1_CellClick);
             // 
             // labelX1
             // 
-            this.labelX1.Location = new System.Drawing.Point(38, 15);
+            this.labelX1.Location = new System.Drawing.Point(36, 15);
             this.labelX1.Name = "labelX1";
-            this.labelX1.Size = new System.Drawing.Size(75, 23);
+            this.labelX1.Size = new System.Drawing.Size(95, 23);
             this.labelX1.TabIndex = 1;
             this.labelX1.Text = "Mã Dịch Vụ";
             // 
@@ -75,6 +76,7 @@
             // 
             this.groupPanel1.CanvasColor = System.Drawing.SystemColors.Control;
             this.groupPanel1.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
+            this.groupPanel1.Controls.Add(this.btnReset);
             this.groupPanel1.Controls.Add(this.btn_del);
             this.groupPanel1.Controls.Add(this.btn_edit);
             this.groupPanel1.Controls.Add(this.btn_add);
@@ -84,9 +86,10 @@
             this.groupPanel1.Controls.Add(this.labelX3);
             this.groupPanel1.Controls.Add(this.labelX2);
             this.groupPanel1.Controls.Add(this.labelX1);
-            this.groupPanel1.Location = new System.Drawing.Point(12, 14);
+            this.groupPanel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupPanel1.Location = new System.Drawing.Point(12, 12);
             this.groupPanel1.Name = "groupPanel1";
-            this.groupPanel1.Size = new System.Drawing.Size(342, 173);
+            this.groupPanel1.Size = new System.Drawing.Size(393, 175);
             // 
             // 
             // 
@@ -113,11 +116,11 @@
             // btn_del
             // 
             this.btn_del.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_del.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_del.ForeColor = System.Drawing.Color.Red;
-            this.btn_del.Location = new System.Drawing.Point(253, 115);
+            this.btn_del.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_del.ForeColor = System.Drawing.Color.Blue;
+            this.btn_del.Location = new System.Drawing.Point(205, 115);
             this.btn_del.Name = "btn_del";
-            this.btn_del.Size = new System.Drawing.Size(75, 23);
+            this.btn_del.Size = new System.Drawing.Size(75, 32);
             this.btn_del.TabIndex = 4;
             this.btn_del.Text = "Xóa";
             this.btn_del.UseVisualStyleBackColor = true;
@@ -126,10 +129,10 @@
             // btn_edit
             // 
             this.btn_edit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_edit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.btn_edit.Location = new System.Drawing.Point(172, 115);
+            this.btn_edit.ForeColor = System.Drawing.Color.Blue;
+            this.btn_edit.Location = new System.Drawing.Point(83, 115);
             this.btn_edit.Name = "btn_edit";
-            this.btn_edit.Size = new System.Drawing.Size(75, 23);
+            this.btn_edit.Size = new System.Drawing.Size(92, 32);
             this.btn_edit.TabIndex = 4;
             this.btn_edit.Text = "Cập nhật";
             this.btn_edit.UseVisualStyleBackColor = true;
@@ -138,10 +141,11 @@
             // btn_add
             // 
             this.btn_add.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_add.ForeColor = System.Drawing.Color.Lime;
-            this.btn_add.Location = new System.Drawing.Point(91, 115);
+            this.btn_add.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_add.ForeColor = System.Drawing.Color.Blue;
+            this.btn_add.Location = new System.Drawing.Point(286, 115);
             this.btn_add.Name = "btn_add";
-            this.btn_add.Size = new System.Drawing.Size(75, 23);
+            this.btn_add.Size = new System.Drawing.Size(81, 32);
             this.btn_add.TabIndex = 4;
             this.btn_add.Text = "Thêm";
             this.btn_add.UseVisualStyleBackColor = true;
@@ -154,7 +158,7 @@
             // 
             this.txt_price.Border.Class = "TextBoxBorder";
             this.txt_price.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_price.Location = new System.Drawing.Point(119, 73);
+            this.txt_price.Location = new System.Drawing.Point(137, 73);
             this.txt_price.Name = "txt_price";
             this.txt_price.Size = new System.Drawing.Size(170, 22);
             this.txt_price.TabIndex = 3;
@@ -166,7 +170,7 @@
             // 
             this.txt_name.Border.Class = "TextBoxBorder";
             this.txt_name.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_name.Location = new System.Drawing.Point(119, 45);
+            this.txt_name.Location = new System.Drawing.Point(137, 45);
             this.txt_name.Name = "txt_name";
             this.txt_name.Size = new System.Drawing.Size(170, 22);
             this.txt_name.TabIndex = 2;
@@ -178,32 +182,43 @@
             // 
             this.txt_id.Border.Class = "TextBoxBorder";
             this.txt_id.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_id.Location = new System.Drawing.Point(120, 15);
+            this.txt_id.Location = new System.Drawing.Point(138, 15);
             this.txt_id.Name = "txt_id";
             this.txt_id.Size = new System.Drawing.Size(170, 22);
             this.txt_id.TabIndex = 1;
             // 
             // labelX3
             // 
-            this.labelX3.Location = new System.Drawing.Point(38, 73);
+            this.labelX3.Location = new System.Drawing.Point(36, 73);
             this.labelX3.Name = "labelX3";
-            this.labelX3.Size = new System.Drawing.Size(75, 23);
+            this.labelX3.Size = new System.Drawing.Size(95, 23);
             this.labelX3.TabIndex = 1;
             this.labelX3.Text = "Giá";
             // 
             // labelX2
             // 
-            this.labelX2.Location = new System.Drawing.Point(38, 44);
+            this.labelX2.Location = new System.Drawing.Point(36, 44);
             this.labelX2.Name = "labelX2";
-            this.labelX2.Size = new System.Drawing.Size(75, 23);
+            this.labelX2.Size = new System.Drawing.Size(95, 23);
             this.labelX2.TabIndex = 1;
             this.labelX2.Text = "Tên Dịch Vụ";
+            // 
+            // btnReset
+            // 
+            this.btnReset.BackgroundImage = global::TTCSDL.Properties.Resources.reload_24;
+            this.btnReset.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnReset.Location = new System.Drawing.Point(326, 9);
+            this.btnReset.Name = "btnReset";
+            this.btnReset.Size = new System.Drawing.Size(41, 34);
+            this.btnReset.TabIndex = 16;
+            this.btnReset.UseVisualStyleBackColor = true;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
             // QuanLyDV
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(376, 426);
+            this.ClientSize = new System.Drawing.Size(417, 426);
             this.Controls.Add(this.groupPanel1);
             this.Controls.Add(this.dataGridViewX1);
             this.Name = "QuanLyDV";
@@ -228,5 +243,6 @@
         private DevComponents.DotNetBar.Controls.TextBoxX txt_id;
         private DevComponents.DotNetBar.LabelX labelX3;
         private DevComponents.DotNetBar.LabelX labelX2;
+        private System.Windows.Forms.Button btnReset;
     }
 }
