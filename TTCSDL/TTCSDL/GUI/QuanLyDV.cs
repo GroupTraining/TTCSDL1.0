@@ -31,10 +31,19 @@ namespace TTCSDL.GUI
         {
             if (MessageBox.Show("Bạn có muốn thêm dịch vụ này?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                DateTime time = DateTime.Now;
-                data.addDV(txt_id.Text, txt_name.Text, txt_price.Text, time);
-                MessageBox.Show("Thêm thành công !!");
-                dataGridViewX1.DataSource = bus.getDataDV();
+                try
+                {
+                    DichVu dv = data.DichVus.Single(p => p.MaDV.Trim() == txt_id.Text);
+                    DichVu dv = data.DichVus.Single(p => p.TenDV.Trim() == txt_name.Text);
+                    MessageBox.Show("Dữ liệu nhập không hợp lệ");
+                }
+                catch
+                {
+                    DateTime time = DateTime.Now;
+                    data.addDV(txt_id.Text, txt_name.Text, txt_price.Text, time);
+                    MessageBox.Show("Thêm thành công !!");
+                    dataGridViewX1.DataSource = bus.getDataDV();
+                }        
             }
         }
 
