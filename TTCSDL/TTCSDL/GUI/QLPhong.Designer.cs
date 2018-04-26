@@ -30,6 +30,7 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupPanel1 = new DevComponents.DotNetBar.Controls.GroupPanel();
+            this.btnReset = new System.Windows.Forms.Button();
             this.labelTT = new DevComponents.DotNetBar.LabelX();
             this.labelGP = new DevComponents.DotNetBar.LabelX();
             this.comboBoxLP = new DevComponents.DotNetBar.Controls.ComboBoxEx();
@@ -42,7 +43,6 @@
             this.txtSP = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.labelX1 = new DevComponents.DotNetBar.LabelX();
             this.dataGridViewX1 = new DevComponents.DotNetBar.Controls.DataGridViewX();
-            this.btnReset = new System.Windows.Forms.Button();
             this.groupPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewX1)).BeginInit();
             this.SuspendLayout();
@@ -90,6 +90,17 @@
             this.groupPanel1.TabIndex = 0;
             this.groupPanel1.Text = "Thông Tin Phòng";
             // 
+            // btnReset
+            // 
+            this.btnReset.BackgroundImage = global::TTCSDL.Properties.Resources.reload_24;
+            this.btnReset.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnReset.Location = new System.Drawing.Point(378, 5);
+            this.btnReset.Name = "btnReset";
+            this.btnReset.Size = new System.Drawing.Size(41, 34);
+            this.btnReset.TabIndex = 15;
+            this.btnReset.UseVisualStyleBackColor = true;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
+            // 
             // labelTT
             // 
             this.labelTT.Location = new System.Drawing.Point(161, 109);
@@ -120,12 +131,15 @@
             // 
             this.btn_del.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_del.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_del.ForeColor = System.Drawing.Color.Blue;
-            this.btn_del.Location = new System.Drawing.Point(279, 144);
+            this.btn_del.ForeColor = System.Drawing.Color.Red;
+            this.btn_del.Image = global::TTCSDL.Properties.Resources.remove;
+            this.btn_del.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_del.Location = new System.Drawing.Point(272, 144);
             this.btn_del.Name = "btn_del";
-            this.btn_del.Size = new System.Drawing.Size(75, 29);
+            this.btn_del.Size = new System.Drawing.Size(82, 29);
             this.btn_del.TabIndex = 11;
             this.btn_del.Text = "Xóa";
+            this.btn_del.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_del.UseVisualStyleBackColor = true;
             this.btn_del.Click += new System.EventHandler(this.btn_del_Click);
             // 
@@ -134,11 +148,14 @@
             this.btn_edit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_edit.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_edit.ForeColor = System.Drawing.Color.Blue;
+            this.btn_edit.Image = global::TTCSDL.Properties.Resources.save;
+            this.btn_edit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_edit.Location = new System.Drawing.Point(86, 144);
             this.btn_edit.Name = "btn_edit";
-            this.btn_edit.Size = new System.Drawing.Size(88, 29);
+            this.btn_edit.Size = new System.Drawing.Size(109, 29);
             this.btn_edit.TabIndex = 10;
             this.btn_edit.Text = "Cập nhật";
+            this.btn_edit.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_edit.UseVisualStyleBackColor = true;
             this.btn_edit.Click += new System.EventHandler(this.btn_edit_Click);
             // 
@@ -147,11 +164,14 @@
             this.btn_add.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_add.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_add.ForeColor = System.Drawing.Color.Blue;
+            this.btn_add.Image = global::TTCSDL.Properties.Resources.Ok;
+            this.btn_add.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_add.Location = new System.Drawing.Point(358, 144);
             this.btn_add.Name = "btn_add";
-            this.btn_add.Size = new System.Drawing.Size(75, 29);
+            this.btn_add.Size = new System.Drawing.Size(84, 29);
             this.btn_add.TabIndex = 9;
             this.btn_add.Text = "Thêm";
+            this.btn_add.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_add.UseVisualStyleBackColor = true;
             this.btn_add.Click += new System.EventHandler(this.btn_add_Click);
             // 
@@ -219,17 +239,6 @@
             this.dataGridViewX1.Size = new System.Drawing.Size(463, 178);
             this.dataGridViewX1.TabIndex = 1;
             this.dataGridViewX1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewX1_CellClick);
-            // 
-            // btnReset
-            // 
-            this.btnReset.BackgroundImage = global::TTCSDL.Properties.Resources.reload_24;
-            this.btnReset.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnReset.Location = new System.Drawing.Point(378, 5);
-            this.btnReset.Name = "btnReset";
-            this.btnReset.Size = new System.Drawing.Size(41, 34);
-            this.btnReset.TabIndex = 15;
-            this.btnReset.UseVisualStyleBackColor = true;
-            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
             // QLPhong
             // 

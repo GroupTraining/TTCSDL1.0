@@ -170,11 +170,14 @@
             this.btnXacNhan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnXacNhan.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnXacNhan.ForeColor = System.Drawing.Color.Blue;
+            this.btnXacNhan.Image = global::TTCSDL.Properties.Resources.Ok;
+            this.btnXacNhan.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnXacNhan.Location = new System.Drawing.Point(49, 324);
             this.btnXacNhan.Name = "btnXacNhan";
-            this.btnXacNhan.Size = new System.Drawing.Size(92, 32);
+            this.btnXacNhan.Size = new System.Drawing.Size(114, 32);
             this.btnXacNhan.TabIndex = 16;
             this.btnXacNhan.Text = "Xác Nhận";
+            this.btnXacNhan.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnXacNhan.UseVisualStyleBackColor = true;
             this.btnXacNhan.Click += new System.EventHandler(this.btnXacNhan_Click);
             // 
@@ -270,12 +273,15 @@
             // 
             this.btnHuyBo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnHuyBo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnHuyBo.ForeColor = System.Drawing.Color.Blue;
+            this.btnHuyBo.ForeColor = System.Drawing.Color.Red;
+            this.btnHuyBo.Image = global::TTCSDL.Properties.Resources.remove2;
+            this.btnHuyBo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnHuyBo.Location = new System.Drawing.Point(189, 324);
             this.btnHuyBo.Name = "btnHuyBo";
             this.btnHuyBo.Size = new System.Drawing.Size(92, 32);
             this.btnHuyBo.TabIndex = 17;
-            this.btnHuyBo.Text = "Hủy Bỏ";
+            this.btnHuyBo.Text = "Đóng";
+            this.btnHuyBo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnHuyBo.UseVisualStyleBackColor = true;
             this.btnHuyBo.Click += new System.EventHandler(this.btnHuyBo_Click);
             // 

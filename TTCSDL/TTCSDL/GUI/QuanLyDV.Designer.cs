@@ -28,10 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridViewX1 = new DevComponents.DotNetBar.Controls.DataGridViewX();
             this.labelX1 = new DevComponents.DotNetBar.LabelX();
             this.groupPanel1 = new DevComponents.DotNetBar.Controls.GroupPanel();
+            this.btnReset = new System.Windows.Forms.Button();
             this.btn_del = new System.Windows.Forms.Button();
             this.btn_edit = new System.Windows.Forms.Button();
             this.btn_add = new System.Windows.Forms.Button();
@@ -40,7 +41,6 @@
             this.txt_id = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.labelX3 = new DevComponents.DotNetBar.LabelX();
             this.labelX2 = new DevComponents.DotNetBar.LabelX();
-            this.btnReset = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewX1)).BeginInit();
             this.groupPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -49,14 +49,14 @@
             // 
             this.dataGridViewX1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewX1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewX1.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewX1.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridViewX1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(215)))), ((int)(((byte)(229)))));
             this.dataGridViewX1.Location = new System.Drawing.Point(12, 193);
             this.dataGridViewX1.Name = "dataGridViewX1";
@@ -113,16 +113,30 @@
             this.groupPanel1.TabIndex = 2;
             this.groupPanel1.Text = "Thông tin dịch vụ";
             // 
+            // btnReset
+            // 
+            this.btnReset.BackgroundImage = global::TTCSDL.Properties.Resources.reload_24;
+            this.btnReset.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnReset.Location = new System.Drawing.Point(326, 9);
+            this.btnReset.Name = "btnReset";
+            this.btnReset.Size = new System.Drawing.Size(41, 34);
+            this.btnReset.TabIndex = 16;
+            this.btnReset.UseVisualStyleBackColor = true;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
+            // 
             // btn_del
             // 
             this.btn_del.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_del.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_del.ForeColor = System.Drawing.Color.Blue;
+            this.btn_del.ForeColor = System.Drawing.Color.Red;
+            this.btn_del.Image = global::TTCSDL.Properties.Resources.remove;
+            this.btn_del.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_del.Location = new System.Drawing.Point(205, 115);
             this.btn_del.Name = "btn_del";
             this.btn_del.Size = new System.Drawing.Size(75, 32);
             this.btn_del.TabIndex = 4;
             this.btn_del.Text = "Xóa";
+            this.btn_del.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_del.UseVisualStyleBackColor = true;
             this.btn_del.Click += new System.EventHandler(this.btn_del_Click);
             // 
@@ -130,11 +144,14 @@
             // 
             this.btn_edit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_edit.ForeColor = System.Drawing.Color.Blue;
-            this.btn_edit.Location = new System.Drawing.Point(83, 115);
+            this.btn_edit.Image = global::TTCSDL.Properties.Resources.save1;
+            this.btn_edit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_edit.Location = new System.Drawing.Point(66, 115);
             this.btn_edit.Name = "btn_edit";
-            this.btn_edit.Size = new System.Drawing.Size(92, 32);
+            this.btn_edit.Size = new System.Drawing.Size(109, 32);
             this.btn_edit.TabIndex = 4;
             this.btn_edit.Text = "Cập nhật";
+            this.btn_edit.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_edit.UseVisualStyleBackColor = true;
             this.btn_edit.Click += new System.EventHandler(this.btn_edit_Click);
             // 
@@ -143,11 +160,14 @@
             this.btn_add.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_add.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_add.ForeColor = System.Drawing.Color.Blue;
+            this.btn_add.Image = global::TTCSDL.Properties.Resources.Ok;
+            this.btn_add.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_add.Location = new System.Drawing.Point(286, 115);
             this.btn_add.Name = "btn_add";
             this.btn_add.Size = new System.Drawing.Size(81, 32);
             this.btn_add.TabIndex = 4;
             this.btn_add.Text = "Thêm";
+            this.btn_add.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_add.UseVisualStyleBackColor = true;
             this.btn_add.Click += new System.EventHandler(this.btn_add_Click);
             // 
@@ -202,17 +222,6 @@
             this.labelX2.Size = new System.Drawing.Size(95, 23);
             this.labelX2.TabIndex = 1;
             this.labelX2.Text = "Tên Dịch Vụ";
-            // 
-            // btnReset
-            // 
-            this.btnReset.BackgroundImage = global::TTCSDL.Properties.Resources.reload_24;
-            this.btnReset.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnReset.Location = new System.Drawing.Point(326, 9);
-            this.btnReset.Name = "btnReset";
-            this.btnReset.Size = new System.Drawing.Size(41, 34);
-            this.btnReset.TabIndex = 16;
-            this.btnReset.UseVisualStyleBackColor = true;
-            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
             // QuanLyDV
             // 

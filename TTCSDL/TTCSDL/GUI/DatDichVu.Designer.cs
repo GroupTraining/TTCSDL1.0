@@ -96,12 +96,14 @@
             // 
             this.btn_del.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_del.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_del.ForeColor = System.Drawing.Color.Blue;
-            this.btn_del.Location = new System.Drawing.Point(287, 193);
+            this.btn_del.ForeColor = System.Drawing.Color.Red;
+            this.btn_del.Image = global::TTCSDL.Properties.Resources.remove2;
+            this.btn_del.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_del.Location = new System.Drawing.Point(474, 3);
             this.btn_del.Name = "btn_del";
-            this.btn_del.Size = new System.Drawing.Size(92, 37);
+            this.btn_del.Size = new System.Drawing.Size(40, 37);
             this.btn_del.TabIndex = 3;
-            this.btn_del.Text = "Hủy bỏ";
+            this.btn_del.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_del.UseVisualStyleBackColor = true;
             this.btn_del.Click += new System.EventHandler(this.btn_del_Click);
             // 
@@ -110,11 +112,14 @@
             this.btn_submit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_submit.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_submit.ForeColor = System.Drawing.Color.Blue;
-            this.btn_submit.Location = new System.Drawing.Point(173, 193);
+            this.btn_submit.Image = global::TTCSDL.Properties.Resources.Ok;
+            this.btn_submit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_submit.Location = new System.Drawing.Point(232, 195);
             this.btn_submit.Name = "btn_submit";
-            this.btn_submit.Size = new System.Drawing.Size(98, 37);
+            this.btn_submit.Size = new System.Drawing.Size(126, 37);
             this.btn_submit.TabIndex = 3;
             this.btn_submit.Text = "Chấp nhận";
+            this.btn_submit.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_submit.UseVisualStyleBackColor = true;
             this.btn_submit.Click += new System.EventHandler(this.btn_submit_Click);
             // 
