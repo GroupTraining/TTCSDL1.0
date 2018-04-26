@@ -34,7 +34,7 @@ namespace TTCSDL.GUI
                 try
                 {
                     DichVu dv = data.DichVus.Single(p => p.MaDV.Trim() == txt_id.Text);
-                    DichVu dv = data.DichVus.Single(p => p.TenDV.Trim() == txt_name.Text);
+                    DichVu dv1 = data.DichVus.Single(p => p.TenDV.Trim() == txt_name.Text);
                     MessageBox.Show("Dữ liệu nhập không hợp lệ");
                 }
                 catch
