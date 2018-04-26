@@ -203,6 +203,7 @@ namespace TTCSDL.GUI
                         comboBoxLP.SelectedItem = "[Loại phòng]";
                         dateTimeNgayDen.Value = DateTime.Now;
                         dateTimeNgayTra.Value = DateTime.Now;
+                        comboBoxLP.Enabled = false;
                 }
             }
             else
@@ -220,6 +221,9 @@ namespace TTCSDL.GUI
             }
         }
 
-      
+        private void dateTimeNgayTra_ValueChanged(object sender, EventArgs e)
+        {
+            comboBoxLP.Enabled = true;
+        }
     }
 }

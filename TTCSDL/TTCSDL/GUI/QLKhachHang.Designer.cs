@@ -50,6 +50,7 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
+            this.btnReset = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dateNS)).BeginInit();
@@ -58,9 +59,9 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(-1, 146);
+            this.dataGridView1.Location = new System.Drawing.Point(-1, 163);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(838, 220);
+            this.dataGridView1.Size = new System.Drawing.Size(838, 203);
             this.dataGridView1.TabIndex = 17;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
@@ -68,6 +69,7 @@
             // 
             this.groupPanel1.CanvasColor = System.Drawing.SystemColors.Control;
             this.groupPanel1.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
+            this.groupPanel1.Controls.Add(this.btnReset);
             this.groupPanel1.Controls.Add(this.comboBoxLevel);
             this.groupPanel1.Controls.Add(this.textDiachi);
             this.groupPanel1.Controls.Add(this.textPhone);
@@ -91,7 +93,7 @@
             this.groupPanel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.groupPanel1.Location = new System.Drawing.Point(-1, 3);
             this.groupPanel1.Name = "groupPanel1";
-            this.groupPanel1.Size = new System.Drawing.Size(838, 148);
+            this.groupPanel1.Size = new System.Drawing.Size(838, 160);
             // 
             // 
             // 
@@ -121,7 +123,7 @@
             this.comboBoxLevel.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.comboBoxLevel.FormattingEnabled = true;
             this.comboBoxLevel.ItemHeight = 16;
-            this.comboBoxLevel.Location = new System.Drawing.Point(382, 94);
+            this.comboBoxLevel.Location = new System.Drawing.Point(382, 109);
             this.comboBoxLevel.Name = "comboBoxLevel";
             this.comboBoxLevel.Size = new System.Drawing.Size(57, 22);
             this.comboBoxLevel.TabIndex = 58;
@@ -132,7 +134,7 @@
             // 
             // 
             this.textDiachi.Border.Class = "TextBoxBorder";
-            this.textDiachi.Location = new System.Drawing.Point(382, 63);
+            this.textDiachi.Location = new System.Drawing.Point(382, 78);
             this.textDiachi.Name = "textDiachi";
             this.textDiachi.Size = new System.Drawing.Size(172, 22);
             this.textDiachi.TabIndex = 57;
@@ -143,7 +145,7 @@
             // 
             // 
             this.textPhone.Border.Class = "TextBoxBorder";
-            this.textPhone.Location = new System.Drawing.Point(382, 32);
+            this.textPhone.Location = new System.Drawing.Point(382, 47);
             this.textPhone.Name = "textPhone";
             this.textPhone.Size = new System.Drawing.Size(172, 22);
             this.textPhone.TabIndex = 56;
@@ -154,14 +156,14 @@
             // 
             // 
             this.textSocmt.Border.Class = "TextBoxBorder";
-            this.textSocmt.Location = new System.Drawing.Point(382, 1);
+            this.textSocmt.Location = new System.Drawing.Point(382, 16);
             this.textSocmt.Name = "textSocmt";
             this.textSocmt.Size = new System.Drawing.Size(172, 22);
             this.textSocmt.TabIndex = 55;
             // 
             // labelX8
             // 
-            this.labelX8.Location = new System.Drawing.Point(325, 90);
+            this.labelX8.Location = new System.Drawing.Point(325, 105);
             this.labelX8.Name = "labelX8";
             this.labelX8.Size = new System.Drawing.Size(51, 27);
             this.labelX8.TabIndex = 54;
@@ -169,7 +171,7 @@
             // 
             // labelX7
             // 
-            this.labelX7.Location = new System.Drawing.Point(325, 58);
+            this.labelX7.Location = new System.Drawing.Point(325, 73);
             this.labelX7.Name = "labelX7";
             this.labelX7.Size = new System.Drawing.Size(51, 27);
             this.labelX7.TabIndex = 53;
@@ -178,7 +180,7 @@
             // radioNu
             // 
             this.radioNu.AutoSize = true;
-            this.radioNu.Location = new System.Drawing.Point(224, 97);
+            this.radioNu.Location = new System.Drawing.Point(224, 112);
             this.radioNu.Name = "radioNu";
             this.radioNu.Size = new System.Drawing.Size(45, 20);
             this.radioNu.TabIndex = 52;
@@ -189,7 +191,7 @@
             // radioNam
             // 
             this.radioNam.AutoSize = true;
-            this.radioNam.Location = new System.Drawing.Point(131, 97);
+            this.radioNam.Location = new System.Drawing.Point(131, 112);
             this.radioNam.Name = "radioNam";
             this.radioNam.Size = new System.Drawing.Size(58, 20);
             this.radioNam.TabIndex = 51;
@@ -204,7 +206,7 @@
             // 
             this.dateNS.BackgroundStyle.Class = "DateTimeInputBackground";
             this.dateNS.ButtonDropDown.Visible = true;
-            this.dateNS.Location = new System.Drawing.Point(131, 65);
+            this.dateNS.Location = new System.Drawing.Point(131, 80);
             // 
             // 
             // 
@@ -239,7 +241,7 @@
             // 
             // 
             this.textTenkh.Border.Class = "TextBoxBorder";
-            this.textTenkh.Location = new System.Drawing.Point(131, 33);
+            this.textTenkh.Location = new System.Drawing.Point(131, 48);
             this.textTenkh.Name = "textTenkh";
             this.textTenkh.Size = new System.Drawing.Size(188, 22);
             this.textTenkh.TabIndex = 49;
@@ -250,14 +252,14 @@
             // 
             // 
             this.textMakh.Border.Class = "TextBoxBorder";
-            this.textMakh.Location = new System.Drawing.Point(131, 1);
+            this.textMakh.Location = new System.Drawing.Point(131, 16);
             this.textMakh.Name = "textMakh";
             this.textMakh.Size = new System.Drawing.Size(78, 22);
             this.textMakh.TabIndex = 48;
             // 
             // labelX6
             // 
-            this.labelX6.Location = new System.Drawing.Point(16, 28);
+            this.labelX6.Location = new System.Drawing.Point(16, 43);
             this.labelX6.Name = "labelX6";
             this.labelX6.Size = new System.Drawing.Size(109, 27);
             this.labelX6.TabIndex = 47;
@@ -265,7 +267,7 @@
             // 
             // labelX5
             // 
-            this.labelX5.Location = new System.Drawing.Point(16, 60);
+            this.labelX5.Location = new System.Drawing.Point(16, 75);
             this.labelX5.Name = "labelX5";
             this.labelX5.Size = new System.Drawing.Size(109, 27);
             this.labelX5.TabIndex = 46;
@@ -273,7 +275,7 @@
             // 
             // labelX4
             // 
-            this.labelX4.Location = new System.Drawing.Point(16, 92);
+            this.labelX4.Location = new System.Drawing.Point(16, 107);
             this.labelX4.Name = "labelX4";
             this.labelX4.Size = new System.Drawing.Size(109, 27);
             this.labelX4.TabIndex = 45;
@@ -281,7 +283,7 @@
             // 
             // labelX3
             // 
-            this.labelX3.Location = new System.Drawing.Point(325, -6);
+            this.labelX3.Location = new System.Drawing.Point(325, 9);
             this.labelX3.Name = "labelX3";
             this.labelX3.Size = new System.Drawing.Size(51, 27);
             this.labelX3.TabIndex = 44;
@@ -289,7 +291,7 @@
             // 
             // labelX2
             // 
-            this.labelX2.Location = new System.Drawing.Point(325, 26);
+            this.labelX2.Location = new System.Drawing.Point(325, 41);
             this.labelX2.Name = "labelX2";
             this.labelX2.Size = new System.Drawing.Size(51, 27);
             this.labelX2.TabIndex = 43;
@@ -297,7 +299,7 @@
             // 
             // labelX1
             // 
-            this.labelX1.Location = new System.Drawing.Point(16, -4);
+            this.labelX1.Location = new System.Drawing.Point(16, 11);
             this.labelX1.Name = "labelX1";
             this.labelX1.Size = new System.Drawing.Size(109, 27);
             this.labelX1.TabIndex = 42;
@@ -310,7 +312,7 @@
             this.button3.ForeColor = System.Drawing.Color.Blue;
             this.button3.Image = global::TTCSDL.Properties.Resources.save;
             this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.Location = new System.Drawing.Point(638, 33);
+            this.button3.Location = new System.Drawing.Point(638, 73);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(102, 26);
             this.button3.TabIndex = 41;
@@ -326,7 +328,7 @@
             this.button2.ForeColor = System.Drawing.Color.Red;
             this.button2.Image = global::TTCSDL.Properties.Resources.remove1;
             this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(638, 65);
+            this.button2.Location = new System.Drawing.Point(638, 105);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(95, 26);
             this.button2.TabIndex = 40;
@@ -341,7 +343,7 @@
             this.btnThem.ForeColor = System.Drawing.Color.Blue;
             this.btnThem.Image = global::TTCSDL.Properties.Resources.Ok;
             this.btnThem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnThem.Location = new System.Drawing.Point(638, 1);
+            this.btnThem.Location = new System.Drawing.Point(638, 41);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(95, 26);
             this.btnThem.TabIndex = 39;
@@ -349,6 +351,17 @@
             this.btnThem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnThem.UseVisualStyleBackColor = true;
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
+            // 
+            // btnReset
+            // 
+            this.btnReset.BackgroundImage = global::TTCSDL.Properties.Resources.reload_24;
+            this.btnReset.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnReset.Location = new System.Drawing.Point(638, 1);
+            this.btnReset.Name = "btnReset";
+            this.btnReset.Size = new System.Drawing.Size(41, 34);
+            this.btnReset.TabIndex = 59;
+            this.btnReset.UseVisualStyleBackColor = true;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
             // QLKhachHang
             // 
@@ -391,5 +404,6 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button btnThem;
+        private System.Windows.Forms.Button btnReset;
     }
 }

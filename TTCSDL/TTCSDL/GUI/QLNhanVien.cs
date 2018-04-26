@@ -133,5 +133,24 @@ namespace TTCSDL.GUI
             btnThem.Enabled = true;
             dataGridViewNV.DataSource = csdl.getDataNV();
         }
+
+        private void btnReset_Click(object sender, EventArgs e)
+        {
+            textManv.Text = "";
+            textTennv.Text = "";
+            dateNS.Text = "";
+            radioNam.Checked = false;
+            radioNu.Checked = false;
+            textSocmt.Text = "";
+            textPhone.Text = "";
+            textQuequan.Text = "";
+            textLuong.Text = "";
+            textBoxChucvu.Text = "";
+            textManv.Enabled = true;
+            btnDel.Enabled = false;
+            btnEdit.Enabled = false;
+            btnThem.Enabled = true;
+            dataGridViewNV.DataSource = csdl.getDataNV();
+        }
     }
 }

@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupPanel1 = new DevComponents.DotNetBar.Controls.GroupPanel();
             this.btnTraPhong = new System.Windows.Forms.Button();
             this.linkLichSu = new System.Windows.Forms.LinkLabel();
@@ -83,12 +83,15 @@
             // 
             this.btnTraPhong.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTraPhong.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTraPhong.ForeColor = System.Drawing.Color.Blue;
+            this.btnTraPhong.ForeColor = System.Drawing.Color.Red;
+            this.btnTraPhong.Image = global::TTCSDL.Properties.Resources.Restore;
+            this.btnTraPhong.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnTraPhong.Location = new System.Drawing.Point(633, 337);
             this.btnTraPhong.Name = "btnTraPhong";
-            this.btnTraPhong.Size = new System.Drawing.Size(115, 32);
+            this.btnTraPhong.Size = new System.Drawing.Size(126, 36);
             this.btnTraPhong.TabIndex = 14;
             this.btnTraPhong.Text = "Trả Phòng";
+            this.btnTraPhong.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnTraPhong.UseVisualStyleBackColor = true;
             this.btnTraPhong.Click += new System.EventHandler(this.btnTraPhong_Click);
             // 
@@ -107,14 +110,14 @@
             // dataGridViewX1
             // 
             this.dataGridViewX1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewX1.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewX1.DefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridViewX1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(215)))), ((int)(((byte)(229)))));
             this.dataGridViewX1.Location = new System.Drawing.Point(3, 94);
             this.dataGridViewX1.Name = "dataGridViewX1";
@@ -128,11 +131,14 @@
             this.btnXuatHD.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnXuatHD.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnXuatHD.ForeColor = System.Drawing.Color.Blue;
-            this.btnXuatHD.Location = new System.Drawing.Point(429, 338);
+            this.btnXuatHD.Image = global::TTCSDL.Properties.Resources.printer;
+            this.btnXuatHD.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnXuatHD.Location = new System.Drawing.Point(407, 338);
             this.btnXuatHD.Name = "btnXuatHD";
-            this.btnXuatHD.Size = new System.Drawing.Size(163, 32);
+            this.btnXuatHD.Size = new System.Drawing.Size(185, 35);
             this.btnXuatHD.TabIndex = 11;
             this.btnXuatHD.Text = "Xem Trước Hóa Đơn";
+            this.btnXuatHD.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnXuatHD.UseVisualStyleBackColor = true;
             this.btnXuatHD.Click += new System.EventHandler(this.btnXuatHD_Click);
             // 

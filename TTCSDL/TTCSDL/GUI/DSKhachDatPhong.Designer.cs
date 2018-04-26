@@ -1,6 +1,6 @@
 ﻿namespace TTCSDL.GUI
 {
-    partial class LichSuThanhToan
+    partial class DSKhachDatPhong
     {
         /// <summary>
         /// Required designer variable.
@@ -28,32 +28,32 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupPanel1 = new DevComponents.DotNetBar.Controls.GroupPanel();
             this.btnSearch = new System.Windows.Forms.Button();
             this.labelX2 = new DevComponents.DotNetBar.LabelX();
             this.labelX1 = new DevComponents.DotNetBar.LabelX();
             this.dateTimeNgayTra = new System.Windows.Forms.DateTimePicker();
             this.dateTimeNgayDen = new System.Windows.Forms.DateTimePicker();
-            this.dataGridViewLichSu = new DevComponents.DotNetBar.Controls.DataGridViewX();
+            this.dataGridViewDSKH = new DevComponents.DotNetBar.Controls.DataGridViewX();
             this.groupPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewLichSu)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDSKH)).BeginInit();
             this.SuspendLayout();
             // 
             // groupPanel1
             // 
             this.groupPanel1.CanvasColor = System.Drawing.SystemColors.Control;
             this.groupPanel1.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
+            this.groupPanel1.Controls.Add(this.dataGridViewDSKH);
             this.groupPanel1.Controls.Add(this.btnSearch);
             this.groupPanel1.Controls.Add(this.labelX2);
             this.groupPanel1.Controls.Add(this.labelX1);
             this.groupPanel1.Controls.Add(this.dateTimeNgayTra);
             this.groupPanel1.Controls.Add(this.dateTimeNgayDen);
-            this.groupPanel1.Controls.Add(this.dataGridViewLichSu);
-            this.groupPanel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupPanel1.Location = new System.Drawing.Point(0, 4);
+            this.groupPanel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupPanel1.Location = new System.Drawing.Point(2, 12);
             this.groupPanel1.Name = "groupPanel1";
-            this.groupPanel1.Size = new System.Drawing.Size(1009, 488);
+            this.groupPanel1.Size = new System.Drawing.Size(873, 381);
             // 
             // 
             // 
@@ -75,7 +75,7 @@
             this.groupPanel1.Style.TextColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
             this.groupPanel1.Style.TextLineAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Near;
             this.groupPanel1.TabIndex = 0;
-            this.groupPanel1.Text = "Lịch Sử Thanh Toán";
+            this.groupPanel1.Text = "Danh Sách KH Đã Đặt Phòng";
             // 
             // btnSearch
             // 
@@ -85,10 +85,10 @@
             this.btnSearch.ForeColor = System.Drawing.Color.Blue;
             this.btnSearch.Image = global::TTCSDL.Properties.Resources.find;
             this.btnSearch.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSearch.Location = new System.Drawing.Point(792, 18);
+            this.btnSearch.Location = new System.Drawing.Point(718, 22);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(110, 32);
-            this.btnSearch.TabIndex = 11;
+            this.btnSearch.Size = new System.Drawing.Size(111, 32);
+            this.btnSearch.TabIndex = 16;
             this.btnSearch.Text = "Tìm Kiếm";
             this.btnSearch.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnSearch.UseVisualStyleBackColor = false;
@@ -96,66 +96,66 @@
             // 
             // labelX2
             // 
-            this.labelX2.Location = new System.Drawing.Point(469, 23);
+            this.labelX2.Location = new System.Drawing.Point(396, 27);
             this.labelX2.Name = "labelX2";
             this.labelX2.Size = new System.Drawing.Size(75, 23);
-            this.labelX2.TabIndex = 5;
+            this.labelX2.TabIndex = 15;
             this.labelX2.Text = "Đến Ngày";
             // 
             // labelX1
             // 
-            this.labelX1.Location = new System.Drawing.Point(128, 23);
+            this.labelX1.Location = new System.Drawing.Point(55, 27);
             this.labelX1.Name = "labelX1";
             this.labelX1.Size = new System.Drawing.Size(81, 23);
-            this.labelX1.TabIndex = 4;
+            this.labelX1.TabIndex = 14;
             this.labelX1.Text = "Từ Ngày";
             // 
             // dateTimeNgayTra
             // 
             this.dateTimeNgayTra.CustomFormat = "dd/MM/yyyy";
             this.dateTimeNgayTra.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimeNgayTra.Location = new System.Drawing.Point(581, 22);
+            this.dateTimeNgayTra.Location = new System.Drawing.Point(508, 26);
             this.dateTimeNgayTra.Name = "dateTimeNgayTra";
-            this.dateTimeNgayTra.Size = new System.Drawing.Size(123, 24);
-            this.dateTimeNgayTra.TabIndex = 2;
+            this.dateTimeNgayTra.Size = new System.Drawing.Size(123, 26);
+            this.dateTimeNgayTra.TabIndex = 13;
             // 
             // dateTimeNgayDen
             // 
             this.dateTimeNgayDen.CustomFormat = "dd/MM/yyyy";
             this.dateTimeNgayDen.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimeNgayDen.Location = new System.Drawing.Point(228, 23);
+            this.dateTimeNgayDen.Location = new System.Drawing.Point(155, 27);
             this.dateTimeNgayDen.Name = "dateTimeNgayDen";
-            this.dateTimeNgayDen.Size = new System.Drawing.Size(123, 24);
-            this.dateTimeNgayDen.TabIndex = 1;
+            this.dateTimeNgayDen.Size = new System.Drawing.Size(123, 26);
+            this.dateTimeNgayDen.TabIndex = 12;
             // 
-            // dataGridViewLichSu
+            // dataGridViewDSKH
             // 
-            this.dataGridViewLichSu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewLichSu.DefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridViewLichSu.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(215)))), ((int)(((byte)(229)))));
-            this.dataGridViewLichSu.Location = new System.Drawing.Point(3, 76);
-            this.dataGridViewLichSu.Name = "dataGridViewLichSu";
-            this.dataGridViewLichSu.Size = new System.Drawing.Size(997, 379);
-            this.dataGridViewLichSu.TabIndex = 0;
+            this.dataGridViewDSKH.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewDSKH.DefaultCellStyle = dataGridViewCellStyle4;
+            this.dataGridViewDSKH.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(215)))), ((int)(((byte)(229)))));
+            this.dataGridViewDSKH.Location = new System.Drawing.Point(3, 80);
+            this.dataGridViewDSKH.Name = "dataGridViewDSKH";
+            this.dataGridViewDSKH.Size = new System.Drawing.Size(861, 277);
+            this.dataGridViewDSKH.TabIndex = 17;
             // 
-            // LichSuThanhToan
+            // DSKhachDatPhong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1011, 491);
+            this.ClientSize = new System.Drawing.Size(878, 395);
             this.Controls.Add(this.groupPanel1);
-            this.Name = "LichSuThanhToan";
-            this.Text = "LichSuThanhToan";
-            this.Load += new System.EventHandler(this.LichSuThanhToan_Load);
+            this.Name = "DSKhachDatPhong";
+            this.Text = "DSKhachDatPhong";
+            this.Load += new System.EventHandler(this.DSKhachDatPhong_Load);
             this.groupPanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewLichSu)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDSKH)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -163,11 +163,11 @@
         #endregion
 
         private DevComponents.DotNetBar.Controls.GroupPanel groupPanel1;
-        private System.Windows.Forms.DateTimePicker dateTimeNgayTra;
-        private System.Windows.Forms.DateTimePicker dateTimeNgayDen;
-        private DevComponents.DotNetBar.Controls.DataGridViewX dataGridViewLichSu;
+        private DevComponents.DotNetBar.Controls.DataGridViewX dataGridViewDSKH;
+        private System.Windows.Forms.Button btnSearch;
         private DevComponents.DotNetBar.LabelX labelX2;
         private DevComponents.DotNetBar.LabelX labelX1;
-        private System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.DateTimePicker dateTimeNgayTra;
+        private System.Windows.Forms.DateTimePicker dateTimeNgayDen;
     }
 }

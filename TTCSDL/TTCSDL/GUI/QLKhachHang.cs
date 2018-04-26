@@ -128,6 +128,23 @@ namespace TTCSDL.GUI
             dataGridView1.DataSource = csdl.getDataKH();
         }
 
-        
+        private void btnReset_Click(object sender, EventArgs e)
+        {
+            textMakh.Text = "";
+            textTenkh.Text = "";
+            dateNS.Text = "";
+            radioNam.Checked = false;
+            radioNu.Checked = false;
+            textSocmt.Text = "";
+            textPhone.Text = "";
+            textDiachi.Text = "";
+            comboBoxLevel.Text = "";
+            textMakh.Enabled = true;
+            dataGridView1.Refresh();
+            button2.Enabled = false;
+            button3.Enabled = false;
+            btnThem.Enabled = true;
+            dataGridView1.DataSource = csdl.getDataKH();
+        }
     }
 }

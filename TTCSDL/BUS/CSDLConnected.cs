@@ -119,12 +119,16 @@ namespace BUS
                        from t in db.HDThuePhongs
                        from z in db.HDThanhToans
                        from a in db.ChiTietThuePhongs
+                       from b in db.Phongs
                        where u.MaKH == v.MaKH
                        where v.MaKH == t.MaKHThue
                        where z.MaKHTT == v.MaKH
                        where z.MaPhong == t.MaPhong
                        where u.MaHD == z.MaHDDV
                        where t.MaPhong == a.MaPhong
+                       where a.SoPhong == b.SoPhong
+                       where v.TrangThai == "checkin"
+                       where DateTime.Compare(DateTime.Now, Convert.ToDateTime(t.NgayThue)) >= 0 && DateTime.Compare(DateTime.Now, Convert.ToDateTime(t.NgayTra)) < 0
                        select new
                        {
                            SoPhong = a.SoPhong.Trim(),
@@ -234,7 +238,52 @@ namespace BUS
 
             return data;
         }
-
+        //lấy ds khách hàng đã đặt phòng
+        public object getDataKHDP()
+        {
+            var data = from v in db.KhachHangs
+                       from t in db.HDThuePhongs
+                       from a in db.ChiTietThuePhongs
+                       from b in db.Phongs
+                       where v.MaKH == t.MaKHThue
+                       where a.MaPhong == t.MaPhong
+                       where a.SoPhong == b.SoPhong
+                       where  v.TrangThai =="checkout"
+                       where DateTime.Compare(DateTime.Now, Convert.ToDateTime(t.NgayThue)) <= 0 
+                       select new
+                       {
+                           SoPhong = a.SoPhong,
+                           TenKH = v.TenKH,
+                           CMTND = v.SoCMT,
+                           SDT = v.SoDT,
+                           NgayDen = t.NgayThue,
+                           NgayTra = t.NgayTra 
+                       };
+              return data;
+        }
+        public object getDataKHDP1(string tungay, string denngay)//lọc theo ngày để xem ds khách hàng đã đặt phòng
+        {
+            var data = from v in db.KhachHangs
+                       from t in db.HDThuePhongs
+                       from a in db.ChiTietThuePhongs
+                       from b in db.Phongs
+                       where v.MaKH == t.MaKHThue
+                       where a.MaPhong == t.MaPhong
+                       where a.SoPhong == b.SoPhong
+                       where b.TinhTrangPhong == true && v.TrangThai == "checkout"
+                       where DateTime.Compare(Convert.ToDateTime(tungay), Convert.ToDateTime(t.NgayThue)) <= 0
+                       where DateTime.Compare(Convert.ToDateTime(denngay), Convert.ToDateTime(t.NgayThue)) >= 0
+                       select new
+                       {
+                           SoPhong = a.SoPhong,
+                           TenKH = v.TenKH,
+                           CMTND = v.SoCMT,
+                           SDT = v.SoDT,
+                           NgayDen = t.NgayThue,
+                           NgayDuTra = t.NgayTra
+                       };
+            return data;
+        }
         public object getDataHDDV(string tenkh)
         {
             var data = from u in db.HDDichVus

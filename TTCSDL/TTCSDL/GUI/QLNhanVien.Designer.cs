@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupPanel1 = new DevComponents.DotNetBar.Controls.GroupPanel();
             this.textBoxChucvu = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.labelX9 = new DevComponents.DotNetBar.LabelX();
@@ -53,6 +53,7 @@
             this.btnDel = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
             this.dataGridViewNV = new DevComponents.DotNetBar.Controls.DataGridViewX();
+            this.btnReset = new System.Windows.Forms.Button();
             this.groupPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dateNS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewNV)).BeginInit();
@@ -62,6 +63,7 @@
             // 
             this.groupPanel1.CanvasColor = System.Drawing.SystemColors.Control;
             this.groupPanel1.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
+            this.groupPanel1.Controls.Add(this.btnReset);
             this.groupPanel1.Controls.Add(this.textBoxChucvu);
             this.groupPanel1.Controls.Add(this.labelX9);
             this.groupPanel1.Controls.Add(this.textLuong);
@@ -325,7 +327,7 @@
             this.btnEdit.ForeColor = System.Drawing.Color.Blue;
             this.btnEdit.Image = global::TTCSDL.Properties.Resources.save;
             this.btnEdit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEdit.Location = new System.Drawing.Point(793, 48);
+            this.btnEdit.Location = new System.Drawing.Point(793, 77);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(106, 26);
             this.btnEdit.TabIndex = 41;
@@ -340,7 +342,7 @@
             this.btnDel.ForeColor = System.Drawing.Color.Red;
             this.btnDel.Image = global::TTCSDL.Properties.Resources.remove;
             this.btnDel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDel.Location = new System.Drawing.Point(793, 80);
+            this.btnDel.Location = new System.Drawing.Point(793, 109);
             this.btnDel.Name = "btnDel";
             this.btnDel.Size = new System.Drawing.Size(85, 26);
             this.btnDel.TabIndex = 40;
@@ -355,7 +357,7 @@
             this.btnThem.ForeColor = System.Drawing.Color.Blue;
             this.btnThem.Image = global::TTCSDL.Properties.Resources.Ok;
             this.btnThem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnThem.Location = new System.Drawing.Point(793, 16);
+            this.btnThem.Location = new System.Drawing.Point(793, 45);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(85, 26);
             this.btnThem.TabIndex = 39;
@@ -367,20 +369,31 @@
             // dataGridViewNV
             // 
             this.dataGridViewNV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewNV.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewNV.DefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridViewNV.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(215)))), ((int)(((byte)(229)))));
             this.dataGridViewNV.Location = new System.Drawing.Point(1, 162);
             this.dataGridViewNV.Name = "dataGridViewNV";
             this.dataGridViewNV.Size = new System.Drawing.Size(915, 197);
             this.dataGridViewNV.TabIndex = 20;
             this.dataGridViewNV.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewNV_CellClick);
+            // 
+            // btnReset
+            // 
+            this.btnReset.BackgroundImage = global::TTCSDL.Properties.Resources.reload_24;
+            this.btnReset.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnReset.Location = new System.Drawing.Point(793, 3);
+            this.btnReset.Name = "btnReset";
+            this.btnReset.Size = new System.Drawing.Size(41, 34);
+            this.btnReset.TabIndex = 61;
+            this.btnReset.UseVisualStyleBackColor = true;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
             // QLNhanVien
             // 
@@ -425,5 +438,6 @@
         private DevComponents.DotNetBar.Controls.TextBoxX textBoxChucvu;
         private DevComponents.DotNetBar.LabelX labelX9;
         private DevComponents.DotNetBar.Controls.DataGridViewX dataGridViewNV;
+        private System.Windows.Forms.Button btnReset;
     }
 }
