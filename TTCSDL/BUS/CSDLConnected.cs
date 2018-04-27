@@ -379,5 +379,107 @@ namespace BUS
             return 1;
         }
 
+        public object Doanthutheongay()
+        {
+            var doanhthu = from a in db.HDThanhToans
+                           from b in db.KhachHangs
+                           where a.MaKHTT == b.MaKH && Convert.ToDateTime(a.NgayThanhToan).Day == DateTime.Now.Day
+                         select new
+                         {
+                             MaHDTT = a.MaHDTT,
+                             TenKH = b.TenKH,
+                             NgayThanhToan = a.NgayThanhToan,
+                             Total = a.Total,
+                         }; 
+            return doanhthu;
+        }
+
+        public object Doanthutheothang()
+        {
+            var doanhthu = from a in db.HDThanhToans
+                           from b in db.KhachHangs
+                           where a.MaKHTT == b.MaKH && Convert.ToDateTime(a.NgayThanhToan).Month == DateTime.Now.Month
+                           select new
+                           {
+                               MaHDTT = a.MaHDTT,
+                               TenKH = b.TenKH,
+                               NgayThanhToan = a.NgayThanhToan,
+                               Total = a.Total,
+                           };
+            return doanhthu;
+        }
+
+        public object Doanthutheonam()
+        {
+            var doanhthu = from a in db.HDThanhToans
+                           from b in db.KhachHangs
+                           where a.MaKHTT == b.MaKH && Convert.ToDateTime(a.NgayThanhToan).Year == DateTime.Now.Year
+                           select new
+                           {
+                               MaHDTT = a.MaHDTT,
+                               TenKH = b.TenKH,
+                               NgayThanhToan = a.NgayThanhToan,
+                               Total = a.Total,
+                           };
+            return doanhthu;
+        }
+
+        public int? Dtngay()
+        {
+            var doanhthu = from a in db.HDThanhToans
+                           from b in db.KhachHangs
+                           where a.MaKHTT == b.MaKH && Convert.ToDateTime(a.NgayThanhToan).Day == DateTime.Now.Day
+                           select new
+                           {
+                               MaHDTT = a.MaHDTT,
+                               TenKH = b.TenKH,
+                               NgayThanhToan = a.NgayThanhToan,
+                               Total = a.Total,
+                           };
+            int? total = 0;
+            foreach(var dt in doanhthu)
+            {
+                total += dt.Total;
+            }
+            return total;
+        }
+        public int? Dtthang()
+        {
+            var doanhthu = from a in db.HDThanhToans
+                           from b in db.KhachHangs
+                           where a.MaKHTT == b.MaKH && Convert.ToDateTime(a.NgayThanhToan).Month == DateTime.Now.Month
+                           select new
+                           {
+                               MaHDTT = a.MaHDTT,
+                               TenKH = b.TenKH,
+                               NgayThanhToan = a.NgayThanhToan,
+                               Total = a.Total,
+                           };
+            int? total = 0;
+            foreach (var dt in doanhthu)
+            {
+                total += dt.Total;
+            }
+            return total;
+        }
+        public int? Dtnam()
+        {
+            var doanhthu = from a in db.HDThanhToans
+                           from b in db.KhachHangs
+                           where a.MaKHTT == b.MaKH && Convert.ToDateTime(a.NgayThanhToan).Year == DateTime.Now.Year
+                           select new
+                           {
+                               MaHDTT = a.MaHDTT,
+                               TenKH = b.TenKH,
+                               NgayThanhToan = a.NgayThanhToan,
+                               Total = a.Total,
+                           };
+            int? total = 0;
+            foreach (var dt in doanhthu)
+            {
+                total += dt.Total;
+            }
+            return total;
+        }
     }
 }

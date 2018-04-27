@@ -70,7 +70,7 @@ namespace TTCSDL.GUI
             data.addnv(textManv.Text, textTennv.Text, Convert.ToDateTime(dateNS.Text), gt, textSocmt.Text, textPhone.Text, textQuequan.Text, Convert.ToInt32(textLuong.Text), textBoxChucvu.Text, time);
             MessageBox.Show("Thêm thành công !!");
             dataGridViewNV.Refresh();
-            dataGridViewNV.DataSource = csdl.getDataNV();
+            
         }
 
         
@@ -89,7 +89,7 @@ namespace TTCSDL.GUI
                 }
 
                 DateTime time = DateTime.Now;
-                data.editnv(textManv.Text, textTennv.Text, Convert.ToDateTime(dateNS.Text), gt, textSocmt.Text, textPhone.Text, textQuequan.Text, Convert.ToInt32(textLuong.Text), textBoxChucvu.Text, time);
+                data.editnv(textManv.Text, textTennv.Text, Convert.ToDateTime(dateNS.Text), gt, textSocmt.Text, textPhone.Text, textQuequan.Text, textBoxChucvu.Text, Convert.ToInt32(textLuong.Text),  time);
                 MessageBox.Show("Chỉnh sửa thành công !!");
                 textManv.Text = "";
                 textTennv.Text = "";

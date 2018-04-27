@@ -30,6 +30,7 @@
         {
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.groupPanel1 = new DevComponents.DotNetBar.Controls.GroupPanel();
+            this.btnReset = new System.Windows.Forms.Button();
             this.comboBoxLevel = new DevComponents.DotNetBar.Controls.ComboBoxEx();
             this.textDiachi = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.textPhone = new DevComponents.DotNetBar.Controls.TextBoxX();
@@ -47,10 +48,9 @@
             this.labelX3 = new DevComponents.DotNetBar.LabelX();
             this.labelX2 = new DevComponents.DotNetBar.LabelX();
             this.labelX1 = new DevComponents.DotNetBar.LabelX();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnEdit = new System.Windows.Forms.Button();
+            this.btnDel = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
-            this.btnReset = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dateNS)).BeginInit();
@@ -87,8 +87,8 @@
             this.groupPanel1.Controls.Add(this.labelX3);
             this.groupPanel1.Controls.Add(this.labelX2);
             this.groupPanel1.Controls.Add(this.labelX1);
-            this.groupPanel1.Controls.Add(this.button3);
-            this.groupPanel1.Controls.Add(this.button2);
+            this.groupPanel1.Controls.Add(this.btnEdit);
+            this.groupPanel1.Controls.Add(this.btnDel);
             this.groupPanel1.Controls.Add(this.btnThem);
             this.groupPanel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.groupPanel1.Location = new System.Drawing.Point(-1, 3);
@@ -116,6 +116,17 @@
             this.groupPanel1.Style.TextLineAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Near;
             this.groupPanel1.TabIndex = 18;
             this.groupPanel1.Text = "Thông Tin Khách Hàng";
+            // 
+            // btnReset
+            // 
+            this.btnReset.BackgroundImage = global::TTCSDL.Properties.Resources.reload_24;
+            this.btnReset.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnReset.Location = new System.Drawing.Point(638, 1);
+            this.btnReset.Name = "btnReset";
+            this.btnReset.Size = new System.Drawing.Size(41, 34);
+            this.btnReset.TabIndex = 59;
+            this.btnReset.UseVisualStyleBackColor = true;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
             // comboBoxLevel
             // 
@@ -305,37 +316,37 @@
             this.labelX1.TabIndex = 42;
             this.labelX1.Text = "Mã Khách Hàng";
             // 
-            // button3
+            // btnEdit
             // 
-            this.button3.Enabled = false;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.ForeColor = System.Drawing.Color.Blue;
-            this.button3.Image = global::TTCSDL.Properties.Resources.save;
-            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.Location = new System.Drawing.Point(638, 73);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(102, 26);
-            this.button3.TabIndex = 41;
-            this.button3.Text = "Cập nhật";
-            this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.btnEdit.Enabled = false;
+            this.btnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEdit.ForeColor = System.Drawing.Color.Blue;
+            this.btnEdit.Image = global::TTCSDL.Properties.Resources.save;
+            this.btnEdit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEdit.Location = new System.Drawing.Point(638, 73);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(102, 26);
+            this.btnEdit.TabIndex = 41;
+            this.btnEdit.Text = "Cập nhật";
+            this.btnEdit.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
-            // button2
+            // btnDel
             // 
-            this.button2.Enabled = false;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.ForeColor = System.Drawing.Color.Red;
-            this.button2.Image = global::TTCSDL.Properties.Resources.remove1;
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(638, 105);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(95, 26);
-            this.button2.TabIndex = 40;
-            this.button2.Text = "Xóa";
-            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btnDel.Enabled = false;
+            this.btnDel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDel.ForeColor = System.Drawing.Color.Red;
+            this.btnDel.Image = global::TTCSDL.Properties.Resources.remove1;
+            this.btnDel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDel.Location = new System.Drawing.Point(638, 105);
+            this.btnDel.Name = "btnDel";
+            this.btnDel.Size = new System.Drawing.Size(102, 26);
+            this.btnDel.TabIndex = 40;
+            this.btnDel.Text = "Xóa";
+            this.btnDel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnDel.UseVisualStyleBackColor = true;
+            this.btnDel.Click += new System.EventHandler(this.btnDel_Click);
             // 
             // btnThem
             // 
@@ -345,23 +356,12 @@
             this.btnThem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnThem.Location = new System.Drawing.Point(638, 41);
             this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(95, 26);
+            this.btnThem.Size = new System.Drawing.Size(102, 26);
             this.btnThem.TabIndex = 39;
             this.btnThem.Text = "Thêm";
             this.btnThem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnThem.UseVisualStyleBackColor = true;
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
-            // 
-            // btnReset
-            // 
-            this.btnReset.BackgroundImage = global::TTCSDL.Properties.Resources.reload_24;
-            this.btnReset.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnReset.Location = new System.Drawing.Point(638, 1);
-            this.btnReset.Name = "btnReset";
-            this.btnReset.Size = new System.Drawing.Size(41, 34);
-            this.btnReset.TabIndex = 59;
-            this.btnReset.UseVisualStyleBackColor = true;
-            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
             // QLKhachHang
             // 
@@ -401,8 +401,8 @@
         private DevComponents.DotNetBar.LabelX labelX3;
         private DevComponents.DotNetBar.LabelX labelX2;
         private DevComponents.DotNetBar.LabelX labelX1;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnEdit;
+        private System.Windows.Forms.Button btnDel;
         private System.Windows.Forms.Button btnThem;
         private System.Windows.Forms.Button btnReset;
     }

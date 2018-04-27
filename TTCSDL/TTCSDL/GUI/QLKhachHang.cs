@@ -28,8 +28,8 @@ namespace TTCSDL.GUI
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            button2.Enabled = true;
-            button3.Enabled = true;
+            btnDel.Enabled = true;
+            btnEdit.Enabled = true;
             btnThem.Enabled = false;
 
             int rowindex = dataGridView1.CurrentCell.RowIndex;
@@ -79,7 +79,7 @@ namespace TTCSDL.GUI
             comboBoxLevel.SelectedItem = "[Level]";
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void btnEdit_Click(object sender, EventArgs e)
         {
             
             if (MessageBox.Show("Bạn có muốn sửa thông tin khách hàng này?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
@@ -109,21 +109,21 @@ namespace TTCSDL.GUI
             comboBoxLevel.Text = "";
             textMakh.Enabled = true;
             dataGridView1.Refresh();
-            button2.Enabled = false;
-            button3.Enabled = false;
+            btnDel.Enabled = false;
+            btnEdit.Enabled = false;
             btnThem.Enabled = true;
             dataGridView1.DataSource = csdl.getDataKH();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void btnDel_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Bạn có muốn xóa  thông tin khách hàng này?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 data.RemoveKhachHang(textMakh.Text);
                 MessageBox.Show("Xóa thành công !!");
             }
-            button2.Enabled = false;
-            button3.Enabled = false;
+            btnDel.Enabled = false;
+            btnEdit.Enabled = false;
             btnThem.Enabled = true;
             dataGridView1.DataSource = csdl.getDataKH();
         }
@@ -141,8 +141,8 @@ namespace TTCSDL.GUI
             comboBoxLevel.Text = "";
             textMakh.Enabled = true;
             dataGridView1.Refresh();
-            button2.Enabled = false;
-            button3.Enabled = false;
+            btnDel.Enabled = false;
+            btnEdit.Enabled = false;
             btnThem.Enabled = true;
             dataGridView1.DataSource = csdl.getDataKH();
         }

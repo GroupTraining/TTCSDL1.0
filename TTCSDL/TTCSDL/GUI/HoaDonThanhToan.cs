@@ -24,21 +24,21 @@ namespace TTCSDL.GUI
             data.Update_ThanhTien();
             data.Update_TongTien();
             data.CTHDTT();
-            button4.Hide();
+            btnEdit.Hide();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void buttonSearch_Click(object sender, EventArgs e)
         {
             dataGridViewHDTT.DataSource = csdl.getDataHDTT(textTenKH.Text);
             dataGridViewHDTT.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
-            dataGridViewHDTT.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            button4.Hide();
+            //dataGridViewHDTT.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            btnEdit.Hide();
 
         }
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            button4.Show();
+            btnEdit.Show();
             dataGridViewHDTT.DataSource = csdl.getDataHDDV(textTenKH.Text);
             dataGridViewHDTT.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
             dataGridViewHDTT.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
@@ -53,17 +53,19 @@ namespace TTCSDL.GUI
 
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void btnReload_Click(object sender, EventArgs e)
         {
             this.Hide();
             GUI.HoaDonThanhToan hdtt = new GUI.HoaDonThanhToan();
             hdtt.Show();
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void btnEdit_Click(object sender, EventArgs e)
         {
             GUI.EditHDDichVu edit_hddv = new GUI.EditHDDichVu(textTenKH.Text);
             edit_hddv.Show();
         }
+
+        
     }
 }
