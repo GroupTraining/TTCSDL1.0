@@ -24,7 +24,9 @@ namespace TTCSDL.GUI
             dataGridViewNV.DataSource = csdl.getDataNV();
             dataGridViewNV.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
            // dataGridViewNV.Columns[7].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewNV.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             dataGridViewNV.Columns[7].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+
             btnDel.Enabled = false;
             btnEdit.Enabled = false;
             btnThem.Enabled = true;
@@ -55,22 +57,60 @@ namespace TTCSDL.GUI
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            TTCSDLDataContext data = new TTCSDLDataContext();
-            bool gt = true;
-            if (radioNam.Checked == true)
+            if (MessageBox.Show("Bạn có muốn thêm thông tin nhân viên này?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                gt = false;
+                var nhanvien = from a in data.NhanViens
+                             select a;
+                bool kiemtra = true;
+                foreach (var nv in nhanvien)
+                {
+                    if (textManv.Text == nv.MaNV.Trim())
+                    {
+                        kiemtra = false;
+                        break;
+                    }
+                }
+                if (kiemtra == false)
+                {
+                    MessageBox.Show("Đã tồn tại mã nhân viên này !!");
+                    return;
+                }
+                else
+                {
+                   
+                        TTCSDLDataContext data = new TTCSDLDataContext();
+                        bool gt = true;
+                        if (radioNam.Checked == true)
+                        {
+                            gt = false;
+                        }
+                        if (radioNu.Checked == true)
+                        {
+                            gt = true;
+                        }
+
+                        DateTime time = DateTime.Now;
+                        data.addnv(textManv.Text, textTennv.Text, Convert.ToDateTime(dateNS.Text), gt, textSocmt.Text, textPhone.Text, textQuequan.Text, Convert.ToInt32(textLuong.Text), textBoxChucvu.Text, time);
+                        MessageBox.Show("Thêm thành công !!");
+                    }
+                    textManv.Text = "";
+                    textTennv.Text = "";
+                    dateNS.Text = "";
+                    radioNam.Checked = false;
+                    radioNu.Checked = false;
+                    textSocmt.Text = "";
+                    textPhone.Text = "";
+                    textQuequan.Text = "";
+                    textLuong.Text = "";
+                    textBoxChucvu.Text = "";
+                    textManv.Enabled = true;
+                    btnDel.Enabled = false;
+                    btnEdit.Enabled = false;
+                    btnThem.Enabled = true;
+                    dataGridViewNV.Refresh();
+                    dataGridViewNV.DataSource = csdl.getDataNV();
+                
             }
-            if (radioNu.Checked == true)
-            {
-                gt = true;
-            }
-            
-            DateTime time = DateTime.Now;
-            data.addnv(textManv.Text, textTennv.Text, Convert.ToDateTime(dateNS.Text), gt, textSocmt.Text, textPhone.Text, textQuequan.Text, Convert.ToInt32(textLuong.Text), textBoxChucvu.Text, time);
-            MessageBox.Show("Thêm thành công !!");
-            dataGridViewNV.Refresh();
-            
         }
 
         
@@ -112,7 +152,7 @@ namespace TTCSDL.GUI
 
         private void btnDel_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Bạn có muốn xóa  thông tin nhân viên này?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            if (MessageBox.Show("Bạn có muốn xóa thông tin nhân viên này?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 data.Removenv(textManv.Text);
                 MessageBox.Show("Xóa thành công !!");
@@ -151,6 +191,19 @@ namespace TTCSDL.GUI
             btnEdit.Enabled = false;
             btnThem.Enabled = true;
             dataGridViewNV.DataSource = csdl.getDataNV();
+        }
+
+        private void QLNhanVien_Load(object sender, EventArgs e)
+        {
+            this.CenterToScreen();
+            int count = 1;
+            var nhanvien = from a in data.NhanViens
+                         select a;
+            foreach (var phong in nhanvien)
+            {
+                count++;
+            }
+            textManv.Text = "NV" + Convert.ToString(count);
         }
     }
 }

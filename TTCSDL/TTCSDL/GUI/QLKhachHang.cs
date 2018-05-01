@@ -50,27 +50,71 @@ namespace TTCSDL.GUI
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            TTCSDLDataContext data = new TTCSDLDataContext();
-            bool gt=true;
-            if (radioNam.Checked == true)
+            if (MessageBox.Show("Bạn có muốn thêm thông tin khách hàng này?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                gt = false;
+                var khachhang = from a in data.KhachHangs
+                               select a;
+                bool kiemtra = true;
+                foreach (var kh in khachhang)
+                {
+                    if (textMakh.Text == kh.MaKH.Trim())
+                    {
+                        kiemtra = false;
+                        break;
+                    }
+                }
+                if (kiemtra == false)
+                {
+                    MessageBox.Show("Đã tồn tại mã khách hàng này !!");
+                    return;
+                }
+                else
+                {
+                    TTCSDLDataContext data = new TTCSDLDataContext();
+                    bool gt = true;
+                    if (radioNam.Checked == true)
+                    {
+                        gt = false;
+                    }
+                    if (radioNu.Checked == true)
+                    {
+                        gt = true;
+                    }
+                    int grp = Convert.ToInt32(comboBoxLevel.SelectedItem.ToString());
+                    DateTime time = DateTime.Now;
+                    data.addkhachhang(textMakh.Text, textTenkh.Text, Convert.ToDateTime(dateNS.Text), gt, textSocmt.Text, textPhone.Text, textDiachi.Text, grp, time);
+                    MessageBox.Show("Thêm thành công !!");
+                }
+                textMakh.Text = "";
+                textTenkh.Text = "";
+                dateNS.Text = "";
+                radioNam.Checked = false;
+                radioNu.Checked = false;
+                textSocmt.Text = "";
+                textPhone.Text = "";
+                textDiachi.Text = "";
+                comboBoxLevel.Text = "";
+                textMakh.Enabled = true;
+                dataGridView1.Refresh();
+                btnDel.Enabled = false;
+                btnEdit.Enabled = false;
+                btnThem.Enabled = true;
+                dataGridView1.Refresh();
+                dataGridView1.DataSource = csdl.getDataKH();
             }
-            if (radioNu.Checked == true)
-            {
-                gt = true;
-            }
-            int grp = Convert.ToInt32(comboBoxLevel.SelectedItem.ToString());
-            DateTime time = DateTime.Now;
-            data.addkhachhang(textMakh.Text,textTenkh.Text,Convert.ToDateTime(dateNS.Text), gt,textSocmt.Text,textPhone.Text,textDiachi.Text,grp,time);
-            MessageBox.Show("Thêm thành công !!");
-            dataGridView1.Refresh();
-            dataGridView1.DataSource = csdl.getDataKH();
         }
 
 
         private void QLKhachHang_Load(object sender, EventArgs e)
         {
+            int count = 1;
+            var khachhang = from a in data.KhachHangs
+                           select a;
+            foreach (var kh in khachhang)
+            {
+                count++;
+            }
+            textMakh.Text = "KH" + Convert.ToString(count);
             this.CenterToScreen();
             comboBoxLevel.Items.Add("[Level]");
             comboBoxLevel.Items.Add("1");
@@ -144,7 +188,23 @@ namespace TTCSDL.GUI
             btnDel.Enabled = false;
             btnEdit.Enabled = false;
             btnThem.Enabled = true;
+            int count = 1;
+            var khachhang = from a in data.KhachHangs
+                            select a;
+            foreach (var kh in khachhang)
+            {
+                count++;
+            }
+            textMakh.Text = "KH" + Convert.ToString(count);
+            this.CenterToScreen();
+            comboBoxLevel.Items.Add("[Level]");
+            comboBoxLevel.Items.Add("1");
+            comboBoxLevel.Items.Add("2");
+            comboBoxLevel.Items.Add("3");
+            comboBoxLevel.SelectedItem = "[Level]";
             dataGridView1.DataSource = csdl.getDataKH();
         }
+
+        
     }
 }

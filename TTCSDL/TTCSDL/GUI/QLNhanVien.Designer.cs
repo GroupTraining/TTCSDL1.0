@@ -28,8 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupPanel1 = new DevComponents.DotNetBar.Controls.GroupPanel();
+            this.btnReset = new System.Windows.Forms.Button();
             this.textBoxChucvu = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.labelX9 = new DevComponents.DotNetBar.LabelX();
             this.textLuong = new DevComponents.DotNetBar.Controls.TextBoxX();
@@ -53,7 +54,6 @@
             this.btnDel = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
             this.dataGridViewNV = new DevComponents.DotNetBar.Controls.DataGridViewX();
-            this.btnReset = new System.Windows.Forms.Button();
             this.groupPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dateNS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewNV)).BeginInit();
@@ -87,9 +87,9 @@
             this.groupPanel1.Controls.Add(this.btnDel);
             this.groupPanel1.Controls.Add(this.btnThem);
             this.groupPanel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.groupPanel1.Location = new System.Drawing.Point(1, -1);
+            this.groupPanel1.Location = new System.Drawing.Point(1, 1);
             this.groupPanel1.Name = "groupPanel1";
-            this.groupPanel1.Size = new System.Drawing.Size(915, 161);
+            this.groupPanel1.Size = new System.Drawing.Size(915, 159);
             // 
             // 
             // 
@@ -112,6 +112,17 @@
             this.groupPanel1.Style.TextLineAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Near;
             this.groupPanel1.TabIndex = 19;
             this.groupPanel1.Text = "Thông Tin Nhân Viên";
+            // 
+            // btnReset
+            // 
+            this.btnReset.BackgroundImage = global::TTCSDL.Properties.Resources.reload_24;
+            this.btnReset.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnReset.Location = new System.Drawing.Point(793, 3);
+            this.btnReset.Name = "btnReset";
+            this.btnReset.Size = new System.Drawing.Size(41, 34);
+            this.btnReset.TabIndex = 61;
+            this.btnReset.UseVisualStyleBackColor = true;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
             // textBoxChucvu
             // 
@@ -369,31 +380,20 @@
             // dataGridViewNV
             // 
             this.dataGridViewNV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewNV.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewNV.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridViewNV.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(215)))), ((int)(((byte)(229)))));
             this.dataGridViewNV.Location = new System.Drawing.Point(1, 162);
             this.dataGridViewNV.Name = "dataGridViewNV";
             this.dataGridViewNV.Size = new System.Drawing.Size(915, 197);
             this.dataGridViewNV.TabIndex = 20;
             this.dataGridViewNV.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewNV_CellClick);
-            // 
-            // btnReset
-            // 
-            this.btnReset.BackgroundImage = global::TTCSDL.Properties.Resources.reload_24;
-            this.btnReset.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnReset.Location = new System.Drawing.Point(793, 3);
-            this.btnReset.Name = "btnReset";
-            this.btnReset.Size = new System.Drawing.Size(41, 34);
-            this.btnReset.TabIndex = 61;
-            this.btnReset.UseVisualStyleBackColor = true;
-            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
             // QLNhanVien
             // 
@@ -404,6 +404,7 @@
             this.Controls.Add(this.groupPanel1);
             this.Name = "QLNhanVien";
             this.Text = "QLNhanVien";
+            this.Load += new System.EventHandler(this.QLNhanVien_Load);
             this.groupPanel1.ResumeLayout(false);
             this.groupPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dateNS)).EndInit();
