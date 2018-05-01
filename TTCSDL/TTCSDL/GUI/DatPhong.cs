@@ -192,7 +192,9 @@ namespace TTCSDL.GUI
                         data.HDTP(mahdtp,mahddv,mahdtt, makh, ngayden, ngaytra, Convert.ToInt32(thoigianthue.TotalDays), thanhtien, thanhtien * 2, time, sophong);
                         MessageBox.Show("Đặt phòng thành công!!");
                         p.TinhTrangPhong = true;
-
+                        kh.TrangThai = "reservation";
+                        data.SubmitChanges();
+                        
                         txtSDT.Text = "";
                         labelHoTen.Text = "";
                         labelQLKH.Text = "";

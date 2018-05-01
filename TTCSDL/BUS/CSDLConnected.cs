@@ -131,7 +131,7 @@ namespace BUS
                        where DateTime.Compare(DateTime.Now, Convert.ToDateTime(t.NgayThue)) >= 0 && DateTime.Compare(DateTime.Now, Convert.ToDateTime(t.NgayTra)) < 0
                        select new
                        {
-                           SoPhong = a.SoPhong.Trim(),
+                           SP = a.SoPhong.Trim(),
                            TenKH = v.TenKH.Trim(),
                            SoDT = v.SoDT.Trim(),
                            TienDV = u.TongTien,
@@ -248,7 +248,7 @@ namespace BUS
                        where v.MaKH == t.MaKHThue
                        where a.MaPhong == t.MaPhong
                        where a.SoPhong == b.SoPhong
-                       where  v.TrangThai =="checkout"
+                       where  v.TrangThai == "reservation"
                        where DateTime.Compare(DateTime.Now, Convert.ToDateTime(t.NgayThue)) <= 0 
                        select new
                        {
@@ -270,7 +270,7 @@ namespace BUS
                        where v.MaKH == t.MaKHThue
                        where a.MaPhong == t.MaPhong
                        where a.SoPhong == b.SoPhong
-                       where b.TinhTrangPhong == true && v.TrangThai == "checkout"
+                       where b.TinhTrangPhong == true && v.TrangThai == "reservation"
                        where DateTime.Compare(Convert.ToDateTime(tungay), Convert.ToDateTime(t.NgayThue)) <= 0
                        where DateTime.Compare(Convert.ToDateTime(denngay), Convert.ToDateTime(t.NgayThue)) >= 0
                        select new
@@ -301,6 +301,9 @@ namespace BUS
                        where y.MaHD == u.MaHD
                        where u.MaHD == z.MaHDDV
                        where a.MaPhong == t.MaPhong
+                       where v.TrangThai == "checkin"
+                       where DateTime.Compare(DateTime.Now, Convert.ToDateTime(t.NgayTra)) <= 0
+                       where DateTime.Compare(DateTime.Now, Convert.ToDateTime(t.NgayThue)) >= 0
                        select new
                        {
                            SoPhong = a.SoPhong.Trim(),
