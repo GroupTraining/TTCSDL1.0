@@ -1,4 +1,4 @@
-﻿using System;
+﻿ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -31,7 +31,28 @@ namespace TTCSDL.GUI
         private void QLPhong_Load(object sender, EventArgs e)
         {
             this.CenterToScreen();
-            
+            int count = 1;
+            var phongs = from a in data.Phongs
+                         select a;
+            foreach(var phong in phongs)
+            {
+                count++;
+            }
+            if (count == 1)
+            {
+                txtSP.Text = "001" ;
+            }
+            else if (count < 10)
+            {
+                txtSP.Text = "00" +Convert.ToString(count);
+            }
+            else if (count < 100)
+            {
+                txtSP.Text = "0" + Convert.ToString(count);
+            }
+            else txtSP.Text =   Convert.ToString(count);
+
+
             comboBoxLP.Items.Add("[Loại Phòng]");
             comboBoxLP.Items.Add("Phòng đơn");
             comboBoxLP.Items.Add("Phòng đôi");
@@ -241,7 +262,26 @@ namespace TTCSDL.GUI
 
         private void btnReset_Click(object sender, EventArgs e)
         {
-            txtSP.Text = "";
+            int count = 1;
+            var phongs = from a in data.Phongs
+                         select a;
+            foreach (var phong in phongs)
+            {
+                count++;
+            }
+            if (count == 1)
+            {
+                txtSP.Text = "001";
+            }
+            else if (count < 10)
+            {
+                txtSP.Text = "00" + Convert.ToString(count);
+            }
+            else if (count < 100)
+            {
+                txtSP.Text = "0" + Convert.ToString(count);
+            }
+            else txtSP.Text = Convert.ToString(count);
             comboBoxLP.SelectedItem = "[Loại Phòng]";
             labelGP.Text = "0 đ";
             labelTT.Text = "";

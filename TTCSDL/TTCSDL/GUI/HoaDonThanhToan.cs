@@ -31,7 +31,7 @@ namespace TTCSDL.GUI
         {
             dataGridViewHDTT.DataSource = csdl.getDataHDTT(textTenKH.Text);
             dataGridViewHDTT.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
-            //dataGridViewHDTT.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewHDTT.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             btnEdit.Hide();
 
         }
@@ -41,8 +41,7 @@ namespace TTCSDL.GUI
             btnEdit.Show();
             dataGridViewHDTT.DataSource = csdl.getDataHDDV(textTenKH.Text);
             dataGridViewHDTT.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
-            dataGridViewHDTT.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewHDTT.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewHDTT.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
         }
 
         private void dataGridViewHDTT_CellClick(object sender, DataGridViewCellEventArgs e)

@@ -55,7 +55,7 @@
             this.groupPanel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.groupPanel1.Location = new System.Drawing.Point(0, 0);
             this.groupPanel1.Name = "groupPanel1";
-            this.groupPanel1.Size = new System.Drawing.Size(698, 346);
+            this.groupPanel1.Size = new System.Drawing.Size(952, 424);
             // 
             // 
             // 
@@ -84,7 +84,7 @@
             this.btnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEdit.ForeColor = System.Drawing.Color.Blue;
-            this.btnEdit.Location = new System.Drawing.Point(570, 18);
+            this.btnEdit.Location = new System.Drawing.Point(713, 16);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(112, 36);
             this.btnEdit.TabIndex = 19;
@@ -97,7 +97,7 @@
             // 
             this.btnReload.BackgroundImage = global::TTCSDL.Properties.Resources.reload_24;
             this.btnReload.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnReload.Location = new System.Drawing.Point(514, 16);
+            this.btnReload.Location = new System.Drawing.Point(657, 14);
             this.btnReload.Name = "btnReload";
             this.btnReload.Size = new System.Drawing.Size(50, 39);
             this.btnReload.TabIndex = 18;
@@ -107,7 +107,7 @@
             // linkLabelCTDV
             // 
             this.linkLabelCTDV.AutoSize = true;
-            this.linkLabelCTDV.Location = new System.Drawing.Point(412, 59);
+            this.linkLabelCTDV.Location = new System.Drawing.Point(555, 57);
             this.linkLabelCTDV.Name = "linkLabelCTDV";
             this.linkLabelCTDV.Size = new System.Drawing.Size(138, 20);
             this.linkLabelCTDV.TabIndex = 17;
@@ -123,7 +123,7 @@
             this.buttonSearch.ForeColor = System.Drawing.Color.Blue;
             this.buttonSearch.Image = global::TTCSDL.Properties.Resources.find;
             this.buttonSearch.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonSearch.Location = new System.Drawing.Point(405, 18);
+            this.buttonSearch.Location = new System.Drawing.Point(548, 16);
             this.buttonSearch.Name = "buttonSearch";
             this.buttonSearch.Size = new System.Drawing.Size(103, 38);
             this.buttonSearch.TabIndex = 16;
@@ -138,7 +138,7 @@
             // 
             this.textTenKH.Border.Class = "TextBoxBorder";
             this.textTenKH.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textTenKH.Location = new System.Drawing.Point(140, 32);
+            this.textTenKH.Location = new System.Drawing.Point(283, 30);
             this.textTenKH.Name = "textTenKH";
             this.textTenKH.Size = new System.Drawing.Size(209, 22);
             this.textTenKH.TabIndex = 15;
@@ -146,7 +146,7 @@
             // labelX2
             // 
             this.labelX2.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.labelX2.Location = new System.Drawing.Point(10, 27);
+            this.labelX2.Location = new System.Drawing.Point(153, 25);
             this.labelX2.Name = "labelX2";
             this.labelX2.Size = new System.Drawing.Size(122, 27);
             this.labelX2.TabIndex = 14;
@@ -158,7 +158,7 @@
             this.dataGridViewHDTT.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ControlText;
@@ -167,7 +167,7 @@
             this.dataGridViewHDTT.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(215)))), ((int)(((byte)(229)))));
             this.dataGridViewHDTT.Location = new System.Drawing.Point(-2, 87);
             this.dataGridViewHDTT.Name = "dataGridViewHDTT";
-            this.dataGridViewHDTT.Size = new System.Drawing.Size(697, 221);
+            this.dataGridViewHDTT.Size = new System.Drawing.Size(951, 307);
             this.dataGridViewHDTT.TabIndex = 13;
             this.dataGridViewHDTT.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewHDTT_CellClick);
             // 
@@ -175,7 +175,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(696, 345);
+            this.ClientSize = new System.Drawing.Size(954, 426);
             this.Controls.Add(this.groupPanel1);
             this.Name = "HoaDonThanhToan";
             this.Text = "HoaDonThanhToan";

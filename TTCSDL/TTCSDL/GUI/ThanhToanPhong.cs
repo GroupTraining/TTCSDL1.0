@@ -60,6 +60,7 @@ namespace TTCSDL.GUI
 
                 kh.TrangThai = "checkout";
                 phong.TinhTrangPhong = false;
+                hoadon.NgayThanhToan = DateTime.Now;
                 data.SubmitChanges();
                 MessageBox.Show("Trả phòng thành công!!");
                 textTenKH.Text = "";
