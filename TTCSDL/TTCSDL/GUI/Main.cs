@@ -68,17 +68,17 @@ namespace TTCSDL.GUI
         
         private void Main_admin_Load(object sender, EventArgs e)
         {
-            
+            string username1 = username;
             this.CenterToScreen();
             this.WindowState = FormWindowState.Maximized;
             int widthScreen = Screen.PrimaryScreen.WorkingArea.Width;
             int heightScreen = Screen.PrimaryScreen.WorkingArea.Height;
             listView1.Width = widthScreen - 10;
             listView1.Height = heightScreen - 10;
-            if (csdl.getGroup(username) == "1")
+            if (csdl.getGroup(username1) == "1")
             {
                 admin();
-            }else if(csdl.getGroup(username) == "2")
+            }else if(csdl.getGroup(username1) == "2")
             {
                 personal();
             }
@@ -171,16 +171,20 @@ namespace TTCSDL.GUI
 
         private void btn_nhanphong_Click(object sender, EventArgs e)
         {
-            var ngaynhan = from a in data.HDThuePhongs
-                           where Convert.ToDateTime(a.NgayThue).Day == DateTime.Now.Day
-                           select a;
-            foreach( var n in ngaynhan)
-            {
-                KhachHang kh = data.KhachHangs.Single(p => p.MaKH == n.MaKHThue);
-                kh.TrangThai = "checkin";
-                data.SubmitChanges();
-            }
-            MessageBox.Show("Nhận thành công");
+            GUI.BtnNhanPhong nhanphong = new BtnNhanPhong();
+            nhanphong.Show();
+        }
+
+        private void btn_KHDatPhong_Click(object sender, EventArgs e)
+        {
+            GUI.DSKhachDatPhong kh = new DSKhachDatPhong();
+            kh.Show();
+        }
+
+        private void btn_DoanhThu_Click(object sender, EventArgs e)
+        {
+            GUI.DoanhThu thu = new DoanhThu();
+            thu.Show();
         }
     }
 }

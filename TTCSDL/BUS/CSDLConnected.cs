@@ -280,7 +280,7 @@ namespace BUS
                            CMTND = v.SoCMT,
                            SDT = v.SoDT,
                            NgayDen = t.NgayThue,
-                           NgayDuTra = t.NgayTra
+                           NgayTra = t.NgayTra
                        };
             return data;
         }
