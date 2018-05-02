@@ -22,6 +22,8 @@ namespace TTCSDL.GUI
             InitializeComponent();
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             dataGridViewX1.DataSource = bus.getDataDV();
+            dataGridViewX1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            dataGridViewX1.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             btn_del.Hide();
             btn_edit.Hide();
         }
@@ -82,6 +84,14 @@ namespace TTCSDL.GUI
         private void QuanLyDV_Load(object sender, EventArgs e)
         {
             this.CenterToScreen();
+            int count = 1;
+            var dichvu = from a in data.DichVus
+                            select a;
+            foreach (var dv in dichvu)
+            {
+                count++;
+            }
+            txt_id.Text = "DV" + Convert.ToString(count);
         }
 
         private void dataGridViewX1_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -100,6 +110,14 @@ namespace TTCSDL.GUI
 
         private void btnReset_Click(object sender, EventArgs e)
         {
+            int count = 1;
+            var dichvu = from a in data.DichVus
+                         select a;
+            foreach (var dv in dichvu)
+            {
+                count++;
+            }
+            txt_id.Text = "DV" + Convert.ToString(count);
             txt_id.Text = "";
             txt_name.Text = "";
             txt_price.Text = "";

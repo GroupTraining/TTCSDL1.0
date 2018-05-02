@@ -387,13 +387,14 @@ namespace BUS
             var doanhthu = from a in db.HDThanhToans
                            from b in db.KhachHangs
                            where a.MaKHTT == b.MaKH && Convert.ToDateTime(a.NgayThanhToan).Day == DateTime.Now.Day
-                         select new
-                         {
-                             MaHDTT = a.MaHDTT,
-                             TenKH = b.TenKH,
-                             NgayThanhToan = a.NgayThanhToan,
-                             Total = a.Total,
-                         }; 
+                           select new
+                           {
+                               MaHDTT = a.MaHDTT,
+                               TenKH = b.TenKH,
+                               NgayThanhToan = a.NgayThanhToan,
+                               TongTien = a.TongTienThanhToan,
+                               GiamGia = a.GiamGia,
+                           };
             return doanhthu;
         }
 
@@ -407,7 +408,8 @@ namespace BUS
                                MaHDTT = a.MaHDTT,
                                TenKH = b.TenKH,
                                NgayThanhToan = a.NgayThanhToan,
-                               Total = a.Total,
+                               TongTien = a.TongTienThanhToan,
+                               GiamGia = a.GiamGia,
                            };
             return doanhthu;
         }
@@ -422,7 +424,8 @@ namespace BUS
                                MaHDTT = a.MaHDTT,
                                TenKH = b.TenKH,
                                NgayThanhToan = a.NgayThanhToan,
-                               Total = a.Total,
+                               TongTien = a.TongTienThanhToan,
+                               GiamGia = a.GiamGia,
                            };
             return doanhthu;
         }
@@ -437,12 +440,13 @@ namespace BUS
                                MaHDTT = a.MaHDTT,
                                TenKH = b.TenKH,
                                NgayThanhToan = a.NgayThanhToan,
-                               Total = a.Total,
+                               TongTien = a.TongTienThanhToan,
+                               GiamGia = a.GiamGia,
                            };
             int? total = 0;
-            foreach(var dt in doanhthu)
+            foreach (var dt in doanhthu)
             {
-                total += dt.Total;
+                total += (dt.TongTien - dt.GiamGia);
             }
             return total;
         }
@@ -456,12 +460,13 @@ namespace BUS
                                MaHDTT = a.MaHDTT,
                                TenKH = b.TenKH,
                                NgayThanhToan = a.NgayThanhToan,
-                               Total = a.Total,
+                               TongTien = a.TongTienThanhToan,
+                               GiamGia = a.GiamGia,
                            };
             int? total = 0;
             foreach (var dt in doanhthu)
             {
-                total += dt.Total;
+                total += (dt.TongTien - dt.GiamGia);
             }
             return total;
         }
@@ -475,12 +480,13 @@ namespace BUS
                                MaHDTT = a.MaHDTT,
                                TenKH = b.TenKH,
                                NgayThanhToan = a.NgayThanhToan,
-                               Total = a.Total,
+                               TongTien = a.TongTienThanhToan,
+                               GiamGia = a.GiamGia,
                            };
             int? total = 0;
             foreach (var dt in doanhthu)
             {
-                total += dt.Total;
+                total += (dt.TongTien - dt.GiamGia);
             }
             return total;
         }

@@ -28,7 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridViewX1 = new DevComponents.DotNetBar.Controls.DataGridViewX();
             this.labelX1 = new DevComponents.DotNetBar.LabelX();
             this.groupPanel1 = new DevComponents.DotNetBar.Controls.GroupPanel();
@@ -48,10 +50,18 @@
             // dataGridViewX1
             // 
             this.dataGridViewX1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewX1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridViewX1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlText;
@@ -60,13 +70,21 @@
             this.dataGridViewX1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(215)))), ((int)(((byte)(229)))));
             this.dataGridViewX1.Location = new System.Drawing.Point(12, 193);
             this.dataGridViewX1.Name = "dataGridViewX1";
-            this.dataGridViewX1.Size = new System.Drawing.Size(393, 219);
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewX1.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dataGridViewX1.Size = new System.Drawing.Size(546, 219);
             this.dataGridViewX1.TabIndex = 0;
             this.dataGridViewX1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewX1_CellClick);
             // 
             // labelX1
             // 
-            this.labelX1.Location = new System.Drawing.Point(36, 15);
+            this.labelX1.Location = new System.Drawing.Point(108, 10);
             this.labelX1.Name = "labelX1";
             this.labelX1.Size = new System.Drawing.Size(95, 23);
             this.labelX1.TabIndex = 1;
@@ -89,7 +107,7 @@
             this.groupPanel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupPanel1.Location = new System.Drawing.Point(12, 12);
             this.groupPanel1.Name = "groupPanel1";
-            this.groupPanel1.Size = new System.Drawing.Size(393, 175);
+            this.groupPanel1.Size = new System.Drawing.Size(546, 175);
             // 
             // 
             // 
@@ -117,7 +135,7 @@
             // 
             this.btnReset.BackgroundImage = global::TTCSDL.Properties.Resources.reload_24;
             this.btnReset.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnReset.Location = new System.Drawing.Point(326, 9);
+            this.btnReset.Location = new System.Drawing.Point(398, 4);
             this.btnReset.Name = "btnReset";
             this.btnReset.Size = new System.Drawing.Size(41, 34);
             this.btnReset.TabIndex = 16;
@@ -131,7 +149,7 @@
             this.btn_del.ForeColor = System.Drawing.Color.Red;
             this.btn_del.Image = global::TTCSDL.Properties.Resources.remove;
             this.btn_del.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_del.Location = new System.Drawing.Point(205, 115);
+            this.btn_del.Location = new System.Drawing.Point(277, 110);
             this.btn_del.Name = "btn_del";
             this.btn_del.Size = new System.Drawing.Size(75, 32);
             this.btn_del.TabIndex = 4;
@@ -146,7 +164,7 @@
             this.btn_edit.ForeColor = System.Drawing.Color.Blue;
             this.btn_edit.Image = global::TTCSDL.Properties.Resources.save1;
             this.btn_edit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_edit.Location = new System.Drawing.Point(66, 115);
+            this.btn_edit.Location = new System.Drawing.Point(138, 110);
             this.btn_edit.Name = "btn_edit";
             this.btn_edit.Size = new System.Drawing.Size(109, 32);
             this.btn_edit.TabIndex = 4;
@@ -162,7 +180,7 @@
             this.btn_add.ForeColor = System.Drawing.Color.Blue;
             this.btn_add.Image = global::TTCSDL.Properties.Resources.Ok;
             this.btn_add.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_add.Location = new System.Drawing.Point(286, 115);
+            this.btn_add.Location = new System.Drawing.Point(358, 110);
             this.btn_add.Name = "btn_add";
             this.btn_add.Size = new System.Drawing.Size(81, 32);
             this.btn_add.TabIndex = 4;
@@ -178,7 +196,7 @@
             // 
             this.txt_price.Border.Class = "TextBoxBorder";
             this.txt_price.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_price.Location = new System.Drawing.Point(137, 73);
+            this.txt_price.Location = new System.Drawing.Point(209, 68);
             this.txt_price.Name = "txt_price";
             this.txt_price.Size = new System.Drawing.Size(170, 22);
             this.txt_price.TabIndex = 3;
@@ -190,7 +208,7 @@
             // 
             this.txt_name.Border.Class = "TextBoxBorder";
             this.txt_name.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_name.Location = new System.Drawing.Point(137, 45);
+            this.txt_name.Location = new System.Drawing.Point(209, 40);
             this.txt_name.Name = "txt_name";
             this.txt_name.Size = new System.Drawing.Size(170, 22);
             this.txt_name.TabIndex = 2;
@@ -202,14 +220,14 @@
             // 
             this.txt_id.Border.Class = "TextBoxBorder";
             this.txt_id.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_id.Location = new System.Drawing.Point(138, 15);
+            this.txt_id.Location = new System.Drawing.Point(210, 10);
             this.txt_id.Name = "txt_id";
             this.txt_id.Size = new System.Drawing.Size(170, 22);
             this.txt_id.TabIndex = 1;
             // 
             // labelX3
             // 
-            this.labelX3.Location = new System.Drawing.Point(36, 73);
+            this.labelX3.Location = new System.Drawing.Point(108, 68);
             this.labelX3.Name = "labelX3";
             this.labelX3.Size = new System.Drawing.Size(95, 23);
             this.labelX3.TabIndex = 1;
@@ -217,7 +235,7 @@
             // 
             // labelX2
             // 
-            this.labelX2.Location = new System.Drawing.Point(36, 44);
+            this.labelX2.Location = new System.Drawing.Point(108, 39);
             this.labelX2.Name = "labelX2";
             this.labelX2.Size = new System.Drawing.Size(95, 23);
             this.labelX2.TabIndex = 1;
@@ -227,7 +245,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(417, 426);
+            this.ClientSize = new System.Drawing.Size(559, 426);
             this.Controls.Add(this.groupPanel1);
             this.Controls.Add(this.dataGridViewX1);
             this.Name = "QuanLyDV";

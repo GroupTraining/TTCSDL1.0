@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupPanel1 = new DevComponents.DotNetBar.Controls.GroupPanel();
             this.textBoxDT = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.labelX2 = new DevComponents.DotNetBar.LabelX();
@@ -51,7 +50,7 @@
             this.groupPanel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.groupPanel1.Location = new System.Drawing.Point(-2, -5);
             this.groupPanel1.Name = "groupPanel1";
-            this.groupPanel1.Size = new System.Drawing.Size(623, 316);
+            this.groupPanel1.Size = new System.Drawing.Size(760, 348);
             // 
             // 
             // 
@@ -82,34 +81,26 @@
             // 
             this.textBoxDT.Border.Class = "TextBoxBorder";
             this.textBoxDT.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.textBoxDT.Location = new System.Drawing.Point(448, 260);
+            this.textBoxDT.Location = new System.Drawing.Point(581, 272);
             this.textBoxDT.Name = "textBoxDT";
-            this.textBoxDT.Size = new System.Drawing.Size(127, 26);
+            this.textBoxDT.Size = new System.Drawing.Size(121, 26);
             this.textBoxDT.TabIndex = 9;
             // 
             // labelX2
             // 
             this.labelX2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.labelX2.Location = new System.Drawing.Point(369, 258);
+            this.labelX2.Location = new System.Drawing.Point(515, 270);
             this.labelX2.Name = "labelX2";
-            this.labelX2.Size = new System.Drawing.Size(73, 28);
+            this.labelX2.Size = new System.Drawing.Size(47, 28);
             this.labelX2.TabIndex = 8;
             this.labelX2.Text = "Tổng";
             // 
             // dataGridViewDT
             // 
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewDT.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridViewDT.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewDT.Location = new System.Drawing.Point(-2, 60);
             this.dataGridViewDT.Name = "dataGridViewDT";
-            this.dataGridViewDT.Size = new System.Drawing.Size(620, 186);
+            this.dataGridViewDT.Size = new System.Drawing.Size(755, 186);
             this.dataGridViewDT.TabIndex = 7;
             // 
             // comboBoxDoanhthu
@@ -139,7 +130,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(620, 308);
+            this.ClientSize = new System.Drawing.Size(758, 342);
             this.Controls.Add(this.groupPanel1);
             this.Name = "DoanhThu";
             this.Text = "DoanhThu";

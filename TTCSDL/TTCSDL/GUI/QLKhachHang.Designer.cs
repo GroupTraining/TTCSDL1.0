@@ -136,7 +136,7 @@
             this.comboBoxLevel.ItemHeight = 16;
             this.comboBoxLevel.Location = new System.Drawing.Point(382, 109);
             this.comboBoxLevel.Name = "comboBoxLevel";
-            this.comboBoxLevel.Size = new System.Drawing.Size(57, 22);
+            this.comboBoxLevel.Size = new System.Drawing.Size(70, 22);
             this.comboBoxLevel.TabIndex = 58;
             // 
             // textDiachi
