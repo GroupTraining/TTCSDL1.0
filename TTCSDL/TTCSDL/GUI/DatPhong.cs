@@ -10,6 +10,8 @@ using System.Windows.Forms;
 using DAL;
 using BUS;
 using System.Globalization;
+using System.Data.Linq;
+using System.Data.Linq.Mapping;
 
 namespace TTCSDL.GUI
 {
@@ -193,9 +195,23 @@ namespace TTCSDL.GUI
                         MessageBox.Show("Đặt phòng thành công!!");
                         p.TinhTrangPhong = true;
                         kh.TrangThai = "reservation";
+                    try
+                    {
+                        data.SubmitChanges(ConflictMode.ContinueOnConflict);
+                    }
+
+                    catch (ChangeConflictException c)
+                    {
+                        foreach (ObjectChangeConflict o in data.ChangeConflicts)
+                        {
+                            o.Resolve(RefreshMode.KeepChanges);
+
+                        }
                         data.SubmitChanges();
-                        
-                        txtSDT.Text = "";
+
+                    }
+
+                    txtSDT.Text = "";
                         labelHoTen.Text = "";
                         labelQLKH.Text = "";
                         labelSP.Text = "";
@@ -207,6 +223,7 @@ namespace TTCSDL.GUI
                         dateTimeNgayTra.Value = DateTime.Now;
                         comboBoxLP.Enabled = false;
                 }
+
             }
             else
             {
