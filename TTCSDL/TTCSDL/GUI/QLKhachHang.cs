@@ -20,32 +20,10 @@ namespace TTCSDL.GUI
         {
             InitializeComponent();
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            dataGridView1.DataSource = csdl.getDataKH();
-            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
-            dataGridView1.Columns[7].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dataGridView1.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-        }
-
-        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            btnDel.Enabled = true;
-            btnEdit.Enabled = true;
-            btnThem.Enabled = false;
-
-            int rowindex = dataGridView1.CurrentCell.RowIndex;
-            int columnindex = dataGridView1.CurrentCell.ColumnIndex;
-            textMakh.Enabled = false;
-            textMakh.Text = dataGridView1.Rows[rowindex].Cells[0].Value.ToString();
-            textTenkh.Text = dataGridView1.Rows[rowindex].Cells[1].Value.ToString();
-            dateNS.Text = dataGridView1.Rows[rowindex].Cells[2].Value.ToString();
-            if (dataGridView1.Rows[rowindex].Cells[3].Value.ToString() == "True")
-                radioNu.Checked = true;
-            else
-                radioNam.Checked = true;
-            textSocmt.Text = dataGridView1.Rows[rowindex].Cells[4].Value.ToString();
-            textPhone.Text = dataGridView1.Rows[rowindex].Cells[5].Value.ToString();
-            textDiachi.Text = dataGridView1.Rows[rowindex].Cells[6].Value.ToString();
-            comboBoxLevel.Text = dataGridView1.Rows[rowindex].Cells[7].Value.ToString();
+            dataGridViewKH.DataSource = csdl.getDataKH();
+            dataGridViewKH.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            dataGridViewKH.Columns[7].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewKH.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
         }
 
         private void btnThem_Click(object sender, EventArgs e)
@@ -95,12 +73,12 @@ namespace TTCSDL.GUI
                 textDiachi.Text = "";
                 comboBoxLevel.Text = "";
                 textMakh.Enabled = true;
-                dataGridView1.Refresh();
+                dataGridViewKH.Refresh();
                 btnDel.Enabled = false;
                 btnEdit.Enabled = false;
                 btnThem.Enabled = true;
-                dataGridView1.Refresh();
-                dataGridView1.DataSource = csdl.getDataKH();
+                dataGridViewKH.Refresh();
+                dataGridViewKH.DataSource = csdl.getDataKH();
             }
         }
 
@@ -152,11 +130,11 @@ namespace TTCSDL.GUI
             textDiachi.Text = "";
             comboBoxLevel.Text = "";
             textMakh.Enabled = true;
-            dataGridView1.Refresh();
+            dataGridViewKH.Refresh();
             btnDel.Enabled = false;
             btnEdit.Enabled = false;
             btnThem.Enabled = true;
-            dataGridView1.DataSource = csdl.getDataKH();
+            dataGridViewKH.DataSource = csdl.getDataKH();
         }
 
         private void btnDel_Click(object sender, EventArgs e)
@@ -169,7 +147,7 @@ namespace TTCSDL.GUI
             btnDel.Enabled = false;
             btnEdit.Enabled = false;
             btnThem.Enabled = true;
-            dataGridView1.DataSource = csdl.getDataKH();
+            dataGridViewKH.DataSource = csdl.getDataKH();
         }
 
         private void btnReset_Click(object sender, EventArgs e)
@@ -184,7 +162,7 @@ namespace TTCSDL.GUI
             textDiachi.Text = "";
             comboBoxLevel.Text = "";
             textMakh.Enabled = true;
-            dataGridView1.Refresh();
+            dataGridViewKH.Refresh();
             btnDel.Enabled = false;
             btnEdit.Enabled = false;
             btnThem.Enabled = true;
@@ -202,9 +180,29 @@ namespace TTCSDL.GUI
             comboBoxLevel.Items.Add("2");
             comboBoxLevel.Items.Add("3");
             comboBoxLevel.SelectedItem = "[Level]";
-            dataGridView1.DataSource = csdl.getDataKH();
+            dataGridViewKH.DataSource = csdl.getDataKH();
         }
 
-        
+        private void dataGridViewKH_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            btnDel.Enabled = true;
+            btnEdit.Enabled = true;
+            btnThem.Enabled = false;
+
+            int rowindex = dataGridViewKH.CurrentCell.RowIndex;
+            int columnindex = dataGridViewKH.CurrentCell.ColumnIndex;
+            textMakh.Enabled = false;
+            textMakh.Text = dataGridViewKH.Rows[rowindex].Cells[0].Value.ToString();
+            textTenkh.Text = dataGridViewKH.Rows[rowindex].Cells[1].Value.ToString();
+            dateNS.Text = dataGridViewKH.Rows[rowindex].Cells[2].Value.ToString();
+            if (dataGridViewKH.Rows[rowindex].Cells[3].Value.ToString() == "True")
+                radioNu.Checked = true;
+            else
+                radioNam.Checked = true;
+            textSocmt.Text = dataGridViewKH.Rows[rowindex].Cells[4].Value.ToString();
+            textPhone.Text = dataGridViewKH.Rows[rowindex].Cells[5].Value.ToString();
+            textDiachi.Text = dataGridViewKH.Rows[rowindex].Cells[6].Value.ToString();
+            comboBoxLevel.Text = dataGridViewKH.Rows[rowindex].Cells[7].Value.ToString();
+        }
     }
 }

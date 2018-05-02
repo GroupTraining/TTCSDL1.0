@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewKH = new System.Windows.Forms.DataGridView();
             this.groupPanel1 = new DevComponents.DotNetBar.Controls.GroupPanel();
             this.btnReset = new System.Windows.Forms.Button();
             this.comboBoxLevel = new DevComponents.DotNetBar.Controls.ComboBoxEx();
@@ -51,19 +51,19 @@
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnDel = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewKH)).BeginInit();
             this.groupPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dateNS)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // dataGridViewKH
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(-1, 163);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(838, 203);
-            this.dataGridView1.TabIndex = 17;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
+            this.dataGridViewKH.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewKH.Location = new System.Drawing.Point(-1, 163);
+            this.dataGridViewKH.Name = "dataGridViewKH";
+            this.dataGridViewKH.Size = new System.Drawing.Size(838, 203);
+            this.dataGridViewKH.TabIndex = 17;
+            this.dataGridViewKH.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewKH_CellClick);
             // 
             // groupPanel1
             // 
@@ -369,11 +369,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(836, 359);
             this.Controls.Add(this.groupPanel1);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dataGridViewKH);
             this.Name = "QLKhachHang";
             this.Text = "QLKhachHang";
             this.Load += new System.EventHandler(this.QLKhachHang_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewKH)).EndInit();
             this.groupPanel1.ResumeLayout(false);
             this.groupPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dateNS)).EndInit();
@@ -382,7 +382,7 @@
         }
 
         #endregion
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridViewKH;
         private DevComponents.DotNetBar.Controls.GroupPanel groupPanel1;
         private DevComponents.DotNetBar.Controls.ComboBoxEx comboBoxLevel;
         private DevComponents.DotNetBar.Controls.TextBoxX textDiachi;
