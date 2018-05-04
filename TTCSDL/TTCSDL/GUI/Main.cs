@@ -197,5 +197,11 @@ namespace TTCSDL.GUI
             GUI.DoanhThu thu = new DoanhThu();
             thu.Show();
         }
+
+        private void btn_huyphong_Click(object sender, EventArgs e)
+        {
+            GUI.BtnHuyPhong huy = new BtnHuyPhong();
+            huy.Show();
+        }
     }
 }
