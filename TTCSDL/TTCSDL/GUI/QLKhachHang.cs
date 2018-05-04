@@ -175,10 +175,6 @@ namespace TTCSDL.GUI
             }
             textMakh.Text = "KH" + Convert.ToString(count);
             this.CenterToScreen();
-            comboBoxLevel.Items.Add("[Level]");
-            comboBoxLevel.Items.Add("1");
-            comboBoxLevel.Items.Add("2");
-            comboBoxLevel.Items.Add("3");
             comboBoxLevel.SelectedItem = "[Level]";
             dataGridViewKH.DataSource = csdl.getDataKH();
         }

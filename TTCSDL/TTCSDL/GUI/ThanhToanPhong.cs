@@ -16,6 +16,8 @@ namespace TTCSDL.GUI
     {
         CSDLConnected csdl = new CSDLConnected();
         TTCSDLDataContext data = new TTCSDLDataContext();
+        public  bool isLoad = false;
+
         public ThanhToanPhong()
         {
             InitializeComponent();
@@ -65,6 +67,7 @@ namespace TTCSDL.GUI
                 MessageBox.Show("Trả phòng thành công!!");
                 textTenKH.Text = "";
                 dataGridViewX1.DataSource = null;
+                isLoad = true;
             }
         }
     }

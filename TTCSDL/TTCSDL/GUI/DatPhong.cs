@@ -19,6 +19,7 @@ namespace TTCSDL.GUI
     {
         TTCSDLDataContext data = new TTCSDLDataContext();
         CSDLConnected bus = new CSDLConnected();
+        public bool isLoad = false;
         public DatPhong()
         {
             InitializeComponent();
@@ -222,6 +223,7 @@ namespace TTCSDL.GUI
                         dateTimeNgayDen.Value = DateTime.Now;
                         dateTimeNgayTra.Value = DateTime.Now;
                         comboBoxLP.Enabled = false;
+                    isLoad = true;
                 }
 
             }

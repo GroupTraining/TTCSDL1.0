@@ -20,7 +20,11 @@ namespace TTCSDL.GUI
         {
             InitializeComponent();
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            
+            Load_ListView();
+
+        }
+        public void Load_ListView()
+        {
             var phongs = from p in data.Phongs
                          select p;
             foreach (var p in phongs)
@@ -28,8 +32,8 @@ namespace TTCSDL.GUI
                 listView1.SmallImageList = imageList1;
                 listView1.LargeImageList = imageList1;
 
-                
-                if(p.TinhTrangPhong == true)
+
+                if (p.TinhTrangPhong == true)
                 {
                     ListViewItem item = new ListViewItem("Phòng số " + p.SoPhong + "Đang sử dụng");
                     item.ForeColor = Color.Red;
@@ -43,11 +47,10 @@ namespace TTCSDL.GUI
                     item.ImageIndex = 0;
                     listView1.Items.Add(item);
                 }
-               
-                
+
+
                 listView1.View = View.SmallIcon;
             }
-
         }
         public Main_admin(string txt) : this()
         {
@@ -144,6 +147,10 @@ namespace TTCSDL.GUI
         {
             GUI.DatPhong datp = new GUI.DatPhong();
             datp.Show();
+            if(datp.isLoad)
+            {
+                Load_ListView();
+            }
         }
 
 
@@ -161,6 +168,10 @@ namespace TTCSDL.GUI
         {
             GUI.ThanhToanPhong tt = new GUI.ThanhToanPhong();
             tt.Show();
+            if(tt.isLoad)
+            {
+                Load_ListView();
+            }
         }
 
         private void btn_qlnv_Click_1(object sender, EventArgs e)
