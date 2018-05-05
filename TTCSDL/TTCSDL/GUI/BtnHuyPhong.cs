@@ -23,19 +23,22 @@ namespace TTCSDL.GUI
 
         private void BtnHuyPhong_Load(object sender, EventArgs e)
         {
-            
+            comboBoxSP.Items.Add("[Chọn Phòng]");
+            comboBoxSP.SelectedItem = "[Chọn Phòng]";
         }
         string mahd = "";
-        string makh = "";
+        
         private void txtSDT_TextChanged(object sender, EventArgs e)
         {
+            comboBoxSP.Items.Clear();
+            comboBoxSP.Items.Add("[Chọn Phòng]");
+            comboBoxSP.SelectedItem = "[Chọn Phòng]";
             var thongtins = from tt in data.KhachHangs
                             select tt;
             foreach (var thongtin in thongtins)
             {
                 if (txtSDT.Text == thongtin.SoDT.Trim())
                 {
-                    makh = thongtin.MaKH;
                     labelHoTen.Text = thongtin.TenKH;
                     var hoadons = from a in data.HDThuePhongs
                                   where a.MaKHThue == thongtin.MaKH
@@ -59,7 +62,7 @@ namespace TTCSDL.GUI
                     foreach (var hoadon in hoadons)
                     {
                         HDThuePhong thue = data.HDThuePhongs.Single(a => a.MaPhong == hoadon.MaPhong);
-                        if (thue.MaKHThue ==makh&& DateTime.Compare(Convert.ToDateTime(thue.NgayThue), DateTime.Now) >= 0)
+                        if (Convert.ToDateTime(thue.NgayThue).DayOfYear >= DateTime.Now.DayOfYear)
                         {
                             mahd = thue.MaPhong;
                             labelNgayDen.Text = Convert.ToDateTime(thue.NgayThue).ToShortDateString();
@@ -90,15 +93,22 @@ namespace TTCSDL.GUI
                     HDThuePhong hdphong = data.HDThuePhongs.Single(a => a.MaPhong == mahd);
                     HDThanhToan hdtt = data.HDThanhToans.Single(a => a.MaPhong == hdphong.MaPhong);
                     HDDichVu hddv = data.HDDichVus.Single(a => a.MaHD == hdtt.MaHDDV);
+                    ChiTietThuePhong chitietphong = data.ChiTietThuePhongs.Single(a => a.MaPhong == hdphong.MaPhong);
+                    
                     p.TinhTrangPhong = false;
                     kh.TrangThai = "checkout";
+                    data.HDThanhToans.DeleteOnSubmit(hdtt);
+                    
+                    data.ChiTietThuePhongs.DeleteOnSubmit(chitietphong);
                     data.HDThuePhongs.DeleteOnSubmit(hdphong);
                     data.HDDichVus.DeleteOnSubmit(hddv);
-                    data.HDThanhToans.DeleteOnSubmit(hdtt);
+                    
                     data.SubmitChanges();
 
                     MessageBox.Show("Hủy thành công");
-                    
+                    comboBoxSP.Items.Clear();
+                    comboBoxSP.Items.Add("[Chọn Phòng]");
+                    comboBoxSP.SelectedItem = "[Chọn Phòng]";
                     labelHoTen.Text = "";
                     txtSDT.Text = "";
                     labelNgayDen.Text = "";
