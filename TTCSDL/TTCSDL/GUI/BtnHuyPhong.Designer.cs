@@ -29,17 +29,17 @@
         private void InitializeComponent()
         {
             this.groupPanelNhanPhong = new DevComponents.DotNetBar.Controls.GroupPanel();
+            this.txtSDT = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.comboBoxSP = new DevComponents.DotNetBar.Controls.ComboBoxEx();
             this.labelNgayTra = new DevComponents.DotNetBar.LabelX();
             this.labelNgayDen = new DevComponents.DotNetBar.LabelX();
-            this.labelSDT = new DevComponents.DotNetBar.LabelX();
             this.labelHoTen = new DevComponents.DotNetBar.LabelX();
+            this.btnXacNhan = new System.Windows.Forms.Button();
             this.labelX5 = new DevComponents.DotNetBar.LabelX();
             this.labelX4 = new DevComponents.DotNetBar.LabelX();
             this.labelX3 = new DevComponents.DotNetBar.LabelX();
             this.labelX2 = new DevComponents.DotNetBar.LabelX();
             this.labelX1 = new DevComponents.DotNetBar.LabelX();
-            this.btnXacNhan = new System.Windows.Forms.Button();
             this.groupPanelNhanPhong.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -47,10 +47,10 @@
             // 
             this.groupPanelNhanPhong.CanvasColor = System.Drawing.SystemColors.Control;
             this.groupPanelNhanPhong.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
+            this.groupPanelNhanPhong.Controls.Add(this.txtSDT);
             this.groupPanelNhanPhong.Controls.Add(this.comboBoxSP);
             this.groupPanelNhanPhong.Controls.Add(this.labelNgayTra);
             this.groupPanelNhanPhong.Controls.Add(this.labelNgayDen);
-            this.groupPanelNhanPhong.Controls.Add(this.labelSDT);
             this.groupPanelNhanPhong.Controls.Add(this.labelHoTen);
             this.groupPanelNhanPhong.Controls.Add(this.btnXacNhan);
             this.groupPanelNhanPhong.Controls.Add(this.labelX5);
@@ -61,7 +61,7 @@
             this.groupPanelNhanPhong.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupPanelNhanPhong.Location = new System.Drawing.Point(2, 12);
             this.groupPanelNhanPhong.Name = "groupPanelNhanPhong";
-            this.groupPanelNhanPhong.Size = new System.Drawing.Size(370, 334);
+            this.groupPanelNhanPhong.Size = new System.Drawing.Size(370, 372);
             // 
             // 
             // 
@@ -85,13 +85,25 @@
             this.groupPanelNhanPhong.TabIndex = 1;
             this.groupPanelNhanPhong.Text = "Hủy Phòng";
             // 
+            // txtSDT
+            // 
+            // 
+            // 
+            // 
+            this.txtSDT.Border.Class = "TextBoxBorder";
+            this.txtSDT.Location = new System.Drawing.Point(142, 28);
+            this.txtSDT.Name = "txtSDT";
+            this.txtSDT.Size = new System.Drawing.Size(204, 26);
+            this.txtSDT.TabIndex = 11;
+            this.txtSDT.TextChanged += new System.EventHandler(this.txtSDT_TextChanged);
+            // 
             // comboBoxSP
             // 
             this.comboBoxSP.DisplayMember = "Text";
             this.comboBoxSP.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.comboBoxSP.FormattingEnabled = true;
             this.comboBoxSP.ItemHeight = 20;
-            this.comboBoxSP.Location = new System.Drawing.Point(142, 34);
+            this.comboBoxSP.Location = new System.Drawing.Point(142, 120);
             this.comboBoxSP.Name = "comboBoxSP";
             this.comboBoxSP.Size = new System.Drawing.Size(146, 26);
             this.comboBoxSP.TabIndex = 10;
@@ -111,19 +123,27 @@
             this.labelNgayDen.Size = new System.Drawing.Size(204, 23);
             this.labelNgayDen.TabIndex = 8;
             // 
-            // labelSDT
-            // 
-            this.labelSDT.Location = new System.Drawing.Point(142, 121);
-            this.labelSDT.Name = "labelSDT";
-            this.labelSDT.Size = new System.Drawing.Size(204, 23);
-            this.labelSDT.TabIndex = 7;
-            // 
             // labelHoTen
             // 
-            this.labelHoTen.Location = new System.Drawing.Point(142, 79);
+            this.labelHoTen.Location = new System.Drawing.Point(142, 70);
             this.labelHoTen.Name = "labelHoTen";
             this.labelHoTen.Size = new System.Drawing.Size(204, 23);
             this.labelHoTen.TabIndex = 6;
+            // 
+            // btnXacNhan
+            // 
+            this.btnXacNhan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnXacNhan.ForeColor = System.Drawing.Color.Blue;
+            this.btnXacNhan.Image = global::TTCSDL.Properties.Resources.Ok;
+            this.btnXacNhan.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnXacNhan.Location = new System.Drawing.Point(123, 250);
+            this.btnXacNhan.Name = "btnXacNhan";
+            this.btnXacNhan.Size = new System.Drawing.Size(120, 39);
+            this.btnXacNhan.TabIndex = 5;
+            this.btnXacNhan.Text = "Xác Nhận";
+            this.btnXacNhan.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnXacNhan.UseVisualStyleBackColor = true;
+            this.btnXacNhan.Click += new System.EventHandler(this.btnXacNhan_Click);
             // 
             // labelX5
             // 
@@ -143,7 +163,7 @@
             // 
             // labelX3
             // 
-            this.labelX3.Location = new System.Drawing.Point(29, 121);
+            this.labelX3.Location = new System.Drawing.Point(29, 28);
             this.labelX3.Name = "labelX3";
             this.labelX3.Size = new System.Drawing.Size(89, 23);
             this.labelX3.TabIndex = 2;
@@ -151,7 +171,7 @@
             // 
             // labelX2
             // 
-            this.labelX2.Location = new System.Drawing.Point(29, 79);
+            this.labelX2.Location = new System.Drawing.Point(29, 70);
             this.labelX2.Name = "labelX2";
             this.labelX2.Size = new System.Drawing.Size(89, 23);
             this.labelX2.TabIndex = 1;
@@ -159,32 +179,17 @@
             // 
             // labelX1
             // 
-            this.labelX1.Location = new System.Drawing.Point(29, 33);
+            this.labelX1.Location = new System.Drawing.Point(29, 119);
             this.labelX1.Name = "labelX1";
             this.labelX1.Size = new System.Drawing.Size(89, 23);
             this.labelX1.TabIndex = 0;
             this.labelX1.Text = "Số Phòng";
             // 
-            // btnXacNhan
-            // 
-            this.btnXacNhan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnXacNhan.ForeColor = System.Drawing.Color.Blue;
-            this.btnXacNhan.Image = global::TTCSDL.Properties.Resources.Ok;
-            this.btnXacNhan.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnXacNhan.Location = new System.Drawing.Point(123, 250);
-            this.btnXacNhan.Name = "btnXacNhan";
-            this.btnXacNhan.Size = new System.Drawing.Size(120, 39);
-            this.btnXacNhan.TabIndex = 5;
-            this.btnXacNhan.Text = "Xác Nhận";
-            this.btnXacNhan.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnXacNhan.UseVisualStyleBackColor = true;
-            this.btnXacNhan.Click += new System.EventHandler(this.btnXacNhan_Click);
-            // 
             // BtnHuyPhong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(375, 350);
+            this.ClientSize = new System.Drawing.Size(375, 379);
             this.Controls.Add(this.groupPanelNhanPhong);
             this.Name = "BtnHuyPhong";
             this.Text = "BtnHuyPhong";
@@ -200,7 +205,6 @@
         private DevComponents.DotNetBar.Controls.ComboBoxEx comboBoxSP;
         private DevComponents.DotNetBar.LabelX labelNgayTra;
         private DevComponents.DotNetBar.LabelX labelNgayDen;
-        private DevComponents.DotNetBar.LabelX labelSDT;
         private DevComponents.DotNetBar.LabelX labelHoTen;
         private System.Windows.Forms.Button btnXacNhan;
         private DevComponents.DotNetBar.LabelX labelX5;
@@ -208,5 +212,6 @@
         private DevComponents.DotNetBar.LabelX labelX3;
         private DevComponents.DotNetBar.LabelX labelX2;
         private DevComponents.DotNetBar.LabelX labelX1;
+        private DevComponents.DotNetBar.Controls.TextBoxX txtSDT;
     }
 }
